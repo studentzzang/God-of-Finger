@@ -21,13 +21,22 @@ MonoBehaviour:
     text: "\uC720\uC800 \uB300\uD654 \uD14C\uC2A4\uD2B8\uC785\uB2C8\uB2E4."
   - speaker: 1
     npcName: NPC
-    text: " NPC\uAC00 \uB300\uD654\uC911\uC785\uB2C8\uB2E4."
+    text: "NPC\uAC00 \uB300\uD654\uC911\uC785\uB2C8\uB2E4."
   - speaker: 1
     npcName: NPC
-    text: "NPC\uAC00 \uB300\uD654\uC911\uC785\uB2C8\uB2E4."
-  - speaker: 0
+    text: "\uB300\uD654\uC911\uC785\uB2C8\uB2E4."
+  - speaker: 1
     npcName: 
-    text: "\uD655\uC778\uC644\uB8CC\uC785\uB2C8\uB2E4!"
+    text: "\uB3C4\uC640\uC8FC\uC2E4\uC218 \uC788\uB098\uC694?"
   hasChoice: 1
-  acceptResultLine: "\uC218\uB77D \uB300\uD654\uCC3D\uC785\uB2C8\uB2E4.\t"
-  rejectResultLine: "\uAC70\uC808 \uB300\uD654\uCC3D\uC785\uB2C8\uB2E4."
+  choicePrompt: "\uD760 \uB3C4\uC640\uC904\uAE4C?"
+  acceptResult:
+    speaker: 0
+    npcName: 
+    text: "\uC88B\uC544."
+  rejectResult:
+    speaker: 1
+    npcName: NPC
+    text: "\uAC70\uC808\uC774\uB77C\uACE0??"
+  acceptLabel: "\uC88B\uC544 \uB3C4\uC640\uC904\uAC8C"
+  rejectLabel: "\uC9C0\uAE08\uC740 \uC880..."

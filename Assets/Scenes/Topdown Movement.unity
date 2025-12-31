@@ -524,8 +524,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 438b22e9735e5462f9527fde0b912cae, type: 2}
+  m_sharedMaterial: {fileID: -1245874876407063776, guid: 438b22e9735e5462f9527fde0b912cae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -831,8 +831,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 438b22e9735e5462f9527fde0b912cae, type: 2}
+  m_sharedMaterial: {fileID: -1245874876407063776, guid: 438b22e9735e5462f9527fde0b912cae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1313,6 +1313,7 @@ GameObject:
   - component: {fileID: 1622754321}
   - component: {fileID: 1622754320}
   - component: {fileID: 1622754319}
+  - component: {fileID: 1622754323}
   m_Layer: 9
   m_Name: Box
   m_TagString: Untagged
@@ -1459,6 +1460,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622754323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622754318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6627805c1021b4e829a19032afd9072e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 11400000, guid: a6cbcd40c741b4523a57ecc40859f8ca, type: 2}
 --- !u!1 &1690825569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,12 +1506,20 @@ MonoBehaviour:
   speakerText: {fileID: 203491720}
   lineText: {fileID: 1752324515}
   nextButton: {fileID: 1900641259}
-  acceptButton: {fileID: 1437897455}
-  rejectButton: {fileID: 2021716151}
+  acceptButton: {fileID: 2021716151}
+  rejectButton: {fileID: 1437897455}
+  nextButtonText: {fileID: 246624201}
+  acceptButtonText: {fileID: 2104746274}
+  rejectButtonText: {fileID: 517765412}
   playerName: "\uB098"
-  choicePromptText: "\uC5B4\uB5BB\uAC8C \uD560\uAE4C?"
+  defaultNpcName: NPC
+  defaultChoicePrompt: "\uC5B4\uB5BB\uAC8C \uD560\uAE4C?"
   defaultAcceptText: "\uC54C\uACA0\uB2E4."
   defaultRejectText: "\uC5B4\uCA54 \uC218 \uC5C6\uC9C0."
+  nextLabel: "\uB2E4\uC74C"
+  closeLabel: "\uB2EB\uAE30"
+  acceptDefaultLabel: "\uC218\uB77D"
+  rejectDefaultLabel: "\uAC70\uC808"
 --- !u!4 &1690825571
 Transform:
   m_ObjectHideFlags: 0
@@ -2016,8 +2038,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 438b22e9735e5462f9527fde0b912cae, type: 2}
+  m_sharedMaterial: {fileID: -1245874876407063776, guid: 438b22e9735e5462f9527fde0b912cae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
