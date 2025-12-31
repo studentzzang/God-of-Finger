@@ -44,7 +44,7 @@ public class PlayerAction : MonoBehaviour
     {
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
 
-        Debug.DrawRay(rb.position, dirVector * 1f, Color.red);
+        Debug.DrawRay(rb.position, dirVector * 1.5f, Color.red);
 
         RaycastHit2D hit = Physics2D.Raycast(
             rb.position,
