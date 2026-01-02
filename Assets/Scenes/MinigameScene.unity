@@ -165,6 +165,9 @@ GameObject:
   m_Component:
   - component: {fileID: 349317766}
   - component: {fileID: 349317767}
+  - component: {fileID: 349317768}
+  - component: {fileID: 349317769}
+  - component: {fileID: 349317770}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -202,6 +205,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothTime: 0.2
+--- !u!114 &349317768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349317765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7fa439e3e55d84ca102ee13d29adfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstFinger: {fileID: 855673588}
+  _secondFinger: {fileID: 1952767269}
+  _boneRotationSpeed: 80
+  _maxCurlDegree: 40
+--- !u!114 &349317769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349317765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db9ac375840d714fa16a2fb2894f0ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bone: {fileID: 1952767269}
+  _stiffness: 170
+  _damping: 18
+  _noise: 8
+  _maxJitter: 10
+--- !u!114 &349317770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349317765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db9ac375840d714fa16a2fb2894f0ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bone: {fileID: 855673588}
+  _stiffness: 120
+  _damping: 18
+  _noise: 8
+  _maxJitter: 12
 --- !u!1 &521216741
 GameObject:
   m_ObjectHideFlags: 0
