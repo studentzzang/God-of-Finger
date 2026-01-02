@@ -1,7 +1,8 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 
 /// <summary>
 /// DialogueSO를 기반으로 대화를 진행·표시하는 중앙 매니저.
@@ -39,6 +40,13 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] private string rejectDefaultLabel = "거절";
 
     public bool IsOpen => panel != null && panel.activeSelf;
+    
+    public bool IsWaitingChoice =>
+        currentDialogue != null &&
+        currentDialogue.hasChoice &&
+        lineIndex >= currentDialogue.lines.Length &&
+        !choiceDone &&
+        !showingChoiceResult;
 
     private DialogueSO currentDialogue;
     private int lineIndex;
@@ -46,13 +54,37 @@ public class DialogueManager : Singleton<DialogueManager>
     private bool choiceDone;
     private bool showingChoiceResult;
 
+    // 같은 프레임에 Next/Accept/Reject가 중복 호출되는 것을 방지
+    private int lastAdvanceFrame = -1;
+
     protected override void Awake()
     {
         base.Awake();
 
-        if (nextButton) nextButton.onClick.AddListener(Next);
-        if (acceptButton) acceptButton.onClick.AddListener(Accept);
-        if (rejectButton) rejectButton.onClick.AddListener(Reject);
+        DisableButtonNavigation(nextButton);
+        DisableButtonNavigation(acceptButton);
+        DisableButtonNavigation(rejectButton);
+
+        // 버튼 이벤트가 중복 등록되는 걸 방지
+        if (nextButton)
+        {
+            nextButton.onClick.RemoveAllListeners();
+            nextButton.onClick.AddListener(Next);
+        }
+
+        if (acceptButton)
+        {
+            acceptButton.onClick.RemoveAllListeners();
+            acceptButton.onClick.AddListener(Accept);
+        }
+
+        if (rejectButton)
+        {
+            rejectButton.onClick.RemoveAllListeners();
+            rejectButton.onClick.AddListener(Reject);
+        }
+
+        ClearUISelection();
 
         if (panel) panel.SetActive(false);
     }
@@ -71,6 +103,10 @@ public class DialogueManager : Singleton<DialogueManager>
         showingChoiceResult = false;
 
         if (panel) panel.SetActive(true);
+
+        // 대화 시작 시 UI 포커스 해제(Submit 방지)
+        ClearUISelection();
+
         ShowLine();
         UpdateButtons();
     }
@@ -85,6 +121,9 @@ public class DialogueManager : Singleton<DialogueManager>
         choiceDone = false;
         showingChoiceResult = false;
 
+        // 대화 종료 시 UI 포커스 해제
+        ClearUISelection();
+
         if (panel) panel.SetActive(false);
     }
 
@@ -95,6 +134,7 @@ public class DialogueManager : Singleton<DialogueManager>
     public void Next()
     {
         if (currentDialogue == null) return;
+        if (ConsumeAdvanceThisFrame()) return;
 
         bool ended = lineIndex >= currentDialogue.lines.Length;
 
@@ -164,6 +204,8 @@ public class DialogueManager : Singleton<DialogueManager>
     /// </summary>
     private void Accept()
     {
+        if (ConsumeAdvanceThisFrame()) return;
+
         choiceDone = true;
 
         // acceptResult가 있으면 그 대사를 보여주고, 해당 줄에 달린 퀘스트 액션을 실행
@@ -188,6 +230,8 @@ public class DialogueManager : Singleton<DialogueManager>
     /// </summary>
     private void Reject()
     {
+        if (ConsumeAdvanceThisFrame()) return;
+
         choiceDone = true;
 
         // rejectResult가 있으면 그 대사를 보여주고, 해당 줄에 달린 퀘스트 액션을 실행
@@ -213,6 +257,9 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         if (currentDialogue == null) return;
 
+        // 버튼 상태가 바뀔 때마다 UI 포커스를 비워 Submit(스페이스/엔터) 자동 클릭을 방지
+        ClearUISelection();
+
         bool ended = lineIndex >= currentDialogue.lines.Length;
 
         // 선택 결과 단계 → 닫기 버튼만 표시
@@ -232,6 +279,8 @@ public class DialogueManager : Singleton<DialogueManager>
             if (nextButton) nextButton.gameObject.SetActive(false);
             if (acceptButton) acceptButton.gameObject.SetActive(true);
             if (rejectButton) rejectButton.gameObject.SetActive(true);
+
+            ClearUISelection();
 
             // 버튼 이름 변경
             if (acceptButtonText)
@@ -311,5 +360,52 @@ public class DialogueManager : Singleton<DialogueManager>
     private static bool HasText(DialogueLine line)
     {
         return line != null && !string.IsNullOrEmpty(line.text);
+    }
+
+    /// <summary>
+    /// UI 선택(포커스)을 해제하여 Space/Enter의 Submit이 버튼을 자동 클릭하지 않게 한다.
+    /// </summary>
+    private void ClearUISelection()
+    {
+        if (EventSystem.current != null)
+            EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    // 같은 프레임에 여러 번 진행(스킵)되는 것을 막는다
+    private bool ConsumeAdvanceThisFrame()
+    {
+        if (Time.frameCount == lastAdvanceFrame) return true;
+        lastAdvanceFrame = Time.frameCount;
+        return false;
+    }
+
+    // 키보드/패드 네비게이션으로 버튼이 선택되는 것을 막는다(선택 = Submit 대상이 될 수 있음)
+    private static void DisableButtonNavigation(Button b)
+    {
+        if (!b) return;
+        var nav = b.navigation;
+        nav.mode = Navigation.Mode.None;
+        b.navigation = nav;
+    }
+    
+    /// <summary>
+    /// 선택지 대기 상태에서 키보드 Y/N 입력으로 수락/거절을 처리한다.
+    /// </summary>
+    private void Update()
+    {
+        if (!IsOpen || currentDialogue == null) return;
+
+        // 선택지 대기 중이면 Y/N만 처리
+        if (IsWaitingChoice)
+        {
+            if (Input.GetKeyDown(KeyCode.Y))
+            {
+                Accept();
+            }
+            else if (Input.GetKeyDown(KeyCode.N))
+            {
+                Reject();
+            }
+        }
     }
 }

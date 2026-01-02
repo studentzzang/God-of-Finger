@@ -11,6 +11,10 @@ public class PlayerAction : MonoBehaviour
 
     [SerializeField] private QuestSO testQuest; // 테스트용 퀘스트 -->> 추후 삭제!!
     [SerializeField] private QuestSO testQuest2; // 테스트용 퀘스트 -->> 추후 삭제!!
+    [SerializeField] private QuestSO testQuest3; // 테스트용 퀘스트 -->> 추후 삭제!!
+    [SerializeField] private QuestSO testQuest4; // 테스트용 퀘스트 -->> 추후 삭제!!
+    [SerializeField] private QuestSO testQuest5; // 테스트용 퀘스트 -->> 추후 삭제!!
+    [SerializeField] private QuestSO testQuest6; // 테스트용 퀘스트 -->> 추후 삭제!!
     
     private Vector2 moveInput;
     private Vector2 dirVector = Vector2.down; 
@@ -31,13 +35,35 @@ public class PlayerAction : MonoBehaviour
         {
             if (DialogueManager.Instance.IsOpen) //대화창 열려있으면 다음으로
             {
-                DialogueManager.Instance.Next();
-                return;
+                
+                if (DialogueManager.Instance.IsWaitingChoice) return; // 선택지에서는 스페이스로 넘기지 않음
+
+                else
+                {
+                    DialogueManager.Instance.Next();
+                    return;
+                    
+                }
+
             }
 
             if (scanObject != null) // 열려있지 않음 / 상호작용 가능 물체가 있으면
             {
-                // 1) 퀘스트 NPC 우선: 상태에 맞는 DialogueSO를 받아서 시작
+                // 퀘스트 NPC 우선 (멀티 -> 단일 순)
+                // 멀티 퀘스트 기버
+                var giverMulti = scanObject.GetComponent<NPCQuestGiverMulti>();
+                if (giverMulti != null)
+                {
+                    var dialogue = giverMulti.GetDialogue();
+                    if (dialogue != null)
+                    {
+                        DialogueManager.Instance.StartDialogue(dialogue);
+                        return;
+                    }
+                }
+
+                // 단일 퀘스트  << 추후 삭제 예정
+                
                 var giver = scanObject.GetComponent<NPCQuestGiver>();
                 if (giver != null)
                 {
@@ -48,6 +74,8 @@ public class PlayerAction : MonoBehaviour
                         return;
                     }
                 }
+                
+                //여기까지 삭제
 
                 // 2) 일반 NPC 대화
                 var npc = scanObject.GetComponent<NPCDialogue>();
@@ -93,6 +121,37 @@ public class PlayerAction : MonoBehaviour
                 Debug.Log($"[TEST] Quest Completed: {testQuest2.questId}");
             }
         }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (testQuest3 != null)
+            {
+                QuestManager.Instance.Complete(testQuest3);
+                Debug.Log($"[TEST] Quest Completed: {testQuest3.questId}");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            if (testQuest4 != null)
+            {
+                QuestManager.Instance.Complete(testQuest4);
+                Debug.Log($"[TEST] Quest Completed: {testQuest4.questId}");
+            }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (testQuest5 != null)
+            {
+                QuestManager.Instance.Complete(testQuest5);
+                Debug.Log($"[TEST] Quest Completed: {testQuest5.questId}");
+            }
+        }
+        
+        
+        
+        
+        
     }
 
     /// <summary>
