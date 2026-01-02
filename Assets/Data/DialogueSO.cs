@@ -6,9 +6,22 @@ public enum SpeakerType
     NPC
 }
 
+public enum QuestActionType
+{
+    None, // 기본값
+    Accept, // 퀘스트 수락
+    Acknowledge // 퀘스트 제출(완료 인정)
+}
+
+
 [System.Serializable]
 public class DialogueLine
 {
+    [Header("Quest Action (Optional)")]
+    public QuestSO quest;
+    public QuestActionType questAction = QuestActionType.None;
+    
+    
     public SpeakerType speaker;
 
     // speaker가 NPC일 때만 사용 (줄마다 다른 NPC 가능)
@@ -28,8 +41,8 @@ public class DialogueSO : ScriptableObject
     [Header("Choice")]
     public bool hasChoice = false;
 
-    [TextArea(2, 4)]
-    public string choicePrompt;   // 예: "이 부탁을 받아들일까?"
+    [Header("Choice Prompt")]
+    public DialogueLine choicePromptLine; // 선택지 질문(화자/이름/텍스트) - 비워두면 기본 문구로 대체
 
     [Header("Choice Result Lines")]
     public DialogueLine acceptResult;
@@ -38,4 +51,5 @@ public class DialogueSO : ScriptableObject
     [Header("Choice Button Labels")]
     public string acceptLabel;    // 예: "수락한다"
     public string rejectLabel;    // 예: "거절한다"
+    
 }

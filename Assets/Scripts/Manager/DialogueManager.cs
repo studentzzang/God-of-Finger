@@ -1,7 +1,12 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// DialogueSO를 기반으로 대화를 진행·표시하는 중앙 매니저.
+/// 대사 진행, 선택지 처리, UI 버튼 제어를 담당한다.
+/// </summary>
 public class DialogueManager : Singleton<DialogueManager>
 {
     [Header("UI")]
@@ -52,6 +57,10 @@ public class DialogueManager : Singleton<DialogueManager>
         if (panel) panel.SetActive(false);
     }
 
+    /// <summary>
+    /// 지정된 DialogueSO로 대화를 시작한다.
+    /// 내부 상태를 초기화하고 첫 줄을 표시한다.
+    /// </summary>
     public void StartDialogue(DialogueSO dialogue)
     {
         if (dialogue == null) return;
@@ -61,11 +70,14 @@ public class DialogueManager : Singleton<DialogueManager>
         choiceDone = false;
         showingChoiceResult = false;
 
-        panel.SetActive(true);
+        if (panel) panel.SetActive(true);
         ShowLine();
         UpdateButtons();
     }
 
+    /// <summary>
+    /// 현재 대화를 종료하고 UI를 닫는다.
+    /// </summary>
     public void CloseDialogue()
     {
         currentDialogue = null;
@@ -73,70 +85,92 @@ public class DialogueManager : Singleton<DialogueManager>
         choiceDone = false;
         showingChoiceResult = false;
 
-        panel.SetActive(false);
+        if (panel) panel.SetActive(false);
     }
 
+    /// <summary>
+    /// 다음 대사로 진행하거나, 상황에 따라 대화를 종료한다.
+    /// 선택지 대기 중에는 진행을 제한한다.
+    /// </summary>
     public void Next()
     {
         if (currentDialogue == null) return;
 
         bool ended = lineIndex >= currentDialogue.lines.Length;
 
-        // 선택지 대기 중이면 Next 금지
+        // 선택지 대기 중이면 Next(진행) 입력을 막는다
         if (currentDialogue.hasChoice && ended && !choiceDone)
             return;
 
-        // 선택 결과 보여준 뒤 Next → 닫기
+        // 선택 결과를 보여준 상태라면 Next로 대화를 닫는다
         if (showingChoiceResult)
         {
             CloseDialogue();
             return;
         }
 
-        // 일반 대화 끝
+        // 선택지가 없는 일반 대화가 끝났으면 닫는다
         if (ended && !currentDialogue.hasChoice)
         {
             CloseDialogue();
             return;
         }
 
+        // 다음 줄로 진행
         lineIndex++;
         ShowLine();
         UpdateButtons();
     }
 
+    /// <summary>
+    /// 현재 인덱스에 맞는 대사 또는 선택지 프롬프트를 화면에 표시한다.
+    /// </summary>
     private void ShowLine()
     {
         if (currentDialogue == null) return;
 
-        // 일반 대사
+        // 일반 대사 표시
         if (lineIndex < currentDialogue.lines.Length)
         {
             ApplyLine(currentDialogue.lines[lineIndex]);
             return;
         }
 
-        // 선택지 프롬프트
+        // 선택지 프롬프트 표시
         if (currentDialogue.hasChoice && !choiceDone)
         {
-            speakerText.text = "";
-            lineText.text = string.IsNullOrEmpty(currentDialogue.choicePrompt)
-                ? defaultChoicePrompt
-                : currentDialogue.choicePrompt;
+            // choicePromptLine이 있으면(텍스트가 있으면) 화자/이름까지 포함해서 표시
+            if (HasText(currentDialogue.choicePromptLine))
+            {
+                ApplyLine(currentDialogue.choicePromptLine);
+            }
+            else
+            {
+                // 없으면 기본 문구로 표시(화자 없음)
+                speakerText.text = "";
+                lineText.text = defaultChoicePrompt;
+            }
+
             return;
         }
 
+        // 종료 처리
         CloseDialogue();
     }
 
+    /// <summary>
+    /// 선택지에서 '수락'을 눌렀을 때 호출된다.
+    /// 수락 결과 대사를 표시하고 종료 단계로 전환한다.
+    /// </summary>
     private void Accept()
     {
         choiceDone = true;
 
-        if (currentDialogue.acceptResult != null &&
-            !string.IsNullOrEmpty(currentDialogue.acceptResult.text))
+        // acceptResult가 있으면 그 대사를 보여주고, 해당 줄에 달린 퀘스트 액션을 실행
+        if (HasText(currentDialogue.acceptResult))
         {
             ApplyLine(currentDialogue.acceptResult);
+            ExecuteQuestAction(currentDialogue.acceptResult);
         }
         else
         {
@@ -148,14 +182,19 @@ public class DialogueManager : Singleton<DialogueManager>
         UpdateButtons();
     }
 
+    /// <summary>
+    /// 선택지에서 '거절'을 눌렀을 때 호출된다.
+    /// 거절 결과 대사를 표시하고 종료 단계로 전환한다.
+    /// </summary>
     private void Reject()
     {
         choiceDone = true;
 
-        if (currentDialogue.rejectResult != null &&
-            !string.IsNullOrEmpty(currentDialogue.rejectResult.text))
+        // rejectResult가 있으면 그 대사를 보여주고, 해당 줄에 달린 퀘스트 액션을 실행
+        if (HasText(currentDialogue.rejectResult))
         {
             ApplyLine(currentDialogue.rejectResult);
+            ExecuteQuestAction(currentDialogue.rejectResult);
         }
         else
         {
@@ -167,31 +206,34 @@ public class DialogueManager : Singleton<DialogueManager>
         UpdateButtons();
     }
 
+    /// <summary>
+    /// 현재 대화 상태(일반/선택지/종료)에 맞게 버튼 가시성과 라벨을 갱신한다.
+    /// </summary>
     private void UpdateButtons()
     {
         if (currentDialogue == null) return;
 
         bool ended = lineIndex >= currentDialogue.lines.Length;
 
-        // 선택 결과 단계 → 닫기
+        // 선택 결과 단계 → 닫기 버튼만 표시
         if (showingChoiceResult)
         {
-            nextButton.gameObject.SetActive(true);
-            acceptButton.gameObject.SetActive(false);
-            rejectButton.gameObject.SetActive(false);
+            if (nextButton) nextButton.gameObject.SetActive(true);
+            if (acceptButton) acceptButton.gameObject.SetActive(false);
+            if (rejectButton) rejectButton.gameObject.SetActive(false);
 
             if (nextButtonText) nextButtonText.text = closeLabel;
             return;
         }
 
-        // 선택지 단계
+        // 선택지 단계 → 수락/거절 버튼 표시
         if (currentDialogue.hasChoice && ended && !choiceDone)
         {
-            nextButton.gameObject.SetActive(false);
-            acceptButton.gameObject.SetActive(true);
-            rejectButton.gameObject.SetActive(true);
+            if (nextButton) nextButton.gameObject.SetActive(false);
+            if (acceptButton) acceptButton.gameObject.SetActive(true);
+            if (rejectButton) rejectButton.gameObject.SetActive(true);
 
-            //버튼 이름 변경
+            // 버튼 이름 변경
             if (acceptButtonText)
                 acceptButtonText.text = string.IsNullOrEmpty(currentDialogue.acceptLabel)
                     ? acceptDefaultLabel
@@ -205,23 +247,69 @@ public class DialogueManager : Singleton<DialogueManager>
             return;
         }
 
-        // 일반 진행
-        nextButton.gameObject.SetActive(true);
-        acceptButton.gameObject.SetActive(false);
-        rejectButton.gameObject.SetActive(false);
+        // 일반 진행 단계 → 다음 버튼만 표시
+        if (nextButton) nextButton.gameObject.SetActive(true);
+        if (acceptButton) acceptButton.gameObject.SetActive(false);
+        if (rejectButton) rejectButton.gameObject.SetActive(false);
 
         if (nextButtonText) nextButtonText.text = nextLabel;
     }
 
+    /// <summary>
+    /// 전달된 DialogueLine을 UI에 적용한다.
+    /// 화자에 따라 이름과 대사를 설정한다.
+    /// </summary>
     private void ApplyLine(DialogueLine line)
     {
+        if (line == null) return;
+
+        // 플레이어 화자 처리
         if (line.speaker == SpeakerType.Player)
+        {
             speakerText.text = playerName;
+        }
         else
+        {
+            // NPC 화자 처리
             speakerText.text = string.IsNullOrEmpty(line.npcName)
                 ? defaultNpcName
                 : line.npcName;
+        }
 
+        // 대사 텍스트 적용
         lineText.text = line.text;
+
+        // 완료 직후 1회 대사에서만 상태 전환(Completed -> Acknowledged)
+        // (Accept는 선택지 결과에서만 실행되도록 유지)
+        if (line.quest != null && line.questAction == QuestActionType.Acknowledge)
+        {
+            QuestManager.Instance.Acknowledge(line.quest);
+        }
+    }
+
+    // DialogueLine에 달린 퀘스트 액션을 실행한다 (없으면 아무 것도 하지 않음)
+    private void ExecuteQuestAction(DialogueLine line)
+    {
+        if (line == null) return;
+        if (line.quest == null) return;
+
+        switch (line.questAction)
+        {
+            case QuestActionType.Accept:
+                QuestManager.Instance.Accept(line.quest);
+                break;
+            case QuestActionType.Acknowledge:
+                QuestManager.Instance.Acknowledge(line.quest);
+                break;
+            case QuestActionType.None:
+            default:
+                break;
+        }
+    }
+
+    // 대사가 유효하게 존재하는지(텍스트가 비어있지 않은지) 확인
+    private static bool HasText(DialogueLine line)
+    {
+        return line != null && !string.IsNullOrEmpty(line.text);
     }
 }
