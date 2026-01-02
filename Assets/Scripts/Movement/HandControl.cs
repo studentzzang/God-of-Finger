@@ -7,6 +7,9 @@ public class HandContol : MonoBehaviour
     public Transform _firstFinger;
     public Transform _secondFinger;
 
+    public MonoBehaviour _firstPhysicsScript;
+    public MonoBehaviour _secondPhysicsScript;
+
     float _firstFingerAngle = 0f;
     float _secondFingerAngle = 0f;
 
@@ -29,17 +32,35 @@ public class HandContol : MonoBehaviour
     }
     void KeyCheck()
     {
-        // second(검지 등) : +1이 "접기"라고 가정
+        // second(검지)
         if (Input.GetKey(KeyCode.V))
+        {
             CurlFinger(_secondFinger, ref _secondFingerAngle, 1);
+            if (_secondPhysicsScript) _secondPhysicsScript.enabled = false;
+        }
         else if (_secondFingerAngle > 0f)
+        {
             CurlFinger(_secondFinger, ref _secondFingerAngle, -1);
+        }
+        else
+        {
+            if (_secondPhysicsScript) _secondPhysicsScript.enabled = true;
+        }
 
-        // thumb(엄지) : 방향 반대라서 "접기"는 -1
+        // thumb(엄지) 
         if (Input.GetKey(KeyCode.Space))
+        {
             CurlFinger(_firstFinger, ref _firstFingerAngle, 1);
+            if (_firstPhysicsScript) _firstPhysicsScript.enabled = false;
+        }
         else if (_firstFingerAngle > 0f)
+        {
             CurlFinger(_firstFinger, ref _firstFingerAngle, -1);
+        }
+        else
+        {
+            if (_firstPhysicsScript) _firstPhysicsScript.enabled = true;
+        }
     }
 
     /// <summary>
