@@ -39,6 +39,7 @@ public class Observable<T> {
 
     // 이벤트 호출
     public void Invoke() {
+        if(onValueChanged == null) onValueChanged = new UnityEvent<T>();
         onValueChanged.Invoke(value);
     }
 

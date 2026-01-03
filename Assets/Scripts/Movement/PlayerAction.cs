@@ -90,7 +90,7 @@ public class PlayerAction : MonoBehaviour
 
         // 대화 중 이동 x
         if (DialogueManager.Instance.IsOpen)
-        {
+        {   
             moveInput = Vector2.zero;
             return;
         }

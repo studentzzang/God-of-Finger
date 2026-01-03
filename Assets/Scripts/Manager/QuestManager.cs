@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum QuestState
@@ -15,8 +16,28 @@ public enum QuestState
 /// </summary>
 public class QuestManager : Singleton<QuestManager>
 {
+    [Header("Database")]
+    [SerializeField] private QuestDatabaseSO database;
+
+    // UI 갱신 트리거(값 자체 의미 없음)
+    public Observable<int> Revision = new Observable<int>(0);
+
     // 퀘스트ID, 상태 매핑 딕셔너리
     private readonly Dictionary<string, QuestState> states = new();
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        // 데이터베이스가 지정되어 있다면 lookup 테이블을 구성
+        if (database != null)
+            database.Build();
+        else
+        {
+            Debug.LogWarning("DataBaseSO가 할당되지 않았습니다. QuestManager가 정상 동작하지 않을 수 있습니다.");
+        }
+    }
+    
 
     // quest/questId 유효성(Null/빈 문자열) 검사
     private bool IsValidQuest(QuestSO quest)
@@ -24,10 +45,32 @@ public class QuestManager : Singleton<QuestManager>
         return quest != null && !string.IsNullOrEmpty(quest.questId);
     }
 
+    private bool IsValidQuestId(string questId)
+    {
+        return !string.IsNullOrEmpty(questId);
+    }
+
+    /// <summary>
+    /// questId로 QuestSO를 찾는다. (DB가 없거나 못 찾으면 null)
+    /// </summary>
+    public QuestSO FindQuest(string questId)
+    {
+        return database != null ? database.Find(questId) : null;
+    }
+
     public QuestState GetState(QuestSO quest) // 퀘스트 상태 조회
     {
-        if (quest == null) return QuestState.NotStarted;
-        return states.TryGetValue(quest.questId, out var s) ? s : QuestState.NotStarted;
+        if (!IsValidQuest(quest)) return QuestState.NotStarted;
+        return GetState(quest.questId);
+    }
+
+    /// <summary>
+    /// questId로 퀘스트 상태 조회
+    /// </summary>
+    public QuestState GetState(string questId)
+    {
+        if (!IsValidQuestId(questId)) return QuestState.NotStarted;
+        return states.TryGetValue(questId, out var s) ? s : QuestState.NotStarted;
     }
 
     /// <summary>
@@ -53,6 +96,24 @@ public class QuestManager : Singleton<QuestManager>
         // 수락 가능 조건을 만족하지 않으면 무시
         if (!CanAccept(quest)) return;
         states[quest.questId] = QuestState.Accepted;
+        BumpRevision();
+    }
+
+    public void Accept(string questId)
+    {
+        if (!IsValidQuestId(questId)) return;
+
+        var quest = FindQuest(questId);
+        if (quest != null)
+        {
+            Accept(quest);
+            return;
+        }
+
+        // DB에 없으면 선행퀘 검사 없이 단순 수락(테스트/디버그용)
+        if (GetState(questId) != QuestState.NotStarted) return;
+        states[questId] = QuestState.Accepted;
+        BumpRevision();
     }
 
     // 퀘스트 완료 처리 -> 미니게임 완료 후 호출
@@ -62,9 +123,19 @@ public class QuestManager : Singleton<QuestManager>
         if (GetState(quest) == QuestState.Accepted)
         {
             states[quest.questId] = QuestState.Completed;
+            BumpRevision();
             Debug.Log($"[Quest] Completed: {quest.questId}");
         }
-            
+    }
+
+    public void Complete(string questId)
+    {
+        if (!IsValidQuestId(questId)) return;
+        if (GetState(questId) != QuestState.Accepted) return;
+
+        states[questId] = QuestState.Completed;
+        BumpRevision();
+        Debug.Log($"[Quest] Completed: {questId}");
     }
 
     // 퀘스트 제출 처리 -> NPC와 대화 후 호출
@@ -77,15 +148,27 @@ public class QuestManager : Singleton<QuestManager>
         if (GetState(quest) == QuestState.Completed)
         {
             states[quest.questId] = QuestState.Acknowledged;
+            BumpRevision();
             Debug.Log($"[Quest] Acknowledged: {quest.questId}");
         }
+    }
+
+    public void Acknowledge(string questId)
+    {
+        if (!IsValidQuestId(questId)) return;
+        if (GetState(questId) != QuestState.Completed) return;
+
+        states[questId] = QuestState.Acknowledged;
+        BumpRevision();
+        Debug.Log($"[Quest] Acknowledged: {questId}");
     }
 
     // 디버그용
     public void ResetQuest(QuestSO quest)
     {
         if (!IsValidQuest(quest)) return;
-        states.Remove(quest.questId);
+        if (states.Remove(quest.questId))
+            BumpRevision();
     }
     
     
@@ -93,6 +176,11 @@ public class QuestManager : Singleton<QuestManager>
     {
         return states;
     }
-    
-    
+
+    // Revision은 "변경 신호"만 필요하므로 안전하게 증가
+    private void BumpRevision()
+    {
+        int v = Revision.Value;
+        Revision.Value = (v == int.MaxValue) ? 0 : v + 1;
+    }
 }
