@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questId: Q002
   title: "\uC5F0\uACC4\uD018\uC2A4\uD2B8 \uAC00\uB2A5?"
-  prerequisiteQuest: {fileID: 11400000, guid: 212833d1268644743934179f1561689a, type: 2}
+  prerequisiteQuest: {fileID: 0}
   Description: "\uC120\uD589\uD018\uC2A4\uD2B8\uAC00 \uC644\uB8CC \uB41C \uD6C4 \uB2E4\uC74C
     \uD018\uC2A4\uD2B8\uAC00 \uC791\uB3D9\uD558\uB294\uC9C0 \uD655\uC778\uD558\uB294
     \uD14C\uC2A4\uD2B8\uD018\uC2A4\uD2B8\uC785\uB2C8\uB2E4.\n\n"
