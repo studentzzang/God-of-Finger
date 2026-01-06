@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 349317766}
   - component: {fileID: 349317768}
   - component: {fileID: 349317767}
+  - component: {fileID: 349317769}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -221,6 +222,22 @@ MonoBehaviour:
   _secondPhysicsScript: {fileID: 0}
   _boneRotationSpeed: 14
   _maxCurlDegree: 50
+  _inputV: 0
+  _inputSpace: 0
+--- !u!114 &349317769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349317765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e87a65a7333ac94f83d11c0c7287c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fingerPower: 0
+  _power: 5
 --- !u!1 &521216741
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,12 +866,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd373fbf67c05c645890a0aa305785e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _friction: 5
   targetHand: {fileID: 349317766}
-  _holdTimerLimit: 0.4
+  handControl: {fileID: 0}
+  _holdTimerLimit: 0.7
   _holdTimer: 0
   _failTimer: 0
   _failTimerLimit: 1
   _catchState: 1
+  _contact: 0
+  _state: 0
 --- !u!1 &1952767268
 GameObject:
   m_ObjectHideFlags: 0

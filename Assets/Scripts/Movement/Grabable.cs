@@ -1,5 +1,5 @@
 ///<summary>
-/// 잡히는 대상 게임 오브젝트에 부착
+/// 잡을 수 있는 모든 물체에 부착
 /// 잡히느 대상 오브젝트는 트리거 콜라이더 필수 부착
 ///</summary>
 
@@ -14,21 +14,20 @@ public enum GrabState
     Grabbing,           // 잡기 성공, 물체/손 고정 상태
     FailCooldown        // 잡기 실패 후 쿨타임(30f), 재시도 불가
 }
-public class HairInteraction : MonoBehaviour
+public class Grabable : MonoBehaviour
 {
+    public int _friction = 5; //마찰력, 기본값 5 객체마다 설정필요
     public Transform targetHand; //손 오브젝트
-    public HandControl handControl;
+    private HandControl handControl;
+    private FingerPower fingerPower;
     Vector3 offset;
 
-    // PPT: "잡기 타이머" (예: 12프레임 정도를 시간으로 튜닝)
     public float _holdTimerLimit = 0.4f;
     public float _holdTimer = 0;
 
-    // PPT: "실패 타이머" (예: 30프레임 정도를 시간으로 튜닝)
     public float _failTimer = 0;
     public float _failTimerLimit = 1f;
 
-    // 기존 변수 유지 (성공/실패 플래그)
     public bool _catchState = true;
 
     private Vector2 _initialPos;
@@ -52,13 +51,19 @@ public class HairInteraction : MonoBehaviour
     [SerializeField] private ContactState _contact = ContactState.None;
     [SerializeField] private GrabState _state = GrabState.Idle;
 
-    // 내부용 접촉 카운트 (로직 판단에는 사용하지 않음. enum 업데이트 용도)
     private int _contactCount = 0;
 
     private void Start()
     {
-        SaveInitialPos();
-        handControl = targetHand.GetComponent<HandControl>();
+        InitialSetting();
+    }
+    void InitialSetting()
+    {
+            SaveInitialPos();
+            handControl = targetHand.GetComponent<HandControl>();
+            fingerPower = targetHand.GetComponent<FingerPower>();
+            
+    
     }
 
     void SaveInitialPos()
@@ -101,7 +106,7 @@ public class HairInteraction : MonoBehaviour
     void LateUpdate()
     {
         CheckCatch();
-        Debug.Log((_state, _contact, _holdTimer, _failTimer, _catchState));
+        //Debug.Log((_state, _contact, _holdTimer, _failTimer, _catchState));
     }
 
     void CheckCatch()
@@ -189,6 +194,10 @@ public class HairInteraction : MonoBehaviour
                         _holdTimer = 0;
                         _state = GrabState.Idle;
                         break;
+
+                        /*한 미니게임 스테이지에 여러 물체가 있을 수 있으므로 잡힐 때마다 새로 할당*/
+                        fingerPower._objFriction = _friction; //잡힐 때 새로 hand에 마찰값 할당
+
                     }
 
                     Catched();
