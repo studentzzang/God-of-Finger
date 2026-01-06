@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandContol : MonoBehaviour
+public class HandControl : MonoBehaviour
 {
     public Transform _firstFinger;
     public Transform _secondFinger;
@@ -20,6 +20,9 @@ public class HandContol : MonoBehaviour
     public float _maxCurlDegree = 70; //손가락 접혀지는 최대 각도(도)
     float _curl = 0;
 
+    public bool _inputV = false;
+    public bool _inputSpace = false;
+
     void Awake()
     {
         if (_firstFinger) _firstFingerBaseLocalRot = _firstFinger.localRotation;
@@ -32,8 +35,14 @@ public class HandContol : MonoBehaviour
     }
     void KeyCheck()
     {
+
+        if (Input.GetKey(KeyCode.V)) _inputV = true;
+        else _inputV = false;
+
+        if (Input.GetKey(KeyCode.Space)) _inputSpace = true;
+        else _inputSpace = false;
         // second(검지)
-        if (Input.GetKey(KeyCode.V))
+        if (_inputV)
         {
             CurlFinger(_secondFinger, ref _secondFingerAngle, 1);
             if (_secondPhysicsScript) _secondPhysicsScript.enabled = false;
@@ -48,7 +57,7 @@ public class HandContol : MonoBehaviour
         }
 
         // thumb(엄지) 
-        if (Input.GetKey(KeyCode.Space))
+        if (_inputSpace)
         {
             CurlFinger(_firstFinger, ref _firstFingerAngle, 1);
             if (_firstPhysicsScript) _firstPhysicsScript.enabled = false;
