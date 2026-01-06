@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TMPro;
 using UnityEngine;
 
@@ -11,14 +10,14 @@ using UnityEngine;
 public class QuestLogUIController : MonoBehaviour
 {
     [Header("Mini UI (List)")]
-    [SerializeField] private Transform miniContentRoot;          // Mini ScrollView Content
-    [SerializeField] private QuestLogEntryUI miniEntryPrefab;     // Mini entry prefab (can reuse entryPrefab)
+    [SerializeField] private Transform miniContentRoot;          // Mini 퀘스트 창
+    [SerializeField] private QuestLogEntryUI miniEntryPrefab;     // Mini entry prefab
 
     [Header("Window UI")]
-    [SerializeField] private GameObject windowPanel;      // QuestLogWindow
-    [SerializeField] private Transform contentRoot;       // ScrollView Content
-    [SerializeField] private QuestLogEntryUI entryPrefab; // QuestEntry Prefab
-    [SerializeField] private QuestTooltipUI tooltip;      // TooltipPanel 스크립트
+    [SerializeField] private GameObject windowPanel;      // 퀘스트 로그 창 패널
+    [SerializeField] private Transform contentRoot;       // 퀘스트 로그 창 콘텐츠 루트
+    [SerializeField] private QuestLogEntryUI entryPrefab; // 퀘스트 엔트리 프리펩
+    [SerializeField] private QuestDetailsUI detailsUI; // 선택된 퀘스트 상세 표시
 
     [Header("Hotkey")]
     [SerializeField] private KeyCode toggleKey = KeyCode.J;
@@ -26,6 +25,7 @@ public class QuestLogUIController : MonoBehaviour
     // 생성한 엔트리 추적해서 Refresh 때 정리
     private readonly List<QuestLogEntryUI> spawned = new();
     private readonly List<QuestLogEntryUI> spawnedMini = new();
+    private string selectedQuestId;
 
     private void OnEnable()
     {
@@ -49,7 +49,6 @@ public class QuestLogUIController : MonoBehaviour
             windowPanel.SetActive(open);
 
             if (open) RefreshWindow();
-            else tooltip?.Hide();
         }
     }
 
@@ -63,6 +62,31 @@ public class QuestLogUIController : MonoBehaviour
         RefreshMini();
         if (windowPanel != null && windowPanel.activeSelf)
             RefreshWindow();
+    }
+
+    // 퀘스트 로그 창을 연다(이미 열려있으면 유지)
+    private void OpenWindow()
+    {
+        if (windowPanel == null) return;
+        if (!windowPanel.activeSelf)
+            windowPanel.SetActive(true);
+    }
+
+    // 특정 퀘스트를 선택하고 상세 패널을 갱신한다.
+    private void SelectQuest(string questId)
+    {
+        if (string.IsNullOrEmpty(questId)) return;
+
+        selectedQuestId = questId;
+
+        var quest = QuestManager.Instance.FindQuest(questId);
+        var state = QuestManager.Instance.GetState(questId);
+
+        string title = quest != null && !string.IsNullOrEmpty(quest.title) ? quest.title : questId;
+        string desc = quest != null ? quest.Description : "";
+        string status = state == QuestState.Accepted ? "진행 중" : "완료 (제출 전)";
+
+        detailsUI?.Show(title, status, desc);
     }
 
     // 1) 미니 UI: (옵션) 스크롤 가능한 리스트 또는 1개 요약
@@ -91,7 +115,7 @@ public class QuestLogUIController : MonoBehaviour
 
                 var quest = QuestManager.Instance.FindQuest(questId);
                 string title = quest != null && !string.IsNullOrEmpty(quest.title) ? quest.title : questId;
-                string desc = quest != null ? quest.Description : "";
+                //string desc = quest != null ? quest.Description : "";
 
                 var entry = Instantiate(miniEntryPrefab, miniContentRoot, false);
                 spawnedMini.Add(entry);
@@ -99,9 +123,13 @@ public class QuestLogUIController : MonoBehaviour
                 entry.Bind(
                     title,
                     state == QuestState.Accepted ? "진행 중" : "완료 (제출 전)",
-                    click: () => { /* 미니 UI 클릭 동작은 필요 시 확장 */ },
-                    hover: () => tooltip?.Show(title, desc),
-                    exit: () => tooltip?.Hide()
+                    click: () =>
+                    {
+                        OpenWindow();
+                        RefreshWindow();
+                        SelectQuest(questId);
+                    }
+
                 );
             }
 
@@ -134,18 +162,27 @@ public class QuestLogUIController : MonoBehaviour
 
             var quest = QuestManager.Instance.FindQuest(questId);
             string title = quest != null && !string.IsNullOrEmpty(quest.title) ? quest.title : questId;
-            string desc = quest != null ? quest.Description : "";
+            //string desc = quest != null ? quest.Description : "";
 
-            var entry = Instantiate(entryPrefab, contentRoot,false);
+            var entry = Instantiate(entryPrefab, contentRoot, false);
             spawned.Add(entry);
 
             entry.Bind(
                 title,
                 state == QuestState.Accepted ? "진행 중" : "완료 (제출 전)",
-                click: () => { /* 선택 강조/핀 고정 등 확장 가능 */ },
-                hover: () => tooltip?.Show(title, desc),
-                exit: () => tooltip?.Hide()
+                click: () => SelectQuest(questId)
             );
+        }
+
+        // 갱신 후 선택 유지(가능하면 기존 선택 유지, 없으면 첫 번째 자동 선택)
+        if (!string.IsNullOrEmpty(selectedQuestId) && states.ContainsKey(selectedQuestId))
+        {
+            SelectQuest(selectedQuestId);
+        }
+        else
+        {
+            string first = filtered.Select(kv => kv.Key).FirstOrDefault();
+            if (!string.IsNullOrEmpty(first)) SelectQuest(first);
         }
     }
 

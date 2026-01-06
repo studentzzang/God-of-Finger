@@ -2,14 +2,22 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.IO;
+using Unity.IO.LowLevel.Unsafe;
+
+/// <summary>
+/// 퀘스트 상태 열거형
+/// </summary>
 
 public enum QuestState
 {
-    NotStarted,
-    Accepted,
-    Completed,
-    Acknowledged
+    NotStarted, // 수락 전 
+    Accepted, //수락 상태 
+    Completed, // 완료 상태
+    Acknowledged // 제출(인정) 상태
 }
+
+
 
 /// <summary>
 /// 퀘스트 상태를 questId 기준으로 저장/조회하고, 수락/완료/제출 전이를 관리한다.
@@ -24,7 +32,22 @@ public class QuestManager : Singleton<QuestManager>
 
     // 퀘스트ID, 상태 매핑 딕셔너리
     private readonly Dictionary<string, QuestState> states = new();
+    
+    
+    [System.Serializable]
+    private class QuestStateEntry
+    {
+        public string questId;
+        public QuestState state;
+    }
 
+    [System.Serializable]
+    private class QuestSaveData
+    {
+        public List<QuestStateEntry> entries = new List<QuestStateEntry>();
+    }
+    
+    private string SavePath => Path.Combine(Application.persistentDataPath, "quests.json");
     protected override void Awake()
     {
         base.Awake();
@@ -182,5 +205,73 @@ public class QuestManager : Singleton<QuestManager>
     {
         int v = Revision.Value;
         Revision.Value = (v == int.MaxValue) ? 0 : v + 1;
+    }
+
+
+    public void Save()
+    {
+        try
+        {
+            QuestSaveData data = new QuestSaveData();
+            foreach (var kv in states)
+            {
+                data.entries.Add(new QuestStateEntry { questId = kv.Key, state = kv.Value });
+
+            }
+
+            string json = JsonUtility.ToJson(data, true);
+            File.WriteAllText(SavePath, json);
+            Debug.Log($"[QuestManager] Quests saved to {SavePath}");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError(e);
+        }
+    }
+
+    public void Load()
+    {
+        try
+        {
+            if (!File.Exists(SavePath)){
+                Debug.Log("no save file found");
+                return;
+            }
+            
+            string json = File.ReadAllText(SavePath);
+            QuestSaveData data = JsonUtility.FromJson<QuestSaveData>(json);
+            states.Clear();
+            if (data!=null && data.entries!=null)
+            {
+                foreach (var entry in data.entries)
+                {
+                    if (!string.IsNullOrEmpty(entry.questId))
+                        states[entry.questId] = entry.state;
+                }
+            }
+            BumpRevision();
+            Debug.Log($"[QuestManager] Quests loaded from {SavePath}");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError(e);
+        }
+
+        
+    }
+    
+    public void DeleteSave()
+    {
+        try
+        {
+            if (File.Exists(SavePath))
+                File.Delete(SavePath);
+
+            Debug.Log("[Quest] Save deleted.");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"[Quest] DeleteSave failed: {e}");
+        }
     }
 }
