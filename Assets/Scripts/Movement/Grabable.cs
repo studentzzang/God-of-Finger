@@ -19,7 +19,9 @@ public class Grabable : MonoBehaviour
     public int _friction = 5; //마찰력, 기본값 5 객체마다 설정필요
     public Transform targetHand; //손 오브젝트
     protected HandControl handControl;
-    protected FingerPower fingerPower;
+    protected FingerPower _fingerPowerScript;
+    protected int _fingerPower;
+
     Vector3 offset;
 
     public float _holdTimerLimit = 0.4f;
@@ -30,7 +32,6 @@ public class Grabable : MonoBehaviour
 
     public bool _catchState = true;
 
-    private Vector2 _initialPos;
 
     //Finchable 상속용
     protected virtual void OnGrabbed() { }          // 잡기 성공 순간 1회
@@ -64,17 +65,12 @@ public class Grabable : MonoBehaviour
     }
     void InitialSetting()
     {
-            SaveInitialPos();
             handControl = targetHand.GetComponent<HandControl>();
-            fingerPower = targetHand.GetComponent<FingerPower>();
+            _fingerPowerScript = targetHand.GetComponent<FingerPower>();
             
     
     }
 
-    void SaveInitialPos()
-    {
-        _initialPos = transform.position;
-    }
 
     Vector2 GetOffset()
     {
@@ -111,6 +107,7 @@ public class Grabable : MonoBehaviour
     protected virtual void LateUpdate()
     {
         CheckCatch();
+        
         //Debug.Log((_state, _contact, _holdTimer, _failTimer, _catchState));
     }
 
@@ -196,17 +193,16 @@ public class Grabable : MonoBehaviour
                 {
                     if (handControl == null || !handControl._inputV || !handControl._inputSpace) // 즉시 잡기해제
                     {
+                        
                         _catchState = true;
                         _holdTimer = 0;
                         _state = GrabState.Idle;
                         OnGrabReleased();
                         break;
 
-                        /*한 미니게임 스테이지에 여러 물체가 있을 수 있으므로 잡힐 때마다 새로 할당*/
-                        fingerPower._objFriction = _friction; //잡힐 때 새로 hand에 마찰값 할당
 
                     }
-
+                    _fingerPower = _fingerPowerScript._power;
                     Grabbed();
 
                     break;
