@@ -16,8 +16,8 @@ public class HandControl : MonoBehaviour
     Quaternion _firstFingerBaseLocalRot;
     Quaternion _secondFingerBaseLocalRot;
 
-    public float _boneRotationSpeed = 15f;
-    public float _maxCurlDegree = 70; //손가락 접혀지는 최대 각도(도)
+    public float _boneRotationSpeed = 100f;
+    public float _maxCurlDegree = 50; //손가락 접혀지는 최대 각도(도)
     float _curl = 0;
 
     public bool _inputV = false;

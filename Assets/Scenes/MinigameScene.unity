@@ -221,7 +221,7 @@ MonoBehaviour:
   _secondFinger: {fileID: 1952767269}
   _firstPhysicsScript: {fileID: 0}
   _secondPhysicsScript: {fileID: 0}
-  _boneRotationSpeed: 14
+  _boneRotationSpeed: 100
   _maxCurlDegree: 50
   _inputV: 0
   _inputSpace: 0
@@ -237,7 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e87a65a7333ac94f83d11c0c7287c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fingerPower: 0
   _objFriction: 0
   _power: 5
 --- !u!50 &349317770
