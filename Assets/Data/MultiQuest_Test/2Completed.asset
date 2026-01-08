@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65305491a1230404680fe2db3d6b994b, type: 3}
+  m_Name: 2Completed
+  m_EditorClassIdentifier: 
+  lines:
+  - quest: {fileID: 11400000, guid: 39c9e6e842ba34a96881bf55b0f17ee9, type: 2}
+    questAction: 2
+    speaker: 0
+    npcName: "\uBCF4\uB77C"
+    text: " \uC798\uD588\uC5B4! \uC81C\uBC95\uC778\uB370? \uB2E4\uC74C\uC774 \uB9C8\uC9C0\uB9C9
+      \uBD80\uD0C1\uC774\uC57C. \uB4E4\uC5B4\uC904\uAC70\uC9C0?"
+  hasChoice: 0
+  choicePromptLine:
+    quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: 
+  acceptResult:
+    quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: 
+  rejectResult:
+    quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: 
+  acceptLabel: 
+  rejectLabel: 
