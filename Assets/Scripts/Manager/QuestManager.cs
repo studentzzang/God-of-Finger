@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using System.IO;
+using System.Linq;
 using Unity.IO.LowLevel.Unsafe;
 
 /// <summary>
@@ -34,6 +35,8 @@ public class QuestManager : Singleton<QuestManager>
     private readonly Dictionary<string, QuestState> states = new();
     
     
+    
+    
     [System.Serializable]
     private class QuestStateEntry
     {
@@ -59,6 +62,14 @@ public class QuestManager : Singleton<QuestManager>
         {
             Debug.LogWarning("DataBaseSO가 할당되지 않았습니다. QuestManager가 정상 동작하지 않을 수 있습니다.");
         }
+        QuestSignals.OnSignal += HandleSignal;
+        //DeleteSave();
+        //Load();
+    }
+    
+    private void OnDestroy()
+    {
+        QuestSignals.OnSignal -= HandleSignal;
     }
     
 
@@ -120,6 +131,7 @@ public class QuestManager : Singleton<QuestManager>
         if (!CanAccept(quest)) return;
         states[quest.questId] = QuestState.Accepted;
         BumpRevision();
+        Save();
     }
 
     public void Accept(string questId)
@@ -132,6 +144,7 @@ public class QuestManager : Singleton<QuestManager>
             Accept(quest);
             return;
         }
+        Save();
 
         // DB에 없으면 선행퀘 검사 없이 단순 수락(테스트/디버그용)
         if (GetState(questId) != QuestState.NotStarted) return;
@@ -149,6 +162,8 @@ public class QuestManager : Singleton<QuestManager>
             BumpRevision();
             Debug.Log($"[Quest] Completed: {quest.questId}");
         }
+
+        Save();
     }
 
     public void Complete(string questId)
@@ -158,6 +173,7 @@ public class QuestManager : Singleton<QuestManager>
 
         states[questId] = QuestState.Completed;
         BumpRevision();
+        Save();
         Debug.Log($"[Quest] Completed: {questId}");
     }
 
@@ -174,6 +190,8 @@ public class QuestManager : Singleton<QuestManager>
             BumpRevision();
             Debug.Log($"[Quest] Acknowledged: {quest.questId}");
         }
+
+        Save();
     }
 
     public void Acknowledge(string questId)
@@ -183,6 +201,7 @@ public class QuestManager : Singleton<QuestManager>
 
         states[questId] = QuestState.Acknowledged;
         BumpRevision();
+        Save();
         Debug.Log($"[Quest] Acknowledged: {questId}");
     }
 
@@ -192,6 +211,7 @@ public class QuestManager : Singleton<QuestManager>
         if (!IsValidQuest(quest)) return;
         if (states.Remove(quest.questId))
             BumpRevision();
+        Save();
     }
     
     
@@ -205,6 +225,28 @@ public class QuestManager : Singleton<QuestManager>
     {
         int v = Revision.Value;
         Revision.Value = (v == int.MaxValue) ? 0 : v + 1;
+    }
+
+    private void HandleSignal(string signal)
+    {
+        // DB 없으면 questId -> QuestSO를 못 찾아서 자동완료가 어려움
+        if (database == null) return;
+
+        // Accepted 상태인 퀘스트 중 signalId가 일치하는 걸 완료 처리
+        foreach (var kv in states.ToArray())
+        {
+            if (kv.Value != QuestState.Accepted) continue;
+
+            var quest = FindQuest(kv.Key);
+            if (quest == null) continue;
+
+            if (!string.IsNullOrEmpty(quest.completeSignalId) &&
+                quest.completeSignalId == signal)
+            {
+                Complete(kv.Key); 
+            }
+        }
+        
     }
 
 

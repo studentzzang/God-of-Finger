@@ -15,4 +15,5 @@ MonoBehaviour:
   questId: MQ001
   title: "\uBA40\uD2F0\uD018\uC2A4\uD2B8 1\uBC88"
   prerequisiteQuest: {fileID: 11400000, guid: 95e4336d4aede49acb9bd1038bbe29df, type: 2}
+  completeSignalId: MultiQuest1Clear
   Description: "\uC5EC\uB7EC\uBC88\uC758 \uC5F0\uB2EC\uC544 \uD018\uC2A4\uD2B8 1\uBC88\uC785\uB2C8\uB2E4.\n"

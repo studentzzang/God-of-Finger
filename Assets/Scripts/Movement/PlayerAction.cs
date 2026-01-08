@@ -107,11 +107,12 @@ public class PlayerAction : MonoBehaviour
         // 테스트용: C 키 누르면 퀘스트 완료 처리
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if (testQuest != null)
-            {
-                QuestManager.Instance.Complete(testQuest);
-                Debug.Log($"[TEST] Quest Completed: {testQuest.questId}");
-            }
+            QuestSignals.Raise("Quest1Clear");
+            // if (testQuest != null)
+            // {
+            //     QuestManager.Instance.Complete(testQuest);
+            //     Debug.Log($"[TEST] Quest Completed: {testQuest.questId}");
+            // }
         }
         if (Input.GetKeyDown(KeyCode.V))
         {
