@@ -522,6 +522,7 @@ GameObject:
   - component: {fileID: 1031261830}
   - component: {fileID: 1031261831}
   - component: {fileID: 1031261832}
+  - component: {fileID: 1031261833}
   m_Layer: 0
   m_Name: hand
   m_TagString: Untagged
@@ -624,6 +625,22 @@ MonoBehaviour:
     m_Extent: {x: 1.4471328, y: 2.9260125, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!114 &1031261833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031261829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570a178ca74d24b4fba0323e2202c962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fingerPowerScript: {fileID: 0}
+  _fingerPower: 0
+  strength: 0.03
+  speed: 20
 --- !u!1 &1276677763
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +707,7 @@ MonoBehaviour:
   targetHand: {fileID: 349317766}
   _holdTimerLimit: 0.4
   _holdTimer: 0
+  _easyBanTime: 0.07
   _failTimer: 0
   _failTimerLimit: 1
   _catchState: 1
@@ -1055,6 +1073,7 @@ MonoBehaviour:
   targetHand: {fileID: 349317766}
   _holdTimerLimit: 0.7
   _holdTimer: 0
+  _easyBanTime: 0.07
   _failTimer: 0
   _failTimerLimit: 1
   _catchState: 1

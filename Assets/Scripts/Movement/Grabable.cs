@@ -26,6 +26,7 @@ public class Grabable : MonoBehaviour
 
     public float _holdTimerLimit = 0.4f;
     public float _holdTimer = 0;
+    public float _easyBanTime = 0.05f; //이 시간 내에 동시에 잡으면 오히려 실패 (쉽게처리방지)
 
     public float _failTimer = 0;
     public float _failTimerLimit = 1f;
@@ -165,7 +166,7 @@ public class Grabable : MonoBehaviour
                     else if (_contact == ContactState.Both)
                     {
               
-                        if (_holdTimer < _holdTimerLimit)
+                        if (_holdTimer < _holdTimerLimit && _holdTimer >=_easyBanTime)
                         {
                             _catchState = false;
                             _holdTimer = 0;
