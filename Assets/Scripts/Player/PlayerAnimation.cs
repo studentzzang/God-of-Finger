@@ -7,7 +7,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private Vector2 lastDir = Vector2.down;
 
-    private void Awake()
+    private void Awake() 
     {
         if (!spriteRenderer)
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -28,6 +28,8 @@ public class PlayerAnimation : MonoBehaviour
             // 👉 좌우 flip 처리
             if (dir.x != 0)
                 spriteRenderer.flipX = dir.x > 0;
+            else if (dir.x == 0) // 수평 이동이 없을 때는 마지막 방향 기준으로 flip 유지
+                spriteRenderer.flipX = false;
         }
 
         anim.SetBool("IsMoving", moving);
