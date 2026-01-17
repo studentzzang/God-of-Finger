@@ -1,6 +1,6 @@
 /// <summary>
 /// 뽑아야하는 물체에 부착
-/// Grabable이랑 같이 부착XXX!@!!
+/// Grabable이랑 같이 부착XX X!@!!
 /// Finchable만 붙이기
 /// </summary>
 using System.Collections;
@@ -17,6 +17,8 @@ public class Finchable : Grabable
     private bool _lockHand = false;
     private bool _lockObject = true;     // 물체 고정 여부
     private bool _isFinchAble = false;
+
+    public bool isClear = false;
     
 
     // 잡기 성공 순간
@@ -94,6 +96,7 @@ public class Finchable : Grabable
     /// </summary>
     private void Finch()
     {
+        isClear = true;
         _lockHand = false;
         _lockObject = false;
     }

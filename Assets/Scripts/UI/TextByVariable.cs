@@ -6,15 +6,15 @@ using TMPro;
 public class TextByVariable : MonoBehaviour
 {
     [Header("Target")]
-    public MonoBehaviour targetScript;   // 값을 가져올스크립트
-    public string variableName;           // 변수명
+    public MonoBehaviour targetScript;
+    public string variableName;
 
     [Header("UI")]
     public TMP_Text text;
 
     [Header("Option")]
-    public string format = "{}";          //포맷할문자열
-    public float refreshInterval = 0.1f;  // 갱신 주기
+    public string format = "{0}";
+    public float refreshInterval = 0.1f;
 
     FieldInfo _field;
     PropertyInfo _property;
@@ -22,31 +22,38 @@ public class TextByVariable : MonoBehaviour
 
     void Awake()
     {
+        CacheMember();
+        UpdateText(); // 시작하자마자 1회 갱신
+    }
+
+    void OnValidate()
+    {
+        // 인스펙터에서 값 바꿀 때 바로 반영
+        CacheMember();
+    }
+
+    void CacheMember()
+    {
+        _field = null;
+        _property = null;
+
         if (targetScript == null || string.IsNullOrEmpty(variableName))
             return;
 
-        Type type = targetScript.GetType();
+        var type = targetScript.GetType();
 
-        // 변수 우선 탐색
-        _field = type.GetField(
-            variableName,
-            BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
-        );
+        _field = type.GetField(variableName,
+            BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 
-        // field 없으면 property
         if (_field == null)
         {
-            _property = type.GetProperty(
-                variableName,
-                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
-            );
-        }
+            _property = type.GetProperty(variableName,
+                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 
-        /*
-        if (_field == null && _property == null)
-        {
-            Debug.LogError("없음");
-        }*/
+            // 인덱서 프로퍼티(예: this[int])면 GetValue에 인자 필요해서 제외
+            if (_property != null && _property.GetIndexParameters().Length > 0)
+                _property = null;
+        }
     }
 
     void Update()
@@ -62,16 +69,22 @@ public class TextByVariable : MonoBehaviour
     {
         if (text == null || targetScript == null) return;
 
-        object value = null;
+        object value;
 
-        if (_field != null)
-            value = _field.GetValue(targetScript);
-        else if (_property != null)
-            value = _property.GetValue(targetScript);
+        try
+        {
+            if (_field != null) value = _field.GetValue(targetScript);
+            else if (_property != null) value = _property.GetValue(targetScript);
+            else { text.text = "null"; return; }
+        }
+        catch (Exception e)
+        {
+            text.text = $"err: {e.GetType().Name}";
+            return;
+        }
 
-        if (value == null)
-            text.text = "null";
-        else
-            text.text = string.Format(format, value);
+        // 핵심: format은 "{0}" 기반이어야 함
+        if (value == null) text.text = "null";
+        else text.text = string.Format(format, value);
     }
 }
