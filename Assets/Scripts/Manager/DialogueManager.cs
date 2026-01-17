@@ -10,20 +10,7 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class DialogueManager : Singleton<DialogueManager>
 {
-    [Header("UI")]
-    [SerializeField] private GameObject panel;
-    [SerializeField] private TextMeshProUGUI speakerText;
-    [SerializeField] private TextMeshProUGUI lineText;
-
-    [Header("Buttons")]
-    [SerializeField] private Button nextButton;
-    [SerializeField] private Button acceptButton;
-    [SerializeField] private Button rejectButton;
-
-    [Header("Button TMP")]
-    [SerializeField] private TextMeshProUGUI nextButtonText;
-    [SerializeField] private TextMeshProUGUI acceptButtonText;
-    [SerializeField] private TextMeshProUGUI rejectButtonText;
+    private DialogueUI ui;
 
     [Header("Names / Defaults")]
     [SerializeField] private string playerName = "나";
@@ -39,7 +26,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] private string acceptDefaultLabel = "수락";
     [SerializeField] private string rejectDefaultLabel = "거절";
 
-    public bool IsOpen => panel != null && panel.activeSelf;
+    public bool IsOpen => ui != null && ui.panel != null && ui.panel.activeSelf;
     
     public bool IsWaitingChoice =>
         currentDialogue != null &&
@@ -60,33 +47,45 @@ public class DialogueManager : Singleton<DialogueManager>
     protected override void Awake()
     {
         base.Awake();
+    }
 
-        DisableButtonNavigation(nextButton);
-        DisableButtonNavigation(acceptButton);
-        DisableButtonNavigation(rejectButton);
+    public void BindUI(DialogueUI newUI)
+    {
+        ui = newUI;
+        if (ui == null) return;
 
-        // 버튼 이벤트가 중복 등록되는 걸 방지
-        if (nextButton)
+        // Button bindings (prevent duplicates)
+        if (ui.nextButton)
         {
-            nextButton.onClick.RemoveAllListeners();
-            nextButton.onClick.AddListener(Next);
+            ui.nextButton.onClick.RemoveAllListeners();
+            ui.nextButton.onClick.AddListener(Next);
         }
 
-        if (acceptButton)
+        if (ui.acceptButton)
         {
-            acceptButton.onClick.RemoveAllListeners();
-            acceptButton.onClick.AddListener(Accept);
+            ui.acceptButton.onClick.RemoveAllListeners();
+            ui.acceptButton.onClick.AddListener(Accept);
         }
 
-        if (rejectButton)
+        if (ui.rejectButton)
         {
-            rejectButton.onClick.RemoveAllListeners();
-            rejectButton.onClick.AddListener(Reject);
+            ui.rejectButton.onClick.RemoveAllListeners();
+            ui.rejectButton.onClick.AddListener(Reject);
         }
 
         ClearUISelection();
 
-        if (panel) panel.SetActive(false);
+        // Sync current dialogue state to the new UI
+        if (currentDialogue != null)
+        {
+            if (ui.panel) ui.panel.SetActive(true);
+            ShowLine();
+            UpdateButtons();
+        }
+        else
+        {
+            if (ui.panel) ui.panel.SetActive(false);
+        }
     }
 
     /// <summary>
@@ -102,7 +101,7 @@ public class DialogueManager : Singleton<DialogueManager>
         choiceDone = false;
         showingChoiceResult = false;
 
-        if (panel) panel.SetActive(true);
+        if (ui?.panel) ui.panel.SetActive(true);
 
         // 대화 시작 시 UI 포커스 해제(Submit 방지)
         ClearUISelection();
@@ -124,7 +123,7 @@ public class DialogueManager : Singleton<DialogueManager>
         // 대화 종료 시 UI 포커스 해제
         ClearUISelection();
 
-        if (panel) panel.SetActive(false);
+        if (ui?.panel) ui.panel.SetActive(false);
     }
 
     /// <summary>
@@ -187,8 +186,8 @@ public class DialogueManager : Singleton<DialogueManager>
             else
             {
                 // 없으면 기본 문구로 표시(화자 없음)
-                speakerText.text = "";
-                lineText.text = defaultChoicePrompt;
+                if (ui?.speakerText) ui.speakerText.text = "";
+                if (ui?.lineText) ui.lineText.text = defaultChoicePrompt;
             }
 
             return;
@@ -216,8 +215,8 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else
         {
-            speakerText.text = playerName;
-            lineText.text = defaultAcceptText;
+            if (ui?.speakerText) ui.speakerText.text = playerName;
+            if (ui?.lineText) ui.lineText.text = defaultAcceptText;
         }
 
         showingChoiceResult = true;
@@ -242,8 +241,8 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else
         {
-            speakerText.text = playerName;
-            lineText.text = defaultRejectText;
+            if (ui?.speakerText) ui.speakerText.text = playerName;
+            if (ui?.lineText) ui.lineText.text = defaultRejectText;
         }
 
         showingChoiceResult = true;
@@ -265,31 +264,31 @@ public class DialogueManager : Singleton<DialogueManager>
         // 선택 결과 단계 → 닫기 버튼만 표시
         if (showingChoiceResult)
         {
-            if (nextButton) nextButton.gameObject.SetActive(true);
-            if (acceptButton) acceptButton.gameObject.SetActive(false);
-            if (rejectButton) rejectButton.gameObject.SetActive(false);
+            if (ui?.nextButton) ui.nextButton.gameObject.SetActive(true);
+            if (ui?.acceptButton) ui.acceptButton.gameObject.SetActive(false);
+            if (ui?.rejectButton) ui.rejectButton.gameObject.SetActive(false);
 
-            if (nextButtonText) nextButtonText.text = closeLabel;
+            if (ui?.nextButtonText) ui.nextButtonText.text = closeLabel;
             return;
         }
 
         // 선택지 단계 → 수락/거절 버튼 표시
         if (currentDialogue.hasChoice && ended && !choiceDone)
         {
-            if (nextButton) nextButton.gameObject.SetActive(false);
-            if (acceptButton) acceptButton.gameObject.SetActive(true);
-            if (rejectButton) rejectButton.gameObject.SetActive(true);
+            if (ui?.nextButton) ui.nextButton.gameObject.SetActive(false);
+            if (ui?.acceptButton) ui.acceptButton.gameObject.SetActive(true);
+            if (ui?.rejectButton) ui.rejectButton.gameObject.SetActive(true);
 
             ClearUISelection();
 
             // 버튼 이름 변경
-            if (acceptButtonText)
-                acceptButtonText.text = string.IsNullOrEmpty(currentDialogue.acceptLabel)
+            if (ui?.acceptButtonText)
+                ui.acceptButtonText.text = string.IsNullOrEmpty(currentDialogue.acceptLabel)
                     ? acceptDefaultLabel
                     : currentDialogue.acceptLabel;
 
-            if (rejectButtonText)
-                rejectButtonText.text = string.IsNullOrEmpty(currentDialogue.rejectLabel)
+            if (ui?.rejectButtonText)
+                ui.rejectButtonText.text = string.IsNullOrEmpty(currentDialogue.rejectLabel)
                     ? rejectDefaultLabel
                     : currentDialogue.rejectLabel;
 
@@ -297,11 +296,11 @@ public class DialogueManager : Singleton<DialogueManager>
         }
 
         // 일반 진행 단계 → 다음 버튼만 표시
-        if (nextButton) nextButton.gameObject.SetActive(true);
-        if (acceptButton) acceptButton.gameObject.SetActive(false);
-        if (rejectButton) rejectButton.gameObject.SetActive(false);
+        if (ui?.nextButton) ui.nextButton.gameObject.SetActive(true);
+        if (ui?.acceptButton) ui.acceptButton.gameObject.SetActive(false);
+        if (ui?.rejectButton) ui.rejectButton.gameObject.SetActive(false);
 
-        if (nextButtonText) nextButtonText.text = nextLabel;
+        if (ui?.nextButtonText) ui.nextButtonText.text = nextLabel;
     }
 
     /// <summary>
@@ -315,18 +314,18 @@ public class DialogueManager : Singleton<DialogueManager>
         // 플레이어 화자 처리
         if (line.speaker == SpeakerType.Player)
         {
-            speakerText.text = playerName;
+            if (ui?.speakerText) ui.speakerText.text = playerName;
         }
         else
         {
             // NPC 화자 처리
-            speakerText.text = string.IsNullOrEmpty(line.npcName)
+            if (ui?.speakerText) ui.speakerText.text = string.IsNullOrEmpty(line.npcName)
                 ? defaultNpcName
                 : line.npcName;
         }
 
         // 대사 텍스트 적용
-        lineText.text = line.text;
+        if (ui?.lineText) ui.lineText.text = line.text;
 
         // 완료 직후 1회 대사에서만 상태 전환(Completed -> Acknowledged)
         // (Accept는 선택지 결과에서만 실행되도록 유지)
@@ -379,15 +378,6 @@ public class DialogueManager : Singleton<DialogueManager>
         return false;
     }
 
-    // 키보드/패드 네비게이션으로 버튼이 선택되는 것을 막는다(선택 = Submit 대상이 될 수 있음)
-    private static void DisableButtonNavigation(Button b)
-    {
-        if (!b) return;
-        var nav = b.navigation;
-        nav.mode = Navigation.Mode.None;
-        b.navigation = nav;
-    }
-    
     /// <summary>
     /// 선택지 대기 상태에서 키보드 Y/N 입력으로 수락/거절을 처리한다.
     /// </summary>

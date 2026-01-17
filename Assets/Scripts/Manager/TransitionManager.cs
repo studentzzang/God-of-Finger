@@ -99,6 +99,8 @@ public class TransitionManager : MonoBehaviour
 
         // 다음 씬에서 사용할 스폰 ID 저장
         pendingSpawnId = spawnId;
+        if (PlayerRegistry.Instance != null)
+            PlayerRegistry.Instance.SetPendingSpawn(spawnId);
 
         // 3. 기존 맵 씬 언로드
         // 단, 부트스트랩 씬은 절대 언로드하지 않는다.
@@ -121,7 +123,7 @@ public class TransitionManager : MonoBehaviour
         }
 
         // 6. 플레이어 스폰 위치 적용
-        ApplySpawn(pendingSpawnId);
+        //ApplySpawn(pendingSpawnId);
 
         // 7. 카메라 위치 즉시 보정
         // (씬 전환 직후 튐 방지 목적)
