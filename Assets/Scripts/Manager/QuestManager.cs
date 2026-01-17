@@ -34,6 +34,8 @@ public class QuestManager : Singleton<QuestManager>
     // 퀘스트ID, 상태 매핑 딕셔너리
     private readonly Dictionary<string, QuestState> states = new();
     
+    [SerializeField] private bool enablePersistence = false;
+    
     
     
     
@@ -131,7 +133,7 @@ public class QuestManager : Singleton<QuestManager>
         if (!CanAccept(quest)) return;
         states[quest.questId] = QuestState.Accepted;
         BumpRevision();
-        Save();
+        //Save();
     }
 
     public void Accept(string questId)
@@ -252,6 +254,7 @@ public class QuestManager : Singleton<QuestManager>
 
     public void Save()
     {
+        if (!enablePersistence) return;
         try
         {
             QuestSaveData data = new QuestSaveData();
@@ -273,6 +276,8 @@ public class QuestManager : Singleton<QuestManager>
 
     public void Load()
     {
+        if (!enablePersistence) return;
+        
         try
         {
             if (!File.Exists(SavePath)){

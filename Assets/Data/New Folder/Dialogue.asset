@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65305491a1230404680fe2db3d6b994b, type: 3}
   m_Name: Dialogue
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: 
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: 
   hasChoice: 0
   choicePromptLine:
     quest: {fileID: 0}

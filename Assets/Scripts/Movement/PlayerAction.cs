@@ -30,6 +30,13 @@ public class PlayerAction : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        //전환 중 일때 입력 무시
+        if (PlayerInputLock.IsLocked)
+        {
+            moveInput = Vector2.zero;
+            return;
+        }
+
         // 대화 처리 로직 대화 중이면 Next, 아니면 대화 시작
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -46,9 +53,18 @@ public class PlayerAction : MonoBehaviour
                 }
 
             }
+            
 
             if (scanObject != null) // 열려있지 않음 / 상호작용 가능 물체가 있으면
             {
+                var door = scanObject.GetComponent<DoorToScene>();
+                if (door != null)
+                {
+                    door.Interact();
+                    Debug.Log("Door Interact");
+                    return;
+                }
+
                 // 퀘스트 NPC 우선 (멀티 -> 단일 순)
                 // 멀티 퀘스트 기버
                 var giverMulti = scanObject.GetComponent<NPCQuestGiverMulti>();
@@ -161,7 +177,7 @@ public class PlayerAction : MonoBehaviour
     private void FixedUpdate()
     {
         // 대화 중 이동 x
-        if (DialogueManager.Instance.IsOpen)
+        if (PlayerInputLock.IsLocked || DialogueManager.Instance.IsOpen)
         {
             rb.velocity = Vector2.zero;
             scanObject = null;
