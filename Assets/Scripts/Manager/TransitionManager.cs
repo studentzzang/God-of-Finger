@@ -49,7 +49,6 @@ public class TransitionManager : MonoBehaviour
     /// <summary>
     /// 다음 씬에서 사용할 스폰 포인트 ID
     /// </summary>
-    private static string pendingSpawnId;
 
     private void Awake()
     {
@@ -98,9 +97,9 @@ public class TransitionManager : MonoBehaviour
             yield return fader.FadeOut();
 
         // 다음 씬에서 사용할 스폰 ID 저장
-        pendingSpawnId = spawnId;
         if (PlayerRegistry.Instance != null)
             PlayerRegistry.Instance.SetPendingSpawn(spawnId);
+        //플레이어 스폰 위치 적용은 씬 로드 후에 수행
 
         // 3. 기존 맵 씬 언로드
         // 단, 부트스트랩 씬은 절대 언로드하지 않는다.
@@ -119,43 +118,19 @@ public class TransitionManager : MonoBehaviour
         currentMapScene = SceneManager.GetSceneByName(nextSceneName);
         if (currentMapScene.IsValid())
         {
+            
             SceneManager.SetActiveScene(currentMapScene);
         }
+        yield return null;
 
-        // 6. 플레이어 스폰 위치 적용
-        //ApplySpawn(pendingSpawnId);
-
-        // 7. 카메라 위치 즉시 보정
-        // (씬 전환 직후 튐 방지 목적)
-        CameraBootstrap.SnapAndRefresh();
-
-        // 8. 화면 페이드 인
+        // 6. 화면 페이드 인
         if (fader)
             yield return fader.FadeIn();
 
-        // 9. 플레이어 입력 해제
+        // 7. 플레이어 입력 해제
         PlayerInputLock.SetLocked(false);
 
         busy = false;
     }
-
-    /// <summary>
-    /// 현재 씬에 존재하는 SpawnPoint 중
-    /// spawnId가 일치하는 위치로 플레이어를 이동시킨다.
-    /// </summary>
-    private void ApplySpawn(string spawnId)
-    {
-        var player = GameObject.FindWithTag("Player");
-        if (!player) return;
-
-        var spawns = Object.FindObjectsByType<SpawnPoint>(FindObjectsSortMode.None);
-        foreach (var s in spawns)
-        {
-            if (s && s.spawnId == spawnId)
-            {
-                player.transform.position = s.transform.position;
-                return;
-            }
-        }
-    }
+    
 }

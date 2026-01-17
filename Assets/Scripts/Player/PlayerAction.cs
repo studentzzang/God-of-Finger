@@ -8,6 +8,7 @@ public class PlayerAction : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private PlayerAnimation playerAnimation;
 
     [SerializeField] private QuestSO testQuest; // 테스트용 퀘스트 -->> 추후 삭제!!
     [SerializeField] private QuestSO testQuest2; // 테스트용 퀘스트 -->> 추후 삭제!!
@@ -23,6 +24,7 @@ public class PlayerAction : MonoBehaviour
     private void Awake()
     {
         if (!rb) rb = GetComponent<Rigidbody2D>();
+        if (!playerAnimation) playerAnimation = GetComponentInChildren<PlayerAnimation>();
     }
 
     /// <summary>
@@ -34,6 +36,7 @@ public class PlayerAction : MonoBehaviour
         if (PlayerInputLock.IsLocked)
         {
             moveInput = Vector2.zero;
+            if (playerAnimation) playerAnimation.UpdateAnim(Vector2.zero);
             return;
         }
 
@@ -108,6 +111,7 @@ public class PlayerAction : MonoBehaviour
         if (DialogueManager.Instance.IsOpen)
         {   
             moveInput = Vector2.zero;
+            if (playerAnimation) playerAnimation.UpdateAnim(Vector2.zero);
             return;
         }
 
@@ -115,6 +119,7 @@ public class PlayerAction : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput = moveInput.normalized;
+        if (playerAnimation) playerAnimation.UpdateAnim(moveInput);
 
         // 마지막 이동 방향을 기억(정지 중에도 레이 방향 유지)
         if (moveInput != Vector2.zero)
