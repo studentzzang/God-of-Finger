@@ -13,6 +13,18 @@ public enum QuestActionType
     Acknowledge // 퀘스트 제출(완료 인정)
 }
 
+[System.Serializable]
+public class DialogueVisual
+{
+    [Header("Normal Dialogue")]
+    public Sprite portrait;
+
+    [Header("Cinematic Dialogue")]
+    public bool useCinematic;
+    public Sprite background;
+    public Sprite standing;
+}
+
 
 [System.Serializable]
 public class DialogueLine
@@ -20,6 +32,8 @@ public class DialogueLine
     [Header("Quest Action (Optional)")]
     public QuestSO quest;
     public QuestActionType questAction = QuestActionType.None;
+    
+    
     
     
     public SpeakerType speaker;
@@ -30,6 +44,9 @@ public class DialogueLine
 
     [TextArea(2, 4)]
     public string text;
+
+    [Header("Visual")]
+    public DialogueVisual visual;
 }
 
 [CreateAssetMenu(menuName = "GameData/Dialogue", fileName = "Dialogue")]
@@ -51,5 +68,10 @@ public class DialogueSO : ScriptableObject
     [Header("Choice Button Labels")]
     public string acceptLabel;    // 예: "수락한다"
     public string rejectLabel;    // 예: "거절한다"
+
+    [Header("Default Visuals (Optional)")]
+    public Sprite defaultPortrait;
+    public Sprite defaultBackground;
+    public Sprite defaultStanding;
     
 }

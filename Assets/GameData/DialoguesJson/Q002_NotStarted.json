@@ -1,0 +1,51 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "상인",
+      "text": "이제 하나만 더 부탁해도 될까?",
+      "useCinematic": false,
+      "portrait": "Portraits/Merchant",
+      "background": ""
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "상인",
+      "text": "가게 홍보가 필요해. 마을 사람들에게 한마디만 해줘.",
+      "useCinematic": false,
+      "portrait": "Portraits/Merchant",
+      "background": ""
+    }
+  ],
+  "hasChoice": true,
+  "choicePromptLine": {
+    "speaker": "NPC",
+    "npcName": "상인",
+    "text": "도와줄래?",
+    "useCinematic": true,
+    "portrait": "Portraits/Merchant",
+    "background": "Backgrounds/Shop"
+  },
+  "acceptResult": {
+    "speaker": "Player",
+    "npcName": "",
+    "text": "오케이. 홍보는 내 전문이지.",
+    "useCinematic": true,
+    "portrait": "",
+    "background": "Backgrounds/Shop",
+    "questId": "Q002",
+    "questAction": "Accept"
+  },
+  "rejectResult": {
+    "speaker": "Player",
+    "npcName": "",
+    "text": "다음에 해줄게.",
+    "useCinematic": true,
+    "portrait": "",
+    "background": "Backgrounds/Shop",
+    "questId": "",
+    "questAction": "None"
+  },
+  "acceptLabel": "수락",
+  "rejectLabel": "거절"
+}

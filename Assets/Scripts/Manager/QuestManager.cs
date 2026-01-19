@@ -69,9 +69,10 @@ public class QuestManager : Singleton<QuestManager>
         //Load();
     }
     
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         QuestSignals.OnSignal -= HandleSignal;
+        base.OnDestroy(); // 싱글톤 정리(Instance=null 같은거) 보장
     }
     
 

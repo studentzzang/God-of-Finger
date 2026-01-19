@@ -1,46 +1,59 @@
 using UnityEngine;
 
 /// <summary>
-/// Bootstrap(Additive) 구조에 맞춘 싱글톤:
-/// - 자동 생성 X (세팅 누락을 바로 발견)
+/// Bootstrap(Additive) 구조용 싱글톤
+/// - 자동 생성 X
+/// - Instance getter에서 Find로 "찾아주지 않음" (의도적으로 null 가능)
+/// - Awake에서만 등록
 /// - 중복 방지
-/// - DontDestroyOnLoad는 선택 (Bootstrap 씬을 유지하면 보통 필요 없음)
+/// - (선택) DontDestroyOnLoad
 /// </summary>
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;
     private static bool isQuitting;
 
+    /// <summary>
+    /// 반드시 존재한다고 "보장"되는 상황에서만 사용.
+    /// 없으면 null 반환(또는 원하는 경우 예외/로그).
+    /// </summary>
     public static T Instance
     {
         get
         {
             if (isQuitting) return null;
-
-            if (instance == null)
-            {
-                instance = FindFirstObjectByType<T>();
-                if (instance == null)
-                {
-                    Debug.LogError($"[{typeof(T).Name}] Instance를 찾을 수 없습니다. Bootstrap 씬에 배치했는지 확인하세요.");
-                }
-            }
-
             return instance;
         }
     }
 
-    [SerializeField] private bool makePersistent = false; // 필요하면 true
+    /// <summary>
+    /// "없을 수도" 있는 상황에서 안전하게 체크하는 용도.
+    /// </summary>
+    public static T InstanceOrNull => isQuitting ? null : instance;
+
+    public static bool HasInstance => !isQuitting && instance != null;
+
+    [SerializeField] private bool makePersistent = false;
 
     protected virtual void Awake()
     {
+        if (isQuitting)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (instance == null)
         {
             instance = this as T;
+
             if (makePersistent)
                 DontDestroyOnLoad(gameObject);
+
+            return;
         }
-        else if (instance != this)
+
+        if (instance != this)
         {
             Destroy(gameObject);
         }
@@ -51,6 +64,14 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         isQuitting = true;
     }
 
-    // 씬 전환에서도 OnDestroy는 호출될 수 있으니 isQuitting 세팅 금지
-    protected virtual void OnDestroy() { }
+    protected virtual void OnDestroy()
+    {
+        // 진짜 종료가 아니라 씬 언로드/중복 제거로 Destroy 되는 경우가 많아서
+        // isQuitting은 여기서 건드리면 안 됨.
+        if (!isQuitting && instance == this)
+        {
+            // Bootstrap 씬이 언로드되는 상황(테스트 등)에서는 instance를 비워주는 게 안전
+            instance = null;
+        }
+    }
 }

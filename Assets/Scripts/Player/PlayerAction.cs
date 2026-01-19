@@ -129,11 +129,11 @@ public class PlayerAction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             QuestSignals.Raise("Quest1Clear");
-            // if (testQuest != null)
-            // {
-            //     QuestManager.Instance.Complete(testQuest);
-            //     Debug.Log($"[TEST] Quest Completed: {testQuest.questId}");
-            // }
+            if (testQuest != null)
+            {
+                QuestManager.Instance.Complete(testQuest);
+                Debug.Log($"[TEST] Quest Completed: {testQuest.questId}");
+            }
         }
         if (Input.GetKeyDown(KeyCode.V))
         {

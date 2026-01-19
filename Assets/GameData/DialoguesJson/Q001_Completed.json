@@ -1,0 +1,28 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "상인",
+      "text": "헉, 이게 내 사과잖아!",
+      "useCinematic": false,
+      "portrait": "Portraits/Merchant",
+      "background": ""
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "상인",
+      "text": "약속대로 보상을 줄게.",
+      "useCinematic": false,
+      "portrait": "Portraits/Merchant",
+      "background": "",
+      "questId": "Q001",
+      "questAction": "Acknowledge"
+    }
+  ],
+  "hasChoice": false,
+  "choicePromptLine": null,
+  "acceptResult": null,
+  "rejectResult": null,
+  "acceptLabel": "",
+  "rejectLabel": ""
+}
