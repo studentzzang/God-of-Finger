@@ -3,6 +3,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+public enum DialoguePresentationMode
+{
+    Normal,
+    Cinematic
+}
+
 
 /// <summary>
 /// DialogueSO를 기반으로 대화를 진행·표시하는 중앙 매니저.
@@ -10,7 +16,15 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class DialogueManager : Singleton<DialogueManager>
 {
-    private DialogueUI ui;
+    [Header("UI (bind from scene)")]
+    private NormalDialogueUI normalUI;
+    private CinematicDialogueUI cinematicUI;
+
+    // 현재 표시/입력을 담당하는 UI
+    private DialogueUIBase ui;
+
+    // 현재 연출 모드
+    private DialoguePresentationMode mode = DialoguePresentationMode.Normal;
 
     [Header("Names / Defaults")]
     [SerializeField] private string playerName = "나";
@@ -26,7 +40,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] private string acceptDefaultLabel = "수락";
     [SerializeField] private string rejectDefaultLabel = "거절";
 
-    public bool IsOpen => ui != null && ui.panel != null && ui.panel.activeSelf;
+    public bool IsOpen => ui != null && ui.gameObject.activeInHierarchy && ui.Panel != null && ui.Panel.activeInHierarchy;
     
     public bool IsWaitingChoice =>
         currentDialogue != null &&
@@ -49,43 +63,100 @@ public class DialogueManager : Singleton<DialogueManager>
         base.Awake();
     }
 
-    public void BindUI(DialogueUI newUI)
+    public void BindNormalUI(NormalDialogueUI newUI)
     {
-        ui = newUI;
+        normalUI = newUI;
+        TryAutoSelectUI();
+    }
+
+    public void BindCinematicUI(CinematicDialogueUI newUI)
+    {
+        cinematicUI = newUI;
+        TryAutoSelectUI();
+    }
+
+    private void TryAutoSelectUI()
+    {
+        // 현재 모드에 맞는 UI 우선, 없으면 있는 쪽으로
+        DialogueUIBase desired = mode == DialoguePresentationMode.Cinematic ? cinematicUI : normalUI;
+        if (desired == null) desired = normalUI != null ? normalUI : cinematicUI;
+
+        SetActiveUI(desired, syncState: true);
+    }
+
+    private void SetActiveUI(DialogueUIBase newActive, bool syncState)
+    {
+        // Hide any previously active UI (root-level hide, not Panel toggles)
+        if (ui != null && ui != newActive)
+        {
+            ui.Hide();
+        }
+
+        ui = newActive;
+
+        // Always hide the non-active UI as well (prevents leftover background/portrait, etc.)
+        if (normalUI != null && normalUI != ui) normalUI.Hide();
+        if (cinematicUI != null && cinematicUI != ui) cinematicUI.Hide();
+
         if (ui == null) return;
 
         // Button bindings (prevent duplicates)
-        if (ui.nextButton)
+        if (ui.NextButton)
         {
-            ui.nextButton.onClick.RemoveAllListeners();
-            ui.nextButton.onClick.AddListener(Next);
+            ui.NextButton.onClick.RemoveAllListeners();
+            ui.NextButton.onClick.AddListener(Next);
         }
 
-        if (ui.acceptButton)
+        if (ui.AcceptButton)
         {
-            ui.acceptButton.onClick.RemoveAllListeners();
-            ui.acceptButton.onClick.AddListener(Accept);
+            ui.AcceptButton.onClick.RemoveAllListeners();
+            ui.AcceptButton.onClick.AddListener(Accept);
         }
 
-        if (ui.rejectButton)
+        if (ui.RejectButton)
         {
-            ui.rejectButton.onClick.RemoveAllListeners();
-            ui.rejectButton.onClick.AddListener(Reject);
+            ui.RejectButton.onClick.RemoveAllListeners();
+            ui.RejectButton.onClick.AddListener(Reject);
         }
 
         ClearUISelection();
 
-        // Sync current dialogue state to the new UI
+        // Sync current dialogue state to the active UI
         if (currentDialogue != null)
         {
-            if (ui.panel) ui.panel.SetActive(true);
-            ShowLine();
-            UpdateButtons();
+            ui.Show();
+
+            // Only re-apply line/buttons when explicitly requested.
+            // (Prevents double ShowLine/UpdateButtons when switching mode during ApplyLine.)
+            if (syncState)
+            {
+                ShowLine();
+                UpdateButtons();
+            }
         }
         else
         {
-            if (ui.panel) ui.panel.SetActive(false);
+            ui.Hide();
         }
+    }
+
+    private void EnterCinematic()
+    {
+        if (mode == DialoguePresentationMode.Cinematic) return;
+        mode = DialoguePresentationMode.Cinematic;
+        SetActiveUI(cinematicUI != null ? cinematicUI : ui, syncState: false);
+    }
+
+    private void EnterNormal()
+    {
+        if (mode == DialoguePresentationMode.Normal) return;
+        mode = DialoguePresentationMode.Normal;
+        SetActiveUI(normalUI != null ? normalUI : ui, syncState: false);
+    }
+
+    public void ForceCinematicMode()
+    {
+        EnterCinematic();
     }
 
     /// <summary>
@@ -101,13 +172,17 @@ public class DialogueManager : Singleton<DialogueManager>
         choiceDone = false;
         showingChoiceResult = false;
 
-        if (ui?.panel) ui.panel.SetActive(true);
+        // 대화 시작은 항상 Normal 모드
+        mode = DialoguePresentationMode.Normal;
+        TryAutoSelectUI();
+
+        // (Panel activation handled by SetActiveUI via ui.Show())
 
         // 대화 시작 시 UI 포커스 해제(Submit 방지)
         ClearUISelection();
 
-        ShowLine();
-        UpdateButtons();
+        // NOTE: TryAutoSelectUI() -> SetActiveUI(..., syncState:true) already calls ShowLine() + UpdateButtons().
+        // Calling them again here would double-apply the line/UI state (can break typing / mode switching).
     }
 
     /// <summary>
@@ -120,10 +195,16 @@ public class DialogueManager : Singleton<DialogueManager>
         choiceDone = false;
         showingChoiceResult = false;
 
+        mode = DialoguePresentationMode.Normal;
+
         // 대화 종료 시 UI 포커스 해제
         ClearUISelection();
 
-        if (ui?.panel) ui.panel.SetActive(false);
+        // Hide both UIs to ensure background/portraits/etc are fully cleared
+        if (normalUI != null) normalUI.Hide();
+        if (cinematicUI != null) cinematicUI.Hide();
+
+        ui = null;
     }
 
     /// <summary>
@@ -132,6 +213,11 @@ public class DialogueManager : Singleton<DialogueManager>
     /// </summary>
     public void Next()
     {
+        if (ui != null && ui.IsTyping)
+        {
+            ui.SkipTyping();
+            return;
+        }
         if (currentDialogue == null) return;
         if (ConsumeAdvanceThisFrame()) return;
 
@@ -175,7 +261,7 @@ public class DialogueManager : Singleton<DialogueManager>
             return;
         }
 
-        // 선택지 프롬프트 표시
+        // 선택지 프롬프트 표시 (이 타이밍부터 Cinematic UI로 전환)
         if (currentDialogue.hasChoice && !choiceDone)
         {
             // choicePromptLine이 있으면(텍스트가 있으면) 화자/이름까지 포함해서 표시
@@ -186,8 +272,11 @@ public class DialogueManager : Singleton<DialogueManager>
             else
             {
                 // 없으면 기본 문구로 표시(화자 없음)
-                if (ui?.speakerText) ui.speakerText.text = "";
-                if (ui?.lineText) ui.lineText.text = defaultChoicePrompt;
+                if (ui != null)
+                {
+                    ui.SetSpeaker("");
+                    ui.SetLine(defaultChoicePrompt);
+                }
             }
 
             return;
@@ -203,24 +292,30 @@ public class DialogueManager : Singleton<DialogueManager>
     /// </summary>
     private void Accept()
     {
+        if (currentDialogue == null) return;
+        if (!currentDialogue.hasChoice) return;
+        if (ui == null) return;
         if (ConsumeAdvanceThisFrame()) return;
+
+        // 클릭 중 currentDialogue가 바뀌어도 안전하도록 로컬 복사
+        var dialogue = currentDialogue;
 
         choiceDone = true;
 
         // acceptResult가 있으면 그 대사를 보여주고, 해당 줄에 달린 퀘스트 액션을 실행
-        if (HasText(currentDialogue.acceptResult))
+        if (HasText(dialogue.acceptResult))
         {
-            ApplyLine(currentDialogue.acceptResult);
-            ExecuteQuestAction(currentDialogue.acceptResult);
+            ApplyLine(dialogue.acceptResult);
+            ExecuteQuestAction(dialogue.acceptResult);
         }
         else
         {
-            if (ui?.speakerText) ui.speakerText.text = playerName;
-            if (ui?.lineText) ui.lineText.text = defaultAcceptText;
+            ui.SetSpeaker(playerName);
+            ui.SetLine(defaultAcceptText);
         }
 
         showingChoiceResult = true;
-        UpdateButtons();
+        if (ui != null) UpdateButtons();
     }
 
     /// <summary>
@@ -229,24 +324,30 @@ public class DialogueManager : Singleton<DialogueManager>
     /// </summary>
     private void Reject()
     {
+        if (currentDialogue == null) return;
+        if (!currentDialogue.hasChoice) return;
+        if (ui == null) return;
         if (ConsumeAdvanceThisFrame()) return;
+
+        // 클릭 중 currentDialogue가 바뀌어도 안전하도록 로컬 복사
+        var dialogue = currentDialogue;
 
         choiceDone = true;
 
         // rejectResult가 있으면 그 대사를 보여주고, 해당 줄에 달린 퀘스트 액션을 실행
-        if (HasText(currentDialogue.rejectResult))
+        if (HasText(dialogue.rejectResult))
         {
-            ApplyLine(currentDialogue.rejectResult);
-            ExecuteQuestAction(currentDialogue.rejectResult);
+            ApplyLine(dialogue.rejectResult);
+            ExecuteQuestAction(dialogue.rejectResult);
         }
         else
         {
-            if (ui?.speakerText) ui.speakerText.text = playerName;
-            if (ui?.lineText) ui.lineText.text = defaultRejectText;
+            ui.SetSpeaker(playerName);
+            ui.SetLine(defaultRejectText);
         }
 
         showingChoiceResult = true;
-        UpdateButtons();
+        if (ui != null) UpdateButtons();
     }
 
     /// <summary>
@@ -255,52 +356,36 @@ public class DialogueManager : Singleton<DialogueManager>
     private void UpdateButtons()
     {
         if (currentDialogue == null) return;
+        if (ui == null) return;
 
         // 버튼 상태가 바뀔 때마다 UI 포커스를 비워 Submit(스페이스/엔터) 자동 클릭을 방지
         ClearUISelection();
 
         bool ended = lineIndex >= currentDialogue.lines.Length;
 
-        // 선택 결과 단계 → 닫기 버튼만 표시
-        if (showingChoiceResult)
+        // 선택지 단계(대사 라인 끝) → 모드와 무관하게 수락/거절 버튼 표시
+        if (currentDialogue.hasChoice && ended && !choiceDone)
         {
-            if (ui?.nextButton) ui.nextButton.gameObject.SetActive(true);
-            if (ui?.acceptButton) ui.acceptButton.gameObject.SetActive(false);
-            if (ui?.rejectButton) ui.rejectButton.gameObject.SetActive(false);
+            ui.SetButtons(showNext: false, showAccept: true, showReject: true);
 
-            if (ui?.nextButtonText) ui.nextButtonText.text = closeLabel;
+            var acceptLabel = string.IsNullOrEmpty(currentDialogue.acceptLabel) ? acceptDefaultLabel : currentDialogue.acceptLabel;
+            var rejectLabel = string.IsNullOrEmpty(currentDialogue.rejectLabel) ? rejectDefaultLabel : currentDialogue.rejectLabel;
+            ui.SetButtonLabels(null, acceptLabel, rejectLabel);
+
             return;
         }
 
-        // 선택지 단계 → 수락/거절 버튼 표시
-        if (currentDialogue.hasChoice && ended && !choiceDone)
+        // 선택 결과 단계 → 닫기 버튼만 표시
+        if (showingChoiceResult)
         {
-            if (ui?.nextButton) ui.nextButton.gameObject.SetActive(false);
-            if (ui?.acceptButton) ui.acceptButton.gameObject.SetActive(true);
-            if (ui?.rejectButton) ui.rejectButton.gameObject.SetActive(true);
-
-            ClearUISelection();
-
-            // 버튼 이름 변경
-            if (ui?.acceptButtonText)
-                ui.acceptButtonText.text = string.IsNullOrEmpty(currentDialogue.acceptLabel)
-                    ? acceptDefaultLabel
-                    : currentDialogue.acceptLabel;
-
-            if (ui?.rejectButtonText)
-                ui.rejectButtonText.text = string.IsNullOrEmpty(currentDialogue.rejectLabel)
-                    ? rejectDefaultLabel
-                    : currentDialogue.rejectLabel;
-
+            ui.SetButtons(showNext: true, showAccept: false, showReject: false);
+            ui.SetButtonLabels(closeLabel, null, null);
             return;
         }
 
         // 일반 진행 단계 → 다음 버튼만 표시
-        if (ui?.nextButton) ui.nextButton.gameObject.SetActive(true);
-        if (ui?.acceptButton) ui.acceptButton.gameObject.SetActive(false);
-        if (ui?.rejectButton) ui.rejectButton.gameObject.SetActive(false);
-
-        if (ui?.nextButtonText) ui.nextButtonText.text = nextLabel;
+        ui.SetButtons(showNext: true, showAccept: false, showReject: false);
+        ui.SetButtonLabels(nextLabel, null, null);
     }
 
     /// <summary>
@@ -311,27 +396,37 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         if (line == null) return;
 
+        
+        // 연출 모드 전환 (라인 단위)
+        bool wantCinematic = line.visual != null && line.visual.useCinematic;
+        if (wantCinematic) EnterCinematic();
+        else EnterNormal();
+        
+        if (ui != null)
+            ui.ApplyVisual(line.visual);
+
         // 플레이어 화자 처리
         if (line.speaker == SpeakerType.Player)
         {
-            if (ui?.speakerText) ui.speakerText.text = playerName;
+            if (ui != null) ui.SetSpeaker(playerName);
         }
         else
         {
             // NPC 화자 처리
-            if (ui?.speakerText) ui.speakerText.text = string.IsNullOrEmpty(line.npcName)
-                ? defaultNpcName
-                : line.npcName;
+            if (ui != null) ui.SetSpeaker(string.IsNullOrEmpty(line.npcName) ? defaultNpcName : line.npcName);
         }
 
         // 대사 텍스트 적용
-        if (ui?.lineText) ui.lineText.text = line.text;
+        if (ui != null) ui.SetLine(line.text);
 
         // 완료 직후 1회 대사에서만 상태 전환(Completed -> Acknowledged)
         // (Accept는 선택지 결과에서만 실행되도록 유지)
         if (line.quest != null && line.questAction == QuestActionType.Acknowledge)
         {
-            QuestManager.Instance.Acknowledge(line.quest);
+            if (QuestManager.Instance != null)
+                QuestManager.Instance.Acknowledge(line.quest);
+            else
+                Debug.LogWarning("[DialogueManager] QuestManager.Instance is null (Acknowledge skipped)");
         }
     }
 
@@ -340,6 +435,12 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         if (line == null) return;
         if (line.quest == null) return;
+
+        if (QuestManager.Instance == null)
+        {
+            Debug.LogWarning("[DialogueManager] QuestManager.Instance is null (QuestAction skipped)");
+            return;
+        }
 
         switch (line.questAction)
         {

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -5,7 +6,9 @@ using UnityEngine;
 
 /// <summary>
 /// 미니 퀘스트 UI + 퀘스트 로그 창 UI를 관리한다.
-/// QuestManager.Revision을 구독해 상태 변경 시 자동 갱신한다.
+/// - QuestManager.Revision을 구독해 상태 변경 시 자동 갱신한다.
+/// - Bootstrap/QuestManager 로드 순서가 늦어도 안전하게 대기 후 바인딩한다.
+/// - OnEnable/OnDisable 반복에서도 중복 구독이 발생하지 않게 보호한다.
 /// </summary>
 public class QuestLogUIController : MonoBehaviour
 {
@@ -17,7 +20,7 @@ public class QuestLogUIController : MonoBehaviour
     [SerializeField] private GameObject windowPanel;      // 퀘스트 로그 창 패널
     [SerializeField] private Transform contentRoot;       // 퀘스트 로그 창 콘텐츠 루트
     [SerializeField] private QuestLogEntryUI entryPrefab; // 퀘스트 엔트리 프리펩
-    [SerializeField] private QuestDetailsUI detailsUI; // 선택된 퀘스트 상세 표시
+    [SerializeField] private QuestDetailsUI detailsUI;    // 선택된 퀘스트 상세 표시
 
     [Header("Hotkey")]
     [SerializeField] private KeyCode toggleKey = KeyCode.J;
@@ -27,22 +30,66 @@ public class QuestLogUIController : MonoBehaviour
     private readonly List<QuestLogEntryUI> spawnedMini = new();
     private string selectedQuestId;
 
+    // 바인딩 상태/루틴
+    private Coroutine bindRoutine;
+    private bool isBound;
+
     private void OnEnable()
     {
-        QuestManager.Instance.Revision.AddListener(OnRevisionChanged);
-        RefreshAll();
+        // 혹시라도 중복 호출되면 방지
+        if (bindRoutine != null) StopCoroutine(bindRoutine);
+        bindRoutine = StartCoroutine(BindWhenReady());
     }
 
     private void OnDisable()
     {
-        var qm = QuestManager.Instance;
-        if (qm != null) qm.Revision.RemoveListener(OnRevisionChanged);
+        if (bindRoutine != null)
+        {
+            StopCoroutine(bindRoutine);
+            bindRoutine = null;
+        }
+
+        Unbind();
         ClearMiniEntries();
         ClearEntries();
     }
 
+    private IEnumerator BindWhenReady()
+    {
+        // QuestManager 생성/초기화 타이밍이 늦어도 안전하게 대기
+        while (QuestManager.Instance == null)
+            yield return null;
+
+        Bind();
+        RefreshAll();
+    }
+
+    private void Bind()
+    {
+        if (isBound) return;
+
+        var qm = QuestManager.Instance;
+        if (qm == null) return;
+
+        qm.Revision.AddListener(OnRevisionChanged);
+        isBound = true;
+    }
+
+    private void Unbind()
+    {
+        if (!isBound) return;
+
+        var qm = QuestManager.Instance;
+        if (qm != null)
+            qm.Revision.RemoveListener(OnRevisionChanged);
+
+        isBound = false;
+    }
+
     private void Update()
     {
+        if (!isBound) return;
+
         if (Input.GetKeyDown(toggleKey) && windowPanel != null)
         {
             bool open = !windowPanel.activeSelf;
@@ -59,12 +106,13 @@ public class QuestLogUIController : MonoBehaviour
 
     private void RefreshAll()
     {
+        if (!isBound) return;
+
         RefreshMini();
         if (windowPanel != null && windowPanel.activeSelf)
             RefreshWindow();
     }
 
-    // 퀘스트 로그 창을 연다(이미 열려있으면 유지)
     private void OpenWindow()
     {
         if (windowPanel == null) return;
@@ -72,9 +120,9 @@ public class QuestLogUIController : MonoBehaviour
             windowPanel.SetActive(true);
     }
 
-    // 특정 퀘스트를 선택하고 상세 패널을 갱신한다.
     private void SelectQuest(string questId)
     {
+        if (!isBound) return;
         if (string.IsNullOrEmpty(questId)) return;
 
         selectedQuestId = questId;
@@ -86,15 +134,17 @@ public class QuestLogUIController : MonoBehaviour
         string desc = quest != null ? quest.Description : "";
         string status = state == QuestState.Accepted ? "진행 중" : "완료 (제출 전)";
 
-        detailsUI?.Show(title, status, desc);
+        if (detailsUI != null)
+            detailsUI.Show(title, status, desc);
     }
 
-    // 1) 미니 UI: (옵션) 스크롤 가능한 리스트 또는 1개 요약
     private void RefreshMini()
     {
+        if (!isBound) return;
+
         var states = QuestManager.Instance.GetAllStates();
 
-        // (A) 미니 리스트 UI가 세팅되어 있으면: 여러 퀘스트를 전부 표시 (스크롤은 UI ScrollView로 처리)
+        // 미니 리스트 UI가 세팅되어 있으면: 여러 퀘스트를 전부 표시
         if (miniContentRoot != null && miniEntryPrefab != null)
         {
             ClearMiniEntries();
@@ -115,7 +165,6 @@ public class QuestLogUIController : MonoBehaviour
 
                 var quest = QuestManager.Instance.FindQuest(questId);
                 string title = quest != null && !string.IsNullOrEmpty(quest.title) ? quest.title : questId;
-                //string desc = quest != null ? quest.Description : "";
 
                 var entry = Instantiate(miniEntryPrefab, miniContentRoot, false);
                 spawnedMini.Add(entry);
@@ -129,7 +178,6 @@ public class QuestLogUIController : MonoBehaviour
                         RefreshWindow();
                         SelectQuest(questId);
                     }
-
                 );
             }
 
@@ -137,9 +185,9 @@ public class QuestLogUIController : MonoBehaviour
         }
     }
 
-    // 2) 로그 창: Accepted/Completed만 표시 (Acknowledged는 숨김)
     private void RefreshWindow()
     {
+        if (!isBound) return;
         if (contentRoot == null || entryPrefab == null) return;
 
         ClearEntries();
@@ -153,7 +201,8 @@ public class QuestLogUIController : MonoBehaviour
             {
                 var q = QuestManager.Instance.FindQuest(kv.Key);
                 return q != null ? q.title : kv.Key;
-            });
+            })
+            .ToList();
 
         foreach (var kv in filtered)
         {
@@ -162,7 +211,6 @@ public class QuestLogUIController : MonoBehaviour
 
             var quest = QuestManager.Instance.FindQuest(questId);
             string title = quest != null && !string.IsNullOrEmpty(quest.title) ? quest.title : questId;
-            //string desc = quest != null ? quest.Description : "";
 
             var entry = Instantiate(entryPrefab, contentRoot, false);
             spawned.Add(entry);
