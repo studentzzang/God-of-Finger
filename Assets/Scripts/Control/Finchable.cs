@@ -19,8 +19,12 @@ public class Finchable : Grabable
     private bool _isFinchAble = false;
 
     public bool isClear = false;
-    
 
+
+    private void Awake()
+    {
+        _lockedObjPos = transform.position;
+    }
     // 잡기 성공 순간
     protected override void OnGrabbed()
     {

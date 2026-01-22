@@ -55,8 +55,8 @@ public class Grabable : MonoBehaviour
         FailCooldown  // 잡기 실패 후 쿨다운(재시도 불가)
     }
 
-    [SerializeField] private ContactState _contact = ContactState.None;
-    [SerializeField] private GrabState _state = GrabState.Idle;
+    public ContactState _contact = ContactState.None;
+    public GrabState _state = GrabState.Idle;
 
     private int _contactCount = 0;
 
