@@ -158,4 +158,33 @@ public abstract class DialogueUIBase : MonoBehaviour
         }
         IsTyping = false;
     }
+    
+    public virtual void ApplyVisual(DialogueVisual visual) { }
+
+    // Lifecycle-based binding support
+    protected virtual void Awake()
+    {
+        StartCoroutine(BindWhenReady());
+    }
+
+    private IEnumerator BindWhenReady()
+    {
+        // Wait until DialogueManager.Instance is not null
+        while (DialogueManager.Instance == null)
+        {
+            yield return null;
+        }
+        BindToManager();
+    }
+
+    protected abstract void BindToManager();
+    protected abstract void UnbindFromManager();
+
+    protected virtual void OnDestroy()
+    {
+        if (DialogueManager.Instance != null)
+        {
+            UnbindFromManager();
+        }
+    }
 }   

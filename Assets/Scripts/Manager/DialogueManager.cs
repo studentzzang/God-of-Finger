@@ -81,10 +81,10 @@ public class DialogueManager : Singleton<DialogueManager>
         DialogueUIBase desired = mode == DialoguePresentationMode.Cinematic ? cinematicUI : normalUI;
         if (desired == null) desired = normalUI != null ? normalUI : cinematicUI;
 
-        SetActiveUI(desired);
+        SetActiveUI(desired, syncState: true);
     }
 
-    private void SetActiveUI(DialogueUIBase newActive)
+    private void SetActiveUI(DialogueUIBase newActive, bool syncState)
     {
         // Hide any previously active UI (root-level hide, not Panel toggles)
         if (ui != null && ui != newActive)
@@ -125,8 +125,14 @@ public class DialogueManager : Singleton<DialogueManager>
         if (currentDialogue != null)
         {
             ui.Show();
-            ShowLine();
-            UpdateButtons();
+
+            // Only re-apply line/buttons when explicitly requested.
+            // (Prevents double ShowLine/UpdateButtons when switching mode during ApplyLine.)
+            if (syncState)
+            {
+                ShowLine();
+                UpdateButtons();
+            }
         }
         else
         {
@@ -138,14 +144,14 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         if (mode == DialoguePresentationMode.Cinematic) return;
         mode = DialoguePresentationMode.Cinematic;
-        SetActiveUI(cinematicUI != null ? cinematicUI : ui);
+        SetActiveUI(cinematicUI != null ? cinematicUI : ui, syncState: false);
     }
 
     private void EnterNormal()
     {
         if (mode == DialoguePresentationMode.Normal) return;
         mode = DialoguePresentationMode.Normal;
-        SetActiveUI(normalUI != null ? normalUI : ui);
+        SetActiveUI(normalUI != null ? normalUI : ui, syncState: false);
     }
 
     public void ForceCinematicMode()
@@ -175,8 +181,8 @@ public class DialogueManager : Singleton<DialogueManager>
         // 대화 시작 시 UI 포커스 해제(Submit 방지)
         ClearUISelection();
 
-        ShowLine();
-        UpdateButtons();
+        // NOTE: TryAutoSelectUI() -> SetActiveUI(..., syncState:true) already calls ShowLine() + UpdateButtons().
+        // Calling them again here would double-apply the line/UI state (can break typing / mode switching).
     }
 
     /// <summary>
@@ -390,10 +396,14 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         if (line == null) return;
 
+        
         // 연출 모드 전환 (라인 단위)
         bool wantCinematic = line.visual != null && line.visual.useCinematic;
         if (wantCinematic) EnterCinematic();
         else EnterNormal();
+        
+        if (ui != null)
+            ui.ApplyVisual(line.visual);
 
         // 플레이어 화자 처리
         if (line.speaker == SpeakerType.Player)

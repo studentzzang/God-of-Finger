@@ -1,71 +1,58 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// 연출(시네마틱) 대화 UI.
-/// - DialogueUIBase를 상속
-/// - 배경/캐릭터(스탠딩) 이미지를 가진다.
-/// - Sprite가 null이면 기존 상태를 유지한다.
-/// </summary>
 public class CinematicDialogueUI : DialogueUIBase
 {
     [Header("Cinematic Slots")]
     [SerializeField] private Image backgroundImage;
     [SerializeField] private Image characterImage;
 
-    /// <summary>
-    /// 배경 이미지를 교체한다.
-    /// sprite가 null이면 유지한다.
-    /// </summary>
-    public void SetBackground(Sprite sprite)
+    public override void ApplyVisual(DialogueVisual visual)
     {
-        if (backgroundImage == null) return;
-        if (sprite == null) return; // 없으면 유지
-
-        backgroundImage.sprite = sprite;
-        backgroundImage.gameObject.SetActive(true);
-    }
-
-    /// <summary>
-    /// 캐릭터(스탠딩) 이미지를 교체한다.
-    /// sprite가 null이면 유지한다.
-    /// </summary>
-    public void SetCharacter(Sprite sprite)
-    {
-        if (characterImage == null) return;
-        if (sprite == null) return; // 없으면 유지
-
-        characterImage.sprite = sprite;
-        characterImage.gameObject.SetActive(true);
-    }
-
-    /// <summary>
-    /// 배경/캐릭터를 숨긴다 (필요할 때만 사용).
-    /// </summary>
-    public void HideBackground()
-    {
-        if (backgroundImage) backgroundImage.gameObject.SetActive(false);
-    }
-
-    public void HideCharacter()
-    {
-        if (characterImage) characterImage.gameObject.SetActive(false);
-    }
-
-    private void Awake()
-    {
-        // DialogueManager에 Cinematic UI로 등록
-        if (DialogueManager.Instance != null)
+        // 배경
+        if (backgroundImage != null)
         {
-            DialogueManager.Instance.BindCinematicUI(this);
+            var bg = visual != null ? visual.background : null;
+
+            if (bg != null)
+            {
+                backgroundImage.sprite = bg;
+                backgroundImage.gameObject.SetActive(true);
+            }
+            else
+            {
+                backgroundImage.sprite = null;
+                //backgroundImage.gameObject.SetActive(false);
+            }
+        }
+
+        // 캐릭터(초상화/스탠딩)
+        if (characterImage != null)
+        {
+            var ch = visual != null ? visual.portrait : null;
+
+            if (ch != null)
+            {
+                characterImage.sprite = ch;
+                characterImage.gameObject.SetActive(true);
+            }
+            else
+            {
+                characterImage.sprite = null;
+                characterImage.gameObject.SetActive(false);
+            }
         }
     }
-
-    private void OnDestroy()
+    
+    protected override void BindToManager()
     {
+        DialogueManager.Instance.BindCinematicUI(this);
+    }
+
+    protected override void UnbindFromManager()
+    {
+        // 이미 매니저가 없을 수도 있어서 체크
         if (DialogueManager.Instance != null)
-        {
             DialogueManager.Instance.BindCinematicUI(null);
-        }
     }
 }

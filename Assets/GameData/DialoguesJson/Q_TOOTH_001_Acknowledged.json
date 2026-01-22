@@ -1,0 +1,27 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "영구",
+      "text": "형! 나 집에 놀러와! 내 이빨 빠진 자리 보여줄게!",
+      "useCinematic": false,
+      "portrait": "Portraits/Younggu"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "영구",
+      "text": "나중에 영구치 나면… 그땐 진짜 영구가 되는 거지?!",
+      "useCinematic": false,
+      "portrait": "Portraits/Younggu"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "",
+      "text": "그래. 영구 2.0이지.",
+      "useCinematic": false
+    }
+  ],
+  "hasChoice": false,
+  "acceptLabel": "",
+  "rejectLabel": ""
+}

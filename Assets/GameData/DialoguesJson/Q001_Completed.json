@@ -2,10 +2,10 @@
   "lines": [
     {
       "speaker": "NPC",
-      "npcName": "상인",
+      "npcName": "",
       "text": "헉, 이게 내 사과잖아!",
       "useCinematic": false,
-      "portrait": "Portraits/Merchant",
+      "portrait": "",
       "background": ""
     },
     {
