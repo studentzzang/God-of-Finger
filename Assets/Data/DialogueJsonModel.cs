@@ -21,10 +21,11 @@ public class DialogueLineJson
     public string text;
 
     // 연출 (줄 단위)
-    public bool useCinematic;
     public string portrait;    // "Portraits/NPC_01"
-    public string background;  // "Backgrounds/Shop"  <-- 이거 추가 추천
-
+    public string background;  // "Backgrounds/Shop" 
+    public string presentation; // "Normal" / "Cinematic" / "FullCinematic"
+    
+    
     // 퀘스트 (줄 단위)
     public string questId;      // QuestSO.questId
     public string questAction;  // "Accept" / "Acknowledge" / "None"

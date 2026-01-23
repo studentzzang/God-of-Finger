@@ -1,0 +1,11 @@
+{
+  "quests": [
+    {
+      "questId": "Q_LOST_CARGO",
+      "title": "잃어버린 짐",
+      "description": "의문의 상인이 잃어버린 짐을 찾아달라고 부탁했다. 동쪽 숲 입구 근처에서 마지막으로 목격되었다.",
+      "completeSignalId": "SIG_Q_LOST_CARGO_DONE",
+      "prerequisiteQuestId": ""
+    }
+  ]
+}

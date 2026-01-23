@@ -1,0 +1,21 @@
+{
+
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "의문의 상인",
+      "text": "동쪽 숲 입구 쪽이야. 혹시 누가 먼저 손댔을까 봐 불안하군.",
+      "presentation": "Cinematic",
+      "background": "Backgrounds/Market_CloseUp",
+      "portrait": "Portraits/trader"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "의문의 상인",
+      "text": "해 지기 전에 다녀오는 편이 좋을 거야.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/trader"
+    }
+  ],
+  "hasChoice": false
+}

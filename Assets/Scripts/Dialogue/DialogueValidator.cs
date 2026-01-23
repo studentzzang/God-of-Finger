@@ -14,7 +14,7 @@ public static class DialogueValidator
 
         foreach (var line in dialogue.lines)
         {
-            ValidateLine(line, dialogue.name);
+            ValidateLine(line, dialogue.name, dialogue.defaultBackground);
         }
 
         // ---------- Choice ----------
@@ -34,23 +34,23 @@ public static class DialogueValidator
 
             // 결과 라인들도 라인 단위 검증 수행
             if (dialogue.choicePromptLine != null)
-                ValidateLine(dialogue.choicePromptLine, dialogue.name);
+                ValidateLine(dialogue.choicePromptLine, dialogue.name, dialogue.defaultBackground);
 
             if (dialogue.acceptLines != null)
             {
                 foreach (var line in dialogue.acceptLines)
-                    ValidateLine(line, dialogue.name);
+                    ValidateLine(line, dialogue.name, dialogue.defaultBackground);
             }
 
             if (dialogue.rejectLines != null)
             {
                 foreach (var line in dialogue.rejectLines)
-                    ValidateLine(line, dialogue.name);
+                    ValidateLine(line, dialogue.name, dialogue.defaultBackground);
             }
         }
     }
 
-    private static void ValidateLine(DialogueLine line, string dialogueName)
+    private static void ValidateLine(DialogueLine line, string dialogueName, Sprite defaultBackground)
     {
         if (line == null)
         {
@@ -66,8 +66,16 @@ public static class DialogueValidator
 
         if (line.visual != null)
         {
-            if (line.visual.useCinematic && line.visual.portrait == null && line.visual.background == null)
-                Debug.LogWarning($"[DialogueValidator] Cinematic line has no visual assets in {dialogueName}");
+            bool isPresented = line.visual.presentation != DialoguePresentationMode.Normal;
+
+            // If a line is intended to be cinematic/full-cinematic, warn if it has no per-line visual assets.
+            if (isPresented && line.visual.portrait == null && line.visual.background == null)
+                Debug.LogWarning($"[DialogueValidator] Presented line has no visual assets (portrait/background) in {dialogueName}");
+
+            // If FullCinematic is requested, a background should exist either on the line or as a DialogueSO default.
+            bool hasAnyBackground = line.visual.background != null || defaultBackground != null;
+            if (line.visual.presentation == DialoguePresentationMode.FullCinematic && !hasAnyBackground)
+                Debug.LogWarning($"[DialogueValidator] FullCinematic line has no background (line/background + defaultBackground are null) in {dialogueName}");
         }
 
         if (line.quest != null && line.questAction == QuestActionType.None)

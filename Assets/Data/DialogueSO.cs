@@ -21,9 +21,9 @@ public class DialogueVisual
     public Sprite portrait;
 
     [Header("Cinematic Dialogue")]
-    public bool useCinematic;
     public Sprite background;
     public Sprite standing;
+    public DialoguePresentationMode presentation = DialoguePresentationMode.Normal;
 }
 
 

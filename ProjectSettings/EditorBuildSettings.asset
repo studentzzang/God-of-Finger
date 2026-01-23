@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/House.unity
     guid: 10211712eca6645108874388213d62d7
+  - enabled: 1
+    path: "Assets/Scenes/Minigame/A-1 \uC720\uCE58\uC640 \uC601\uAD6C\uCE58.unity"
+    guid: 73459bbc7bb0b964aab2779cbb1732e3
+  - enabled: 1
+    path: Assets/Scenes/Minigame/MinigameScene.unity
+    guid: 742b5bbe309df334aab18fbf08973a87
   m_configObjects: {}

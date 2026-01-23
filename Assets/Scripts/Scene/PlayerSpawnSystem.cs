@@ -11,8 +11,18 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PlayerSpawnSystem : MonoBehaviour
 {
-    [SerializeField] private Transform player;                 // Bootstrap에 있는 Player(또는 Tag로 찾음)
+    [Header("Player")]
+    [SerializeField] private string playerTag = "Player";     // 각 씬의 Player 태그
+
+    [Header("Bootstrap Cache (optional)")]
+    [SerializeField] private Transform player;                 // (캐시) 마지막으로 찾은 Player
+
+    [Header("Spawn Reservation")]
     [SerializeField] private string pendingSpawnId = "Default"; // 다음 씬에서 찾을 spawnId
+
+    [Header("No-Player Scenes")]
+    [Tooltip("Player가 없는 씬(미니게임 등)에서 경고 로그를 띄울지")]
+    [SerializeField] private bool warnIfNoPlayerInScene = false;
 
     private void Awake()
     {
@@ -57,14 +67,16 @@ public class PlayerSpawnSystem : MonoBehaviour
     // 현재/새 씬에서 pendingSpawnId → Default 순서로 스폰 위치 정렬
     private void AlignToSpawnInScene(Scene scene)
     {
-        // player가 인스펙터에서 빠졌으면 Tag로 복구
+        // 각 씬에 Player가 존재하는 전제: 씬이 바뀔 때마다 "해당 씬"에서 Player를 다시 찾는다.
+        player = FindPlayerInScene(scene);
+
+        // 미니게임 씬처럼 Player가 없으면 조용히 스킵
         if (player == null)
         {
-            var go = GameObject.FindGameObjectWithTag("Player");
-            if (go != null) player = go.transform;
+            if (warnIfNoPlayerInScene)
+                Debug.LogWarning($"[PlayerSpawnSystem] Player를 찾지 못함 in {scene.name} (tag={playerTag})");
+            return;
         }
-
-        if (player == null) return;
 
         var points = Object.FindObjectsByType<SpawnPoint>(FindObjectsSortMode.None);
 
@@ -94,5 +106,26 @@ public class PlayerSpawnSystem : MonoBehaviour
         }
 
         Debug.LogWarning($"[PlayerSpawnSystem] SpawnPoint를 찾지 못함 (spawnId={pendingSpawnId}) in {scene.name}");
+    }
+
+    private Transform FindPlayerInScene(Scene scene)
+    {
+        // 특정 씬 루트에서만 Player를 찾는다. (멀티씬/DDOL 혼선 방지)
+        var roots = scene.GetRootGameObjects();
+        for (int i = 0; i < roots.Length; i++)
+        {
+            var root = roots[i];
+            if (root == null) continue;
+
+            // 비활성 포함해서 탐색
+            var all = root.GetComponentsInChildren<Transform>(true);
+            for (int j = 0; j < all.Length; j++)
+            {
+                var t = all[j];
+                if (t != null && t.CompareTag(playerTag))
+                    return t;
+            }
+        }
+        return null;
     }
 }

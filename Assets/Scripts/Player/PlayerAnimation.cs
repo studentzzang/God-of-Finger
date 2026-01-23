@@ -25,11 +25,11 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetFloat("MoveX", dir.x);
             anim.SetFloat("MoveY", dir.y);
 
-            // 👉 좌우 flip 처리
-            if (dir.x != 0)
-                spriteRenderer.flipX = dir.x > 0;
-            else if (dir.x == 0) // 수평 이동이 없을 때는 마지막 방향 기준으로 flip 유지
-                spriteRenderer.flipX = false;
+            // // 좌우 flip 처리
+            // if (dir.x != 0)
+            //     spriteRenderer.flipX = dir.x > 0;
+            // else if (dir.x == 0) // 수평 이동이 없을 때는 마지막 방향 기준으로 flip 유지
+            //     spriteRenderer.flipX = false;
         }
 
         anim.SetBool("IsMoving", moving);

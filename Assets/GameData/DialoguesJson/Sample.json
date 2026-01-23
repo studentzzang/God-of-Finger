@@ -1,0 +1,46 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "",
+      "text": "",
+      "useCinematic": false,
+      "portrait": "",
+      "background": "",
+      "questId": "",
+      "questAction": "None"
+    }
+  ],
+
+  "hasChoice": false,
+
+  "choicePromptLine": {
+    "speaker": "NPC",
+    "npcName": "",
+    "text": "",
+    "useCinematic": false,
+    "portrait": "",
+    "background": ""
+  },
+
+  "acceptLines": [    {
+    "speaker": "NPC",
+    "npcName": "",
+    "text": "",
+    "useCinematic": false,
+    "portrait": "",
+    "background": "",
+    "questId": "",
+    "questAction": "None"
+  }
+    
+  ],
+  "rejectLines": [
+    {
+      
+    }
+  ],
+
+  "acceptLabel": "",
+  "rejectLabel": ""
+}

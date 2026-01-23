@@ -11,7 +11,7 @@ using UnityEngine;
 ///   * Sprite: Resources.Load<Sprite>(portraitPath)
 ///   * portraitPath 예: "Portraits/NPC_01"
 ///   * backgroundPath 예: "Backgrounds/Shop"
-/// - cinematic은 DialogueVisual.useCinematic로 매핑
+/// - presentation은 DialogueVisual.presentation으로 매핑
 /// - quest는 QuestDatabaseSO(database.Find)에서 questId로 탐색
 ///   (database 미주입 시 quest는 null로 파싱되고 경고 로그가 출력된다)
 /// </summary>
@@ -175,15 +175,36 @@ public static class DialogueJsonParser
         return quest;
     }
 
+    private static DialoguePresentationMode ParsePresentation(string value)
+    {
+        // Default: missing/empty => Normal
+        if (string.IsNullOrEmpty(value))
+            return DialoguePresentationMode.Normal;
+
+        if (System.Enum.TryParse(value, true, out DialoguePresentationMode mode))
+            return mode;
+
+        Debug.LogWarning($"[DialogueParser] Unknown presentation mode: {value}. Falling back to Normal.");
+        return DialoguePresentationMode.Normal;
+    }
+
     private static DialogueVisual ParseVisual(DialogueLineJson json)
     {
-        // 둘 다 없으면 굳이 객체 만들지 않음
-        if (!json.useCinematic && string.IsNullOrEmpty(json.portrait) && string.IsNullOrEmpty(json.background))
+        // (presentation/portrait/background 모두 없으면 null)
+        bool hasAnyVisualField =
+            !string.IsNullOrEmpty(json.portrait) ||
+            !string.IsNullOrEmpty(json.background) ||
+            !string.IsNullOrEmpty(json.presentation);
+
+        if (!hasAnyVisualField)
             return null;
+
+        var mode = ParsePresentation(json.presentation);
 
         var visual = new DialogueVisual
         {
-            useCinematic = json.useCinematic
+            // presentation 기반
+            presentation = mode
         };
 
         // portrait, background는 Resources 경로 문자열

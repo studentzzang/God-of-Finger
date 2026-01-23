@@ -1,0 +1,70 @@
+{
+
+  "lines": [
+    {
+      "text": "해가 기울자 시장의 소음이 한 겹 가라앉았다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/Market_Night"
+    },
+    {
+      "text": "사람들 틈에서 누군가가 허둥지둥 바닥을 뒤지고 있었다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/Market_Night"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "의문의 상인",
+      "text": "…잠깐. 혹시 시간을 좀 내줄 수 있나?",
+      "presentation": "Normal",
+      "portrait": "Portraits/trader"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "의문의 상인",
+      "text": "짐을 하나 잃어버렸어. 동쪽 숲 입구 근처에서 마지막으로 봤지.",
+      "presentation": "Normal",
+      "portrait": "Portraits/trader"
+    }
+  ],
+
+  "hasChoice": true,
+  "acceptLabel": "맡아줄게",
+  "rejectLabel": "지금은 어려워",
+
+  "choicePromptLine": {
+    "speaker": "NPC",
+    "npcName": "의문의 상인",
+    "text": "부탁해도 될까?",
+    "presentation": "Normal",
+    "portrait": "Portraits/trader"
+  },
+
+  "acceptLines": [
+    {
+      "speaker": "NPC",
+      "npcName": "의문의 상인",
+      "text": "고마워. 무사히만 다녀와.",
+      "portrait": "Portraits/trader",
+      "questId": "Q_LOST_CARGO",
+      "questAction": "Accept",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "의문의 상인",
+      "portrait": "Portraits/trader",
+      "text": "짐을 찾으면 바로 여기로 돌아와 줘.",
+      "presentation": "Normal"
+    }
+  ],
+
+  "rejectLines": [
+    {
+      "speaker": "NPC",
+      "npcName": "의문의 상인",
+      "portrait": "Portraits/trader",
+      "text": "알겠어… 괜찮아. 무리할 필요는 없지.",
+      "presentation": "Normal"
+    }
+  ]
+}

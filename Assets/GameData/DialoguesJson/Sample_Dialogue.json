@@ -1,0 +1,34 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "",
+      "text": "",
+      "presentation": "Normal",
+      "portrait": "",
+      "background": "",
+      "questId": "",
+      "questAction": "None"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "",
+      "text": "",
+      "presentation": "Normal",
+      "portrait": "",
+      "background": "",
+      "questId": "",
+      "questAction": "None"
+    }
+  ],
+
+  "hasChoice": false,
+
+  "choicePromptLine": null,
+
+  "acceptLines": [],
+  "rejectLines": [],
+
+  "acceptLabel": "",
+  "rejectLabel": ""
+}

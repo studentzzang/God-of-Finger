@@ -6,7 +6,8 @@ using UnityEngine.EventSystems;
 public enum DialoguePresentationMode
 {
     Normal,
-    Cinematic
+    Cinematic,
+    FullCinematic
 }
 
 
@@ -19,6 +20,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [Header("UI (bind from scene)")]
     private NormalDialogueUI normalUI;
     private CinematicDialogueUI cinematicUI;
+    private FullCinematicDialogueUI fullUI;
 
     // 현재 표시/입력을 담당하는 UI
     private DialogueUIBase ui;
@@ -78,11 +80,27 @@ public class DialogueManager : Singleton<DialogueManager>
         TryAutoSelectUI();
     }
 
+    public void BindFullCinematicUI(FullCinematicDialogueUI newUI)
+    {
+        fullUI = newUI;
+        TryAutoSelectUI();
+    }
+
     private void TryAutoSelectUI()
     {
         // 현재 모드에 맞는 UI 우선, 없으면 있는 쪽으로
-        DialogueUIBase desired = mode == DialoguePresentationMode.Cinematic ? cinematicUI : normalUI;
-        if (desired == null) desired = normalUI != null ? normalUI : cinematicUI;
+        DialogueUIBase desired = mode switch
+        {
+            DialoguePresentationMode.FullCinematic => (DialogueUIBase)fullUI,
+            DialoguePresentationMode.Cinematic => cinematicUI,
+            _ => normalUI
+        };
+
+        if (desired == null)
+        {
+            // Fallback order: Normal -> Cinematic -> Full
+            desired = normalUI != null ? normalUI : (cinematicUI != null ? cinematicUI : fullUI);
+        }
 
         SetActiveUI(desired, syncState: true);
     }
@@ -100,6 +118,7 @@ public class DialogueManager : Singleton<DialogueManager>
         // Always hide the non-active UI as well (prevents leftover background/portrait, etc.)
         if (normalUI != null && normalUI != ui) normalUI.Hide();
         if (cinematicUI != null && cinematicUI != ui) cinematicUI.Hide();
+        if (fullUI != null && fullUI != ui) fullUI.Hide();
 
         if (ui == null) return;
 
@@ -147,14 +166,21 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         if (mode == DialoguePresentationMode.Cinematic) return;
         mode = DialoguePresentationMode.Cinematic;
-        SetActiveUI(cinematicUI != null ? cinematicUI : ui, syncState: false);
+        SetActiveUI(cinematicUI != null ? cinematicUI : (fullUI != null ? fullUI : ui), syncState: false);
+    }
+
+    private void EnterFullCinematic()
+    {
+        if (mode == DialoguePresentationMode.FullCinematic) return;
+        mode = DialoguePresentationMode.FullCinematic;
+        SetActiveUI(fullUI != null ? fullUI : (cinematicUI != null ? cinematicUI : ui), syncState: false);
     }
 
     private void EnterNormal()
     {
         if (mode == DialoguePresentationMode.Normal) return;
         mode = DialoguePresentationMode.Normal;
-        SetActiveUI(normalUI != null ? normalUI : ui, syncState: false);
+        SetActiveUI(normalUI != null ? normalUI : (cinematicUI != null ? cinematicUI : (fullUI != null ? fullUI : ui)), syncState: false);
     }
 
     public void ForceCinematicMode()
@@ -207,9 +233,10 @@ public class DialogueManager : Singleton<DialogueManager>
         // 대화 종료 시 UI 포커스 해제
         ClearUISelection();
 
-        // Hide both UIs to ensure background/portraits/etc are fully cleared
+        // Hide all UIs to ensure background/portraits/etc are fully cleared
         if (normalUI != null) normalUI.Hide();
         if (cinematicUI != null) cinematicUI.Hide();
+        if (fullUI != null) fullUI.Hide();
 
         ui = null;
     }
@@ -285,7 +312,7 @@ public class DialogueManager : Singleton<DialogueManager>
             return;
         }
 
-        // 선택지 프롬프트 표시 (이 타이밍부터 Cinematic UI로 전환)
+        // 선택지 프롬프트 표시 (라인 presentation에 따라 UI가 전환됨)
         if (currentDialogue.hasChoice && !choiceDone)
         {
             // choicePromptLine이 있으면(텍스트가 있으면) 화자/이름까지 포함해서 표시
@@ -428,12 +455,22 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         if (line == null) return;
 
-        
-        // 연출 모드 전환 (라인 단위)
-        bool wantCinematic = line.visual != null && line.visual.useCinematic;
-        if (wantCinematic) EnterCinematic();
-        else EnterNormal();
-        
+        // 연출 모드 전환 (라인 단위, presentation 기반)
+        var presentation = line.visual != null ? line.visual.presentation : DialoguePresentationMode.Normal;
+        switch (presentation)
+        {
+            case DialoguePresentationMode.FullCinematic:
+                EnterFullCinematic();
+                break;
+            case DialoguePresentationMode.Cinematic:
+                EnterCinematic();
+                break;
+            case DialoguePresentationMode.Normal:
+            default:
+                EnterNormal();
+                break;
+        }
+
         if (ui != null)
             ui.ApplyVisual(line.visual);
 
