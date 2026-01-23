@@ -61,7 +61,7 @@ public static class DialogueJsonParser
             return null;
         }
 
-        Debug.Log($"[DialogueParser] Parsed JSON: hasChoice={data.hasChoice}, lines={(data.lines == null ? 0 : data.lines.Length)}");
+        Debug.Log($"[DialogueParser] Parsed JSON: hasChoice={data.hasChoice}, lines={(data.lines == null ? 0 : data.lines.Length)}, acceptLines={(data.acceptLines == null ? 0 : data.acceptLines.Length)}, rejectLines={(data.rejectLines == null ? 0 : data.rejectLines.Length)}");
 
         if (database == null)
             Debug.LogWarning("[DialogueParser] QuestDatabaseSO is null. questId fields will not be resolved.");
@@ -76,8 +76,10 @@ public static class DialogueJsonParser
         // ---------- Choice ----------
         dialogue.hasChoice = data.hasChoice;
         dialogue.choicePromptLine = ParseLine(data.choicePromptLine, database);
-        dialogue.acceptResult = ParseLine(data.acceptResult, database);
-        dialogue.rejectResult = ParseLine(data.rejectResult, database);
+
+        // Choice results: arrays (new format)
+        dialogue.acceptLines = ParseLinesOrEmpty(data.acceptLines, database);
+        dialogue.rejectLines = ParseLinesOrEmpty(data.rejectLines, database);
 
         dialogue.acceptLabel = data.acceptLabel;
         dialogue.rejectLabel = data.rejectLabel;
@@ -86,10 +88,12 @@ public static class DialogueJsonParser
         {
             if (dialogue.choicePromptLine == null)
                 Debug.LogWarning("[DialogueParser] hasChoice=true but choicePromptLine is null (will fall back to default prompt)");
-            if (dialogue.acceptResult == null)
-                Debug.LogWarning("[DialogueParser] hasChoice=true but acceptResult is null (will fall back to default accept text)");
-            if (dialogue.rejectResult == null)
-                Debug.LogWarning("[DialogueParser] hasChoice=true but rejectResult is null (will fall back to default reject text)");
+
+            if (dialogue.acceptLines == null || dialogue.acceptLines.Length == 0)
+                Debug.LogWarning("[DialogueParser] hasChoice=true but acceptLines is empty (will fall back to default accept text)");
+
+            if (dialogue.rejectLines == null || dialogue.rejectLines.Length == 0)
+                Debug.LogWarning("[DialogueParser] hasChoice=true but rejectLines is empty (will fall back to default reject text)");
         }
 
         return dialogue;
@@ -105,13 +109,19 @@ public static class DialogueJsonParser
 
     private static DialogueLine[] ParseLines(DialogueLineJson[] jsonLines, QuestDatabaseSO database)
     {
-        if (jsonLines == null) return new DialogueLine[0];
+        if (jsonLines == null) return System.Array.Empty<DialogueLine>();
 
         var result = new DialogueLine[jsonLines.Length];
         for (int i = 0; i < jsonLines.Length; i++)
             result[i] = ParseLine(jsonLines[i], database);
 
         return result;
+    }
+
+    private static DialogueLine[] ParseLinesOrEmpty(DialogueLineJson[] jsonLines, QuestDatabaseSO database)
+    {
+        if (jsonLines == null || jsonLines.Length == 0) return System.Array.Empty<DialogueLine>();
+        return ParseLines(jsonLines, database);
     }
 
     private static DialogueLine ParseLine(DialogueLineJson json, QuestDatabaseSO database)

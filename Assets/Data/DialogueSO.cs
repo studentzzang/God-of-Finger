@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum SpeakerType
@@ -61,9 +62,12 @@ public class DialogueSO : ScriptableObject
     [Header("Choice Prompt")]
     public DialogueLine choicePromptLine; // 선택지 질문(화자/이름/텍스트) - 비워두면 기본 문구로 대체
 
-    [Header("Choice Result Lines")]
-    public DialogueLine acceptResult;
-    public DialogueLine rejectResult;
+    [Header("Choice Result Lines (Multi-Line Only)")]
+    [Tooltip("선택지 수락 후 출력되는 결과 대사들 (배열, 여러 줄 가능)")]
+    public DialogueLine[] acceptLines;
+
+    [Tooltip("선택지 거절 후 출력되는 결과 대사들 (배열, 여러 줄 가능)")]
+    public DialogueLine[] rejectLines;
 
     [Header("Choice Button Labels")]
     public string acceptLabel;    // 예: "수락한다"

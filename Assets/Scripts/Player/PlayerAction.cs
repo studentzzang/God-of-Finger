@@ -128,7 +128,7 @@ public class PlayerAction : MonoBehaviour
         // 테스트용: C 키 누르면 퀘스트 완료 처리
         if (Input.GetKeyDown(KeyCode.C))
         {
-            QuestSignals.Raise("Quest1Clear");
+            QuestSignals.Raise("ToothPulled");
             if (testQuest != null)
             {
                 QuestManager.Instance.Complete(testQuest);

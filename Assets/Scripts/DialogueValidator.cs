@@ -20,14 +20,33 @@ public static class DialogueValidator
         // ---------- Choice ----------
         if (dialogue.hasChoice)
         {
+            // choicePromptLine은 "없으면 기본 문구"로 대체하는 흐름일 수 있으니,
+            // null 자체는 경고만(에러 X)로 둔다.
             if (dialogue.choicePromptLine == null)
-                Debug.LogWarning($"[DialogueValidator] hasChoice=true but choicePromptLine is null: {dialogue.name}");
+                Debug.LogWarning($"[DialogueValidator] hasChoice=true but choicePromptLine is null (will fallback to default prompt): {dialogue.name}");
 
-            if (dialogue.acceptResult == null)
-                Debug.LogWarning($"[DialogueValidator] hasChoice=true but acceptResult is null: {dialogue.name}");
+            // 신버전: 선택 결과는 단일 라인이 아니라 라인 묶음
+            if (dialogue.acceptLines == null || dialogue.acceptLines.Length == 0)
+                Debug.LogWarning($"[DialogueValidator] hasChoice=true but acceptLines is empty: {dialogue.name}");
 
-            if (dialogue.rejectResult == null)
-                Debug.LogWarning($"[DialogueValidator] hasChoice=true but rejectResult is null: {dialogue.name}");
+            if (dialogue.rejectLines == null || dialogue.rejectLines.Length == 0)
+                Debug.LogWarning($"[DialogueValidator] hasChoice=true but rejectLines is empty: {dialogue.name}");
+
+            // 결과 라인들도 라인 단위 검증 수행
+            if (dialogue.choicePromptLine != null)
+                ValidateLine(dialogue.choicePromptLine, dialogue.name);
+
+            if (dialogue.acceptLines != null)
+            {
+                foreach (var line in dialogue.acceptLines)
+                    ValidateLine(line, dialogue.name);
+            }
+
+            if (dialogue.rejectLines != null)
+            {
+                foreach (var line in dialogue.rejectLines)
+                    ValidateLine(line, dialogue.name);
+            }
         }
     }
 

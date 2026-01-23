@@ -2,50 +2,64 @@
   "lines": [
     {
       "speaker": "NPC",
-      "npcName": "상인",
-      "text": "아… 큰일이야.",
+      "npcName": "영구",
+      "text": "형! 나 이빨 흔들려!",
       "useCinematic": false,
-      "portrait": "Portraits/Merchant",
+      "portrait": "Portraits/Younggu",
       "background": ""
     },
     {
       "speaker": "NPC",
-      "npcName": "상인",
-      "text": "내가 아끼는 사과 한 개가 사라졌거든.",
+      "npcName": "영구",
+      "text": "이게 유치야? 영구치야?",
       "useCinematic": false,
-      "portrait": "Portraits/Merchant",
+      "portrait": "Portraits/Younggu",
       "background": ""
     }
   ],
   "hasChoice": true,
   "choicePromptLine": {
     "speaker": "NPC",
-    "npcName": "상인",
-    "text": "찾아다 줄래?",
+    "npcName": "영구",
+    "text": "뽑아줄래?",
     "useCinematic": true,
-    "portrait": "Portraits/Merchant",
-    "background": "Backgrounds/Shop"
+    "portrait": "Portraits/Younggu",
+    "background": "Backgrounds/Village"
   },
-  "acceptResult": {
-    "speaker": "Player",
-    "npcName": "",
-    "text": "좋아. 내가 찾아볼게.",
-    "useCinematic": true,
-    "portrait": "",
-    "background": "Backgrounds/Shop",
-    "questId": "Q001",
-    "questAction": "Accept"
-  },
-  "rejectResult": {
-    "speaker": "Player",
-    "npcName": "",
-    "text": "미안, 지금은 바빠.",
-    "useCinematic": true,
-    "portrait": "",
-    "background": "Backgrounds/Shop",
-    "questId": "",
-    "questAction": "None"
-  },
-  "acceptLabel": "수락",
-  "rejectLabel": "거절"
+  "acceptLines": [
+    {
+      "speaker": "Player",
+      "npcName": "",
+      "text": "알겠어. 가만히 있어.",
+      "useCinematic": false,
+      "portrait": "",
+      "background": "",
+      "questId": "Q001",
+      "questAction": "Accept"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "영구",
+      "text": "헉… 진짜? 약속!",
+      "useCinematic": false,
+      "portrait": "Portraits/Younggu",
+      "background": "",
+      "questId": "",
+      "questAction": "None"
+    }
+  ],
+  "rejectLines": [
+    {
+      "speaker": "Player",
+      "npcName": "",
+      "text": "지금은 좀 무서운데…",
+      "useCinematic": false,
+      "portrait": "",
+      "background": "",
+      "questId": "",
+      "questAction": "None"
+    }
+  ],
+  "acceptLabel": "뽑아준다",
+  "rejectLabel": "거절한다"
 }

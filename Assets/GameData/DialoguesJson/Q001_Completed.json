@@ -2,27 +2,56 @@
   "lines": [
     {
       "speaker": "NPC",
+      "npcName": "영구",
+      "text": "형! 나 이빨 뽑았어!!",
+      "useCinematic": true,
+      "portrait": "Portraits/Younggu",
+      "background": "Backgrounds/Village"
+    }
+  ],
+  "hasChoice": true,
+  "choicePromptLine": {
+    "speaker": "NPC",
+    "npcName": "영구",
+    "text": "그럼 이게 유치야? 영구치야?",
+    "useCinematic": false,
+    "portrait": "Portraits/Younggu",
+    "background": ""
+  },
+  "acceptLines": [
+    {
+      "speaker": "Player",
       "npcName": "",
-      "text": "헉, 이게 내 사과잖아!",
+      "text": "그건 유치야. 빠지고 나면 영구치가 나올 거야.",
       "useCinematic": false,
       "portrait": "",
-      "background": ""
-    },
-    {
-      "speaker": "NPC",
-      "npcName": "상인",
-      "text": "약속대로 보상을 줄게.",
-      "useCinematic": false,
-      "portrait": "Portraits/Merchant",
       "background": "",
       "questId": "Q001",
       "questAction": "Acknowledge"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "영구",
+      "text": "오오! 나 이제 어른이야??",
+      "useCinematic": false,
+      "portrait": "Portraits/Younggu",
+      "background": "",
+      "questId": "",
+      "questAction": "None"
     }
   ],
-  "hasChoice": false,
-  "choicePromptLine": null,
-  "acceptResult": null,
-  "rejectResult": null,
-  "acceptLabel": "",
-  "rejectLabel": ""
+  "rejectLines": [
+    {
+      "speaker": "Player",
+      "npcName": "",
+      "text": "음… 나중에 더 자세히 알려줄게.",
+      "useCinematic": false,
+      "portrait": "",
+      "background": "",
+      "questId": "",
+      "questAction": "None"
+    }
+  ],
+  "acceptLabel": "설명해준다",
+  "rejectLabel": "대충 넘긴다"
 }

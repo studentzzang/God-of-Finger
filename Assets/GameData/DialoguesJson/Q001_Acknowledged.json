@@ -1,0 +1,57 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "영구",
+      "text": "형, 우리 집 올래? 진짜 재밌는 거 보여줄게!",
+      "useCinematic": true,
+      "portrait": "Portraits/Younggu",
+      "background": "Backgrounds/Village"
+    }
+  ],
+  "hasChoice": true,
+  "choicePromptLine": {
+    "speaker": "NPC",
+    "npcName": "영구",
+    "text": "지금 갈래?",
+    "useCinematic": false,
+    "portrait": "Portraits/Younggu",
+    "background": ""
+  },
+  "acceptLines": [
+    {
+      "speaker": "Player",
+      "npcName": "",
+      "text": "좋아. 안내해줘.",
+      "useCinematic": false,
+      "portrait": "",
+      "background": "",
+      "questId": "Q002",
+      "questAction": "Accept"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "영구",
+      "text": "가자아아아!",
+      "useCinematic": false,
+      "portrait": "Portraits/Younggu",
+      "background": "",
+      "questId": "",
+      "questAction": "None"
+    }
+  ],
+  "rejectLines": [
+    {
+      "speaker": "Player",
+      "npcName": "",
+      "text": "나중에 갈게.",
+      "useCinematic": false,
+      "portrait": "",
+      "background": "",
+      "questId": "",
+      "questAction": "None"
+    }
+  ],
+  "acceptLabel": "간다",
+  "rejectLabel": "나중에"
+}

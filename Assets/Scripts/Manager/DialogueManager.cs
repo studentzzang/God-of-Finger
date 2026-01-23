@@ -55,6 +55,9 @@ public class DialogueManager : Singleton<DialogueManager>
     private bool choiceDone;
     private bool showingChoiceResult;
 
+    private DialogueLine[] resultLines;
+    private int resultLineIndex;
+
     // 같은 프레임에 Next/Accept/Reject가 중복 호출되는 것을 방지
     private int lastAdvanceFrame = -1;
 
@@ -171,6 +174,8 @@ public class DialogueManager : Singleton<DialogueManager>
         lineIndex = 0;
         choiceDone = false;
         showingChoiceResult = false;
+        resultLines = null;
+        resultLineIndex = 0;
 
         // 대화 시작은 항상 Normal 모드
         mode = DialoguePresentationMode.Normal;
@@ -194,6 +199,8 @@ public class DialogueManager : Singleton<DialogueManager>
         lineIndex = 0;
         choiceDone = false;
         showingChoiceResult = false;
+        resultLines = null;
+        resultLineIndex = 0;
 
         mode = DialoguePresentationMode.Normal;
 
@@ -220,6 +227,23 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         if (currentDialogue == null) return;
         if (ConsumeAdvanceThisFrame()) return;
+
+        if (resultLines != null)
+        {
+            resultLineIndex++;
+            if (resultLineIndex < resultLines.Length)
+            {
+                ApplyLine(resultLines[resultLineIndex]);
+                return;
+            }
+            else
+            {
+                resultLines = null;
+                resultLineIndex = 0;
+                CloseDialogue();
+                return;
+            }
+        }
 
         bool ended = lineIndex >= currentDialogue.lines.Length;
 
@@ -302,20 +326,19 @@ public class DialogueManager : Singleton<DialogueManager>
 
         choiceDone = true;
 
-        // acceptResult가 있으면 그 대사를 보여주고, 해당 줄에 달린 퀘스트 액션을 실행
-        if (HasText(dialogue.acceptResult))
+        if (dialogue.acceptLines != null && dialogue.acceptLines.Length > 0)
         {
-            ApplyLine(dialogue.acceptResult);
-            ExecuteQuestAction(dialogue.acceptResult);
+            resultLines = dialogue.acceptLines;
+            resultLineIndex = 0;
+            ApplyLine(resultLines[resultLineIndex]);
         }
         else
         {
             ui.SetSpeaker(playerName);
             ui.SetLine(defaultAcceptText);
+            showingChoiceResult = true;
+            if (ui != null) UpdateButtons();
         }
-
-        showingChoiceResult = true;
-        if (ui != null) UpdateButtons();
     }
 
     /// <summary>
@@ -334,20 +357,19 @@ public class DialogueManager : Singleton<DialogueManager>
 
         choiceDone = true;
 
-        // rejectResult가 있으면 그 대사를 보여주고, 해당 줄에 달린 퀘스트 액션을 실행
-        if (HasText(dialogue.rejectResult))
+        if (dialogue.rejectLines != null && dialogue.rejectLines.Length > 0)
         {
-            ApplyLine(dialogue.rejectResult);
-            ExecuteQuestAction(dialogue.rejectResult);
+            resultLines = dialogue.rejectLines;
+            resultLineIndex = 0;
+            ApplyLine(resultLines[resultLineIndex]);
         }
         else
         {
             ui.SetSpeaker(playerName);
             ui.SetLine(defaultRejectText);
+            showingChoiceResult = true;
+            if (ui != null) UpdateButtons();
         }
-
-        showingChoiceResult = true;
-        if (ui != null) UpdateButtons();
     }
 
     /// <summary>
@@ -362,6 +384,16 @@ public class DialogueManager : Singleton<DialogueManager>
         ClearUISelection();
 
         bool ended = lineIndex >= currentDialogue.lines.Length;
+
+        // 선택 결과(accept/reject) 여러 줄 재생 중이면 Next 버튼만 표시
+        if (resultLines != null)
+        {
+            ui.SetButtons(showNext: true, showAccept: false, showReject: false);
+
+            bool isLast = resultLineIndex >= resultLines.Length - 1;
+            ui.SetButtonLabels(isLast ? closeLabel : nextLabel, null, null);
+            return;
+        }
 
         // 선택지 단계(대사 라인 끝) → 모드와 무관하게 수락/거절 버튼 표시
         if (currentDialogue.hasChoice && ended && !choiceDone)
@@ -427,6 +459,14 @@ public class DialogueManager : Singleton<DialogueManager>
                 QuestManager.Instance.Acknowledge(line.quest);
             else
                 Debug.LogWarning("[DialogueManager] QuestManager.Instance is null (Acknowledge skipped)");
+        }
+
+        // 선택지 결과(accept/reject) 대사일 경우: 줄마다 필요한 퀘스트 액션만 실행하고,
+        // 버튼 라벨은 UpdateButtons()에서 (마지막 줄이면 닫기 / 아니면 다음)으로 처리한다.
+        if (resultLines != null)
+        {
+            ExecuteQuestAction(line);
+            if (ui != null) UpdateButtons();
         }
     }
 

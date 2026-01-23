@@ -6,8 +6,8 @@ public class DialogueJson
     public bool hasChoice;
 
     public DialogueLineJson choicePromptLine;
-    public DialogueLineJson acceptResult;
-    public DialogueLineJson rejectResult;
+    public DialogueLineJson[] acceptLines;
+    public DialogueLineJson[] rejectLines;
 
     public string acceptLabel;
     public string rejectLabel;
@@ -28,4 +28,4 @@ public class DialogueLineJson
     // 퀘스트 (줄 단위)
     public string questId;      // QuestSO.questId
     public string questAction;  // "Accept" / "Acknowledge" / "None"
-}   
+}  
