@@ -10,6 +10,12 @@ public enum SceneName
     Street,
     TopdownMovement,
     MinigameScene,
+    A_1,
+    A_2,
+    A_3,
+    B_1,
+    B_2,
+    B_3
     
 }
 

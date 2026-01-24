@@ -423,7 +423,7 @@ MonoBehaviour:
   returnScene: 0
   returnSpawnId: Default
   successSignalId: 
-  fallbackReturnScene: 0
+  fallbackReturnScene: 3
   fallbackReturnSpawnId: Default
 --- !u!1 &1412091126
 GameObject:
