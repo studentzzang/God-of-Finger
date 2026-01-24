@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorToScene : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class DoorToScene : MonoBehaviour
     [SerializeField] private DialogueSO lockedDialogue;     // 잠겨있을 때 재생할 대화
     [SerializeField] private string lockedLog = "Cannot enter."; // lockedDialogue가 없을 때 fallback 로그
 
+    [Header("Minigame")]
+    [SerializeField] private bool isMinigame = false;
+    [SerializeField] private string returnSpawnPointId = "Default";
+    [SerializeField] private string successSignalIdOnClear = "";
+
     /// <summary>
     /// 상호작용 진입점.
     /// - 퀘스트 조건을 만족하면 씬 이동
@@ -40,6 +46,27 @@ public class DoorToScene : MonoBehaviour
             return;
         }
 
+        // 미니게임 진입이라면 복귀 정보를 저장한다.
+        // - returnScene: 현재 씬
+        // - returnSpawnPointId: 복귀 시 스폰 위치
+        // - successSignalIdOnClear: 성공 시 발행할 퀘스트 시그널(비워두면 발행 안 함)
+        if (isMinigame && MinigameFlow.Instance != null)
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            if (System.Enum.TryParse(currentSceneName, out SceneName currentScene))
+            {
+                MinigameFlow.Instance.Begin(
+                    returnScene: currentScene,
+                    returnSpawnId: returnSpawnPointId,
+                    successSignalId: successSignalIdOnClear
+                );
+            }
+            else
+            {
+                Debug.LogWarning($"[DoorToScene] Cannot parse current scene '{currentSceneName}' to SceneName. Minigame return will not work.");
+            }
+        }
+
         // 다음 씬에서 스폰할 위치를 예약
         var spawner = FindFirstObjectByType<PlayerSpawnSystem>();
         if (spawner != null)
@@ -51,7 +78,7 @@ public class DoorToScene : MonoBehaviour
 
     /// <summary>
     /// requiredQuestId의 현재 상태를 확인하여 진입 가능 여부를 반환한다.
-    /// - AcceptedOnly: Accepted일 때만 허용 (미니게임 진입 등)
+    /// - AcceptedOnly: Accepted일 때만 허용 (미니게임/제한 구역 진입 등)
     /// - AcknowledgedOnly: Acknowledged일 때만 허용 (완료 처리까지 끝난 맵 진입 등)
     /// </summary>
     private bool CanEnterByQuest()

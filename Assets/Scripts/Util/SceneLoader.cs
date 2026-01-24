@@ -9,7 +9,8 @@ public enum SceneName
     House,
     Street,
     TopdownMovement,
-    MinigameScene
+    MinigameScene,
+    
 }
 
 public class SceneLoader : Singleton<SceneLoader>

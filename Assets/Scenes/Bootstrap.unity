@@ -241,6 +241,9 @@ GameObject:
   - component: {fileID: 468961299}
   - component: {fileID: 468961300}
   - component: {fileID: 468961301}
+  - component: {fileID: 468961304}
+  - component: {fileID: 468961303}
+  - component: {fileID: 468961302}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -303,7 +306,7 @@ MonoBehaviour:
     onValueChanged:
       m_PersistentCalls:
         m_Calls: []
-  enablePersistence: 0
+  enablePersistence: 1
 --- !u!4 &468961297
 Transform:
   m_ObjectHideFlags: 0
@@ -331,8 +334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227b37ac322c94f3e9dc9c9e0867393f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
   player: {fileID: 0}
   pendingSpawnId: Default
+  warnIfNoPlayerInScene: 0
 --- !u!114 &468961299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +379,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pendingSpawnId: 
+--- !u!114 &468961302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468961293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33bf008e928741d0b33c4c1af36540b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  router: {fileID: 468961303}
+--- !u!114 &468961303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468961293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c7b328d47a34c8f9d442e1f0a7017c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldCamera: {fileID: 1875327487}
+  manageAudioListener: 1
+--- !u!114 &468961304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468961293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9cb7fb67bd34b14bf5c83afcbd45d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  makePersistent: 0
+  hasContext: 0
+  returnScene: 0
+  returnSpawnId: Default
+  successSignalId: 
 --- !u!1 &1412091126
 GameObject:
   m_ObjectHideFlags: 0
