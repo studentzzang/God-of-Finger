@@ -8,6 +8,10 @@ public class MinigameFlow : Singleton<MinigameFlow>
     [SerializeField] private string returnSpawnId = "Default";
     [SerializeField] private string successSignalId;
 
+    [Header("Standalone Test Fallback")]
+    [SerializeField] private SceneName fallbackReturnScene = SceneName.Title;
+    [SerializeField] private string fallbackReturnSpawnId = "Default";
+
     protected override void Awake()
     {
         base.Awake();
@@ -29,13 +33,22 @@ public class MinigameFlow : Singleton<MinigameFlow>
     {
         if (!hasContext)
         {
-            Debug.LogWarning("[MinigameFlow] Exit called but no context exists.");
+            Debug.LogWarning("[MinigameFlow] Exit called with no context. Using fallback return.");
+
+            var fallbackSpawner = FindFirstObjectByType<PlayerSpawnSystem>();
+            if (fallbackSpawner != null)
+                fallbackSpawner.SetNextSpawn(fallbackReturnSpawnId);
+
+            if (TransitionManager.Instance != null)
+                TransitionManager.Instance.TransitionTo(fallbackReturnScene, fallbackReturnSpawnId);
+
             return;
         }
 
         if (success && !string.IsNullOrEmpty(successSignalId))
         {
             QuestSignals.Raise(successSignalId);
+            
         }
 
         var spawner = FindFirstObjectByType<PlayerSpawnSystem>();
