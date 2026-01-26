@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65305491a1230404680fe2db3d6b994b, type: 3}
+  m_Name: Q001_NotStarted
+  m_EditorClassIdentifier: 
+  lines:
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "\uC601\uAD6C"
+    text: "\uD615! \uB098 \uC774\uBE68 \uD754\uB4E4\uB824!"
+    visual:
+      portrait: {fileID: 21300000, guid: 38d9a6ed718dc4235988d08c275a6160, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "\uC601\uAD6C"
+    text: "\uC774\uAC8C \uC720\uCE58\uC57C? \uC601\uAD6C\uCE58\uC57C?"
+    visual:
+      portrait: {fileID: 21300000, guid: 38d9a6ed718dc4235988d08c275a6160, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  hasChoice: 1
+  choicePromptLine:
+    quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "\uC601\uAD6C"
+    text: "\uBF51\uC544\uC904\uB798?"
+    visual:
+      portrait: {fileID: 21300000, guid: 38d9a6ed718dc4235988d08c275a6160, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  acceptLines:
+  - quest: {fileID: 11400000, guid: 8f4a367623148fb4aa7a8e5aacee721e, type: 2}
+    questAction: 1
+    speaker: 0
+    npcName: 
+    text: "\uC54C\uACA0\uC5B4. \uAC00\uB9CC\uD788 \uC788\uC5B4."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "\uC601\uAD6C"
+    text: "\uD5C9\u2026 \uC9C4\uC9DC? \uC57D\uC18D!"
+    visual:
+      portrait: {fileID: 21300000, guid: 38d9a6ed718dc4235988d08c275a6160, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  rejectLines:
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uC9C0\uAE08\uC740 \uC880 \uBB34\uC11C\uC6B4\uB370\u2026"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  acceptLabel: "\uBF51\uC544\uC900\uB2E4"
+  rejectLabel: "\uAC70\uC808\uD55C\uB2E4"
+  defaultPortrait: {fileID: 0}
+  defaultBackground: {fileID: 0}
+  defaultStanding: {fileID: 0}

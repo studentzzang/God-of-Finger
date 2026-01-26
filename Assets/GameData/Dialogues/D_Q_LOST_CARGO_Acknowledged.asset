@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65305491a1230404680fe2db3d6b994b, type: 3}
+  m_Name: D_Q_LOST_CARGO_Acknowledged
+  m_EditorClassIdentifier: 
+  lines:
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uB2E4\uC74C \uB0A0, \uC2DC\uC7A5\uC740 \uC544\uBB34 \uC77C\uB3C4 \uC5C6\uC5C8\uB2E4\uB294
+      \uB4EF \uB2E4\uC2DC \uBD84\uC8FC\uD574\uC84C\uB2E4."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 1a6c8da56512d4a4894aac8c47c150c0, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "\uC758\uBB38\uC758 \uC0C1\uC778"
+    text: "\uADF8\uB54C \uB3C4\uC640\uC900 \uC77C, \uC78A\uC9C0 \uC54A\uACE0 \uC788\uC5B4."
+    visual:
+      portrait: {fileID: 21300000, guid: 528bc5547a18f458fa2a0d51110a89b5, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  hasChoice: 0
+  choicePromptLine:
+    quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: 
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  acceptLines: []
+  rejectLines: []
+  acceptLabel: 
+  rejectLabel: 
+  defaultPortrait: {fileID: 0}
+  defaultBackground: {fileID: 0}
+  defaultStanding: {fileID: 0}
