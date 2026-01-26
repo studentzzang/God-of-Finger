@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigame/A_3.unity
     guid: eff01afdbd0a7a748aa2b590a19dc1cb
   - enabled: 1
-    path: "Assets/Scenes/Minigame/B-2 \uD558\uC528 \uC9C4\uC9DC \uB204\uAD6C\uC9C0.unity"
+    path: Assets/Scenes/Minigame/B-2.unity
     guid: 24c1343682bf3f842920c9b2c97ff58e
   - enabled: 1
     path: Assets/Scenes/Minigame/B_1.unity
