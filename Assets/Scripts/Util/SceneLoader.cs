@@ -15,7 +15,8 @@ public enum SceneName
     A_3,
     B_1,
     B_2,
-    B_3
+    B_3,
+    Test_Scene
     
 }
 

@@ -4,7 +4,7 @@
       "speaker": "NPC",
       "npcName": "영구",
       "text": "형! 나 이빨 흔들려!",
-      "useCinematic": false,
+      "presentation": "Normal",
       "portrait": "Portraits/Younggu",
       "background": ""
     },
@@ -12,7 +12,7 @@
       "speaker": "NPC",
       "npcName": "영구",
       "text": "이게 유치야? 영구치야?",
-      "useCinematic": false,
+      "presentation": "Normal",
       "portrait": "Portraits/Younggu",
       "background": ""
     }
@@ -22,7 +22,7 @@
     "speaker": "NPC",
     "npcName": "영구",
     "text": "뽑아줄래?",
-    "useCinematic": true,
+    "presentation": "Cinematic",
     "portrait": "Portraits/Younggu",
     "background": "Backgrounds/Village"
   },

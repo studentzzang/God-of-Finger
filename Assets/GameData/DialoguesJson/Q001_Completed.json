@@ -4,7 +4,7 @@
       "speaker": "NPC",
       "npcName": "영구",
       "text": "형! 나 이빨 뽑았어!!",
-      "useCinematic": true,
+      "presentation": "Cinematic",
       "portrait": "Portraits/Younggu",
       "background": "Backgrounds/Village"
     }
@@ -14,9 +14,9 @@
     "speaker": "NPC",
     "npcName": "영구",
     "text": "그럼 이게 유치야? 영구치야?",
-    "useCinematic": false,
+    "presentation": "Cinematic",
     "portrait": "Portraits/Younggu",
-    "background": ""
+    "background": "Backgrounds/Village"
   },
   "acceptLines": [
     {

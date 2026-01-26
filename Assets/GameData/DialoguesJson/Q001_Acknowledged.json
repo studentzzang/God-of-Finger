@@ -4,7 +4,7 @@
       "speaker": "NPC",
       "npcName": "영구",
       "text": "형, 우리 집 올래? 진짜 재밌는 거 보여줄게!",
-      "useCinematic": true,
+      "presentation": "Cinematic",
       "portrait": "Portraits/Younggu",
       "background": "Backgrounds/Village"
     }
@@ -14,9 +14,9 @@
     "speaker": "NPC",
     "npcName": "영구",
     "text": "지금 갈래?",
-    "useCinematic": false,
+    "presentation": "Cinematic",
     "portrait": "Portraits/Younggu",
-    "background": ""
+    "background": "Backgrounds/Village"
   },
   "acceptLines": [
     {
@@ -38,7 +38,17 @@
       "background": "",
       "questId": "",
       "questAction": "None"
+    },
+    {
+      "speaker": "",
+      "npcName": "",
+      "text": "오른쪽에 있는 집이 영구의 집인듯 하다. 따라가 보자.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/YoungguHouse",
+      "questId": "",
+      "questAction": "None"
     }
+    
   ],
   "rejectLines": [
     {
