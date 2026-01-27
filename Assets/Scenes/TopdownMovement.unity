@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1841270755105393430, guid: a01b2f648c37c4e4cbfc4015fd6efbf4, type: 3}
+      propertyPath: testQuest
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f4a367623148fb4aa7a8e5aacee721e, type: 2}
     - target: {fileID: 2727265440978183649, guid: a01b2f648c37c4e4cbfc4015fd6efbf4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -587,11 +591,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questEntries:
-  - quest: {fileID: 11400000, guid: 3c98558ed2c134e3691dc46bb73717fd, type: 2}
-    notStartedDialogue: {fileID: 11400000, guid: 792b4cc33ca6e410cbf0d54a4ecf4244, type: 2}
-    acceptedDialogue: {fileID: 11400000, guid: 5caa12a841c214638aa59f6c15dff7e4, type: 2}
-    completedOnceDialogue: {fileID: 11400000, guid: fd3f8f2ff546c40d6b02aade65b73cd3, type: 2}
-    acknowledgedDialogue: {fileID: 11400000, guid: fc8571d020d78467e94cb51eead2c924, type: 2}
+  - quest: {fileID: 11400000, guid: e4ebf0af7a9172d40ae0afeee49fe75c, type: 2}
+    notStartedDialogue: {fileID: 11400000, guid: 70efb204663707d4c8ee958bc9c31e06, type: 2}
+    acceptedDialogue: {fileID: 11400000, guid: b13b6d4aee747794d925461609bf74b8, type: 2}
+    completedOnceDialogue: {fileID: 11400000, guid: 0dee1350f1570fe448d1d5a57f34f98a, type: 2}
+    acknowledgedDialogue: {fileID: 11400000, guid: 70efb204663707d4c8ee958bc9c31e06, type: 2}
     lockedDialogue: {fileID: 0}
   idleDialogue: {fileID: 0}
 --- !u!212 &1679241693
@@ -862,7 +866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00090026855
+      value: 0.000045776367
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1075,11 +1079,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questEntries:
-  - quest: {fileID: 11400000, guid: c7954be1039414e5c83d3bf1c5025d81, type: 2}
-    notStartedDialogue: {fileID: 11400000, guid: 08a3ac099622a4256940d2a6a900aa82, type: 2}
-    acceptedDialogue: {fileID: 11400000, guid: 9fc43852e87bf441883e88d6ceabd992, type: 2}
-    completedOnceDialogue: {fileID: 11400000, guid: 103ce0872af1146f6a19ea9774981c98, type: 2}
-    acknowledgedDialogue: {fileID: 11400000, guid: 7db6e7b00e0d842d5bbdccd27f70b3aa, type: 2}
+  - quest: {fileID: 11400000, guid: 8f4a367623148fb4aa7a8e5aacee721e, type: 2}
+    notStartedDialogue: {fileID: 11400000, guid: 41774fe60e026504d9a8552562f82329, type: 2}
+    acceptedDialogue: {fileID: 11400000, guid: f7f8ecf5ee17ab547bc989a70566f716, type: 2}
+    completedOnceDialogue: {fileID: 11400000, guid: c58cc59a29ace7642ac088c40e0cb645, type: 2}
+    acknowledgedDialogue: {fileID: 11400000, guid: 446530d2972d4ba4f9d77df5a8b80105, type: 2}
     lockedDialogue: {fileID: 0}
   idleDialogue: {fileID: 11400000, guid: 00c1d3bdc63fb40389bf4a555dabca20, type: 2}
 --- !u!212 &1947378505
