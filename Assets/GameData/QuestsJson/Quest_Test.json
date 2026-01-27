@@ -10,7 +10,7 @@
     {
       "questId": "Q002",
       "title": "영구의 집 초대",
-      "description": "영구의 집으로 가 보자. (Q001 완료 후 수락 가능)",
+      "description": "영구의 집으로 가 보자.",
       "prerequisiteQuestId": "Q001",
       "completeSignalId": ""
     }

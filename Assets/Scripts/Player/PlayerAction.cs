@@ -193,12 +193,12 @@ public class PlayerAction : MonoBehaviour
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
 
         // 상호작용 대상 스캔(전방 레이캐스트)
-        Debug.DrawRay(rb.position, dirVector * 1.5f, Color.red);
+        Debug.DrawRay(rb.position, dirVector * 2f, Color.red);
 
         RaycastHit2D hit = Physics2D.Raycast(
             rb.position,
             dirVector,
-            1.5f,
+            2f,
             LayerMask.GetMask("Object")
         );
 

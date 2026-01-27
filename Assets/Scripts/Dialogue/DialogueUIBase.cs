@@ -5,17 +5,22 @@ using UnityEngine.UI;
 
 /// <summary>
 /// 대화 UI의 공통 베이스.
-/// - 패널 on/off
+/// - VisualRoot(이미지/배경/패널 묶음) on/off
 /// - 화자/대사 텍스트 세팅
 /// - 버튼 표시/라벨 세팅
-/// 
+///
 /// Normal/Cinematic UI는 이 클래스를 상속해서
 /// 자신만의 추가 요소(초상화/배경/스탠딩 등)를 확장한다.
 /// </summary>
 public abstract class DialogueUIBase : MonoBehaviour
 {
     [Header("Base UI")]
+    [Tooltip("DialogueUIROOT 아래에 있는 비주얼 루트(이미지/배경/패널 전체 묶음). Show/Hide는 이것만 토글함.")]
+    [SerializeField] protected GameObject visualRoot;
+
+    [Tooltip("텍스트/버튼이 들어있는 실제 패널(보통 visualRoot 자식).")]
     [SerializeField] protected GameObject panel;
+
     [SerializeField] protected TextMeshProUGUI speakerText;
     [SerializeField] protected TextMeshProUGUI lineText;
 
@@ -37,23 +42,27 @@ public abstract class DialogueUIBase : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI acceptButtonText;
     [SerializeField] protected TextMeshProUGUI rejectButtonText;
 
-    public bool IsVisible => panel != null && panel.activeSelf;
+    public bool IsVisible =>
+        (panel != null && panel.activeSelf) || (visualRoot != null && visualRoot.activeSelf);
 
     /// <summary>
-    /// 패널을 켠다.
+    /// 패널(비주얼 루트)을 켠다.
     /// </summary>
     public virtual void Show()
     {
-        gameObject.SetActive(true);
+        // IMPORTANT: 이 컴포넌트가 붙은 DialogueUIROOT는 끄지 않는다.
+        if (visualRoot) visualRoot.SetActive(true);
         if (panel) panel.SetActive(true);
     }
 
     /// <summary>
-    /// 패널을 끈다.
+    /// 패널(비주얼 루트)을 끈다.
     /// </summary>
     public virtual void Hide()
     {
-        gameObject.SetActive(false);
+        StopTypingInternal();
+
+        if (visualRoot) visualRoot.SetActive(false);
         if (panel) panel.SetActive(false);
     }
 
@@ -102,9 +111,6 @@ public abstract class DialogueUIBase : MonoBehaviour
         if (reject != null && rejectButtonText) rejectButtonText.text = reject;
     }
 
-    /// <summary>
-    /// DialogueManager가 버튼 이벤트를 연결할 수 있게 버튼 참조를 제공한다.
-    /// </summary>
     public Button NextButton => nextButton;
     public Button AcceptButton => acceptButton;
     public Button RejectButton => rejectButton;
@@ -114,6 +120,16 @@ public abstract class DialogueUIBase : MonoBehaviour
     private void StartTyping(string text)
     {
         StopTypingInternal();
+
+        // 비활성 상태면 코루틴 시작 불가 → 즉시 출력
+        if (!isActiveAndEnabled || panel == null || !panel.activeInHierarchy)
+        {
+            if (lineText) lineText.text = text ?? string.Empty;
+            IsTyping = false;
+            typingCo = null;
+            return;
+        }
+
         typingCo = StartCoroutine(TypeRoutine(text));
     }
 
@@ -158,7 +174,7 @@ public abstract class DialogueUIBase : MonoBehaviour
         }
         IsTyping = false;
     }
-    
+
     public virtual void ApplyVisual(DialogueVisual visual) { }
 
     // Lifecycle-based binding support
@@ -169,11 +185,9 @@ public abstract class DialogueUIBase : MonoBehaviour
 
     private IEnumerator BindWhenReady()
     {
-        // Wait until DialogueManager.Instance is not null
         while (DialogueManager.Instance == null)
-        {
             yield return null;
-        }
+
         BindToManager();
     }
 
@@ -183,8 +197,6 @@ public abstract class DialogueUIBase : MonoBehaviour
     protected virtual void OnDestroy()
     {
         if (DialogueManager.Instance != null)
-        {
             UnbindFromManager();
-        }
     }
-}   
+}

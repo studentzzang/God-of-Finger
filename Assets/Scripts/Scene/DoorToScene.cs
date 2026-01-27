@@ -74,6 +74,7 @@ public class DoorToScene : MonoBehaviour
 
         // 씬 전환(전환 연출 포함)
         TransitionManager.Instance.TransitionTo(targetScene, targetSpawnPointId);
+        
     }
 
     /// <summary>
@@ -92,6 +93,8 @@ public class DoorToScene : MonoBehaviour
             return false;
 
         QuestState state = QuestManager.Instance.GetState(requiredQuestId);
+        
+        
 
         switch (gateRule)
         {

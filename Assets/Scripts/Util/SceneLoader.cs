@@ -15,7 +15,8 @@ public enum SceneName
     A_3,
     B_1,
     B_2,
-    B_3
+    B_3,
+    Test_Scene
     
 }
 
@@ -33,27 +34,35 @@ public class SceneLoader : Singleton<SceneLoader>
     {
         if (isLoading) return;
 
-        // 이미 target이 로드되어 있으면 그 씬을 활성화만 하고 끝
-        if (IsSceneLoaded(target.ToString()))
-        {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(target.ToString()));
-            onComplete?.Invoke();
-            return;
-        }
-
+        // Bootstrap 보장 및 씬 전환은 코루틴에서 처리 (target이 이미 로드된 경우도 포함)
         StartCoroutine(LoadSceneAsync(target, onComplete));
+    }
+
+    private IEnumerator EnsureBootstrapLoaded()
+    {
+        if (string.IsNullOrEmpty(bootstrapSceneName)) yield break;
+        if (IsSceneLoaded(bootstrapSceneName)) yield break;
+
+        AsyncOperation op = SceneManager.LoadSceneAsync(bootstrapSceneName, LoadSceneMode.Additive);
+        while (op != null && !op.isDone) yield return null;
     }
 
     private IEnumerator LoadSceneAsync(SceneName target, Action onComplete)
     {
         isLoading = true;
 
+        // 0) Bootstrap 씬이 항상 먼저 로드되도록 보장
+        yield return EnsureBootstrapLoaded();
+
         // 현재 활성 씬(대개 “현재 맵 씬”) 저장
         Scene currentActive = SceneManager.GetActiveScene();
 
-        // 1) 타겟 씬 Additive 로드
-        AsyncOperation loadOp = SceneManager.LoadSceneAsync(target.ToString(), LoadSceneMode.Additive);
-        while (!loadOp.isDone) yield return null;
+        // 1) 타겟 씬이 이미 로드되어 있으면 재로드하지 않고 Active만 전환
+        if (!IsSceneLoaded(target.ToString()))
+        {
+            AsyncOperation loadOp = SceneManager.LoadSceneAsync(target.ToString(), LoadSceneMode.Additive);
+            while (loadOp != null && !loadOp.isDone) yield return null;
+        }
 
         // 2) 타겟 씬을 Active로 설정
         Scene targetScene = SceneManager.GetSceneByName(target.ToString());
