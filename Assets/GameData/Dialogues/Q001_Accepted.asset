@@ -27,8 +27,8 @@ MonoBehaviour:
     questAction: 0
     speaker: 0
     npcName: 
-    text: "\uC774\uB97C \uBF51\uC544\uC57C \uD558\uB2C8\uAE4C, \uC774\uBE68 \uBF51\uB294
-      \uB370\uB85C \uAC00\uBCF4\uC790."
+    text: "\uC774\uB97C \uBF51\uC544\uC57C \uD558\uB2C8\uAE4C, \uC606\uC5D0 \uC758\uC790\uC5D0
+      \uC549\uC544\uBD10"
     visual:
       portrait: {fileID: 0}
       background: {fileID: 0}

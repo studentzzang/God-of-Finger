@@ -16,5 +16,4 @@ MonoBehaviour:
   title: "\uC601\uAD6C\uC758 \uC9D1 \uCD08\uB300"
   prerequisiteQuest: {fileID: 11400000, guid: 8f4a367623148fb4aa7a8e5aacee721e, type: 2}
   completeSignalId: 
-  Description: "\uC601\uAD6C\uC758 \uC9D1\uC73C\uB85C \uAC00 \uBCF4\uC790. (Q001
-    \uC644\uB8CC \uD6C4 \uC218\uB77D \uAC00\uB2A5)"
+  Description: "\uC601\uAD6C\uC758 \uC9D1\uC73C\uB85C \uAC00 \uBCF4\uC790."

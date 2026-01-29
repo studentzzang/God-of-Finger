@@ -42,9 +42,9 @@ MonoBehaviour:
     text: "\uBF51\uC544\uC904\uB798?"
     visual:
       portrait: {fileID: 21300000, guid: 38d9a6ed718dc4235988d08c275a6160, type: 3}
-      background: {fileID: 0}
+      background: {fileID: 21300000, guid: fd91184bd3e4c48429e9ddd6d3514299, type: 3}
       standing: {fileID: 0}
-      presentation: 0
+      presentation: 1
   acceptLines:
   - quest: {fileID: 11400000, guid: 8f4a367623148fb4aa7a8e5aacee721e, type: 2}
     questAction: 1

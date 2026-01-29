@@ -12,17 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65305491a1230404680fe2db3d6b994b, type: 3}
   m_Name: Sample
   m_EditorClassIdentifier: 
-  lines:
-  - quest: {fileID: 0}
-    questAction: 0
-    speaker: 1
-    npcName: 
-    text: 
-    visual:
-      portrait: {fileID: 0}
-      background: {fileID: 0}
-      standing: {fileID: 0}
-      presentation: 0
+  lines: []
   hasChoice: 0
   choicePromptLine:
     quest: {fileID: 0}
@@ -35,28 +25,8 @@ MonoBehaviour:
       background: {fileID: 0}
       standing: {fileID: 0}
       presentation: 0
-  acceptLines:
-  - quest: {fileID: 0}
-    questAction: 0
-    speaker: 1
-    npcName: 
-    text: 
-    visual:
-      portrait: {fileID: 0}
-      background: {fileID: 0}
-      standing: {fileID: 0}
-      presentation: 0
-  rejectLines:
-  - quest: {fileID: 0}
-    questAction: 0
-    speaker: 1
-    npcName: 
-    text: 
-    visual:
-      portrait: {fileID: 0}
-      background: {fileID: 0}
-      standing: {fileID: 0}
-      presentation: 0
+  acceptLines: []
+  rejectLines: []
   acceptLabel: 
   rejectLabel: 
   defaultPortrait: {fileID: 0}

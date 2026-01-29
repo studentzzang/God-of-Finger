@@ -21,9 +21,9 @@ MonoBehaviour:
       \uAC70 \uBCF4\uC5EC\uC904\uAC8C!"
     visual:
       portrait: {fileID: 21300000, guid: 38d9a6ed718dc4235988d08c275a6160, type: 3}
-      background: {fileID: 0}
+      background: {fileID: 21300000, guid: fd91184bd3e4c48429e9ddd6d3514299, type: 3}
       standing: {fileID: 0}
-      presentation: 0
+      presentation: 1
   hasChoice: 1
   choicePromptLine:
     quest: {fileID: 0}
@@ -33,9 +33,9 @@ MonoBehaviour:
     text: "\uC9C0\uAE08 \uAC08\uB798?"
     visual:
       portrait: {fileID: 21300000, guid: 38d9a6ed718dc4235988d08c275a6160, type: 3}
-      background: {fileID: 0}
+      background: {fileID: 21300000, guid: fd91184bd3e4c48429e9ddd6d3514299, type: 3}
       standing: {fileID: 0}
-      presentation: 0
+      presentation: 1
   acceptLines:
   - quest: {fileID: 11400000, guid: e088c065fcc66de4ebd9973732a52e55, type: 2}
     questAction: 1
@@ -57,6 +57,17 @@ MonoBehaviour:
       background: {fileID: 0}
       standing: {fileID: 0}
       presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uC624\uB978\uCABD\uC5D0 \uC788\uB294 \uC9D1\uC774 \uC601\uAD6C\uC758
+      \uC9D1\uC778\uB4EF \uD558\uB2E4. \uB530\uB77C\uAC00 \uBCF4\uC790."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 847d41feb1a204b2cb845028ab630ebd, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
   rejectLines:
   - quest: {fileID: 0}
     questAction: 0

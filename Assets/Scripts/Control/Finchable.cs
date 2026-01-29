@@ -18,7 +18,7 @@ public class Finchable : Grabable
     private bool _lockObject = true;     // 물체 고정 여부
     private bool _isFinchAble = false;
 
-    public bool isClear = false;
+    public bool _clear = false;
 
 
     private void Awake()
@@ -100,7 +100,7 @@ public class Finchable : Grabable
     /// </summary>
     private void Finch()
     {
-        isClear = true;
+        _clear = true;
         _lockHand = false;
         _lockObject = false;
     }
