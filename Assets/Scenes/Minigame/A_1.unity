@@ -222,7 +222,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2504878054586179973, guid: 1857427ca669a8348989176bcfc21a05, type: 3}
       propertyPath: m_Name
-      value: MinigameManager
+      value: QuitManager
       objectReference: {fileID: 0}
     - target: {fileID: 3914493974716477905, guid: 1857427ca669a8348989176bcfc21a05, type: 3}
       propertyPath: m_LocalPosition.x

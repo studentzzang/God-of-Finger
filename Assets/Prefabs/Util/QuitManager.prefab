@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3914493974716477905}
   - component: {fileID: 896880263546521627}
   m_Layer: 0
-  m_Name: MinigameManager
+  m_Name: QuitManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
