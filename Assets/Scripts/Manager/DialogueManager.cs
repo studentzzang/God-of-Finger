@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,7 +44,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] private string rejectDefaultLabel = "거절";
 
     public bool IsOpen => ui != null && ui.gameObject.activeInHierarchy && ui.Panel != null && ui.Panel.activeInHierarchy;
-    
+    public event Action OnDialogueClosed;
     public bool IsWaitingChoice =>
         currentDialogue != null &&
         currentDialogue.hasChoice &&
@@ -239,6 +240,7 @@ public class DialogueManager : Singleton<DialogueManager>
         if (fullUI != null) fullUI.Hide();
 
         ui = null;
+        OnDialogueClosed?.Invoke();
     }
 
     /// <summary>
