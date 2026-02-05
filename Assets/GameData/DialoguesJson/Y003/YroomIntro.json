@@ -1,0 +1,88 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 이게뭐야!??",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "영구: 아하하하하하하!!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "*(펑)",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A07"
+    },
+    {
+      "speaker": "NPC",
+      "text": "???: 안녕하세요.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A08"
+    },
+    {
+      "speaker": "NPC",
+      "text": "악마: 저는 악마에요.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A08"
+    },
+    {
+      "speaker": "NPC",
+      "text": "악마: 니 목숨을 주세요.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A08"
+    },
+    {
+      "speaker": "NPC",
+      "text": "악마: 으럇!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 큿..!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 저리가!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A10"
+    },
+    {
+      "speaker": "NPC",
+      "text": "악마: 으어어ㅓ",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A10"
+    },
+    {
+      "speaker": "NPC",
+      "text": "*(쿵)",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A11"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 어..?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A12"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨, 악마: ...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨, 악마: 죽었어...!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A13"
+    }
+  ]
+}

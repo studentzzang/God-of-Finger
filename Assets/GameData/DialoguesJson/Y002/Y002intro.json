@@ -1,0 +1,133 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "앆그느!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y04",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "뽑은 데 막았구나.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y04",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "으! 드흐즈 그기ㄱ그스 므극ㅅ으!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y04",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "...음",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y04",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "느 습츨느이 흐그습으!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y04",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "그임그의그 늘즈!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y04",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "...뭐라고??",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y04",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "퉤.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y05",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "우리 그림 그리기 놀이 하자!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y03",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "...아!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y03",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "그래!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y03",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "나 근데 물감 뚜껑을 못열겠어.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y03",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "손톱이 너무 짧아!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y03",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "형아가 열어줘.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y03",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "물론이지.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y03",
+      "background": "Backgrounds/BG_Yhouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "저기 구석에 물감 통이야!",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_Y03",
+      "questId": "Y002",
+      "questAction": "Accept"
+    }
+  ]
+}

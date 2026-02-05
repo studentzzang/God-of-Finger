@@ -490,23 +490,14 @@ public class DialogueManager : Singleton<DialogueManager>
         // 대사 텍스트 적용
         if (ui != null) ui.SetLine(line.text);
 
-        // 완료 직후 1회 대사에서만 상태 전환(Completed -> Acknowledged)
-        // (Accept는 선택지 결과에서만 실행되도록 유지)
-        if (line.quest != null && line.questAction == QuestActionType.Acknowledge)
-        {
-            if (QuestManager.Instance != null)
-                QuestManager.Instance.Acknowledge(line.quest);
-            else
-                Debug.LogWarning("[DialogueManager] QuestManager.Instance is null (Acknowledge skipped)");
-        }
+        // DialogueLine에 달린 퀘스트 액션을 실행한다.
+        // - 기존엔 선택지 결과(resultLines)에서만 실행했지만,
+        //   일반 라인에서도 questAction(예: Accept)을 허용하기 위해 항상 실행한다.
+        ExecuteQuestAction(line);
 
-        // 선택지 결과(accept/reject) 대사일 경우: 줄마다 필요한 퀘스트 액션만 실행하고,
-        // 버튼 라벨은 UpdateButtons()에서 (마지막 줄이면 닫기 / 아니면 다음)으로 처리한다.
-        if (resultLines != null)
-        {
-            ExecuteQuestAction(line);
-            if (ui != null) UpdateButtons();
-        }
+        // 선택지 결과(accept/reject) 대사 재생 중엔 버튼 라벨을 갱신한다.
+        if (resultLines != null && ui != null)
+            UpdateButtons();
     }
 
     // DialogueLine에 달린 퀘스트 액션을 실행한다 (없으면 아무 것도 하지 않음)

@@ -1,0 +1,36 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 열었어.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "영구: 우와!! 물감!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 우왓..!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "영구: 이예에에에에에에!!!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A04"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: ...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A05",
+      "questId": "Y002",
+      "questAction": "Acknowledge"
+    }
+  ]
+}

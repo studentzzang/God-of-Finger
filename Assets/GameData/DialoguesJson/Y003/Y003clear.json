@@ -1,0 +1,110 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "정말 감사합니다.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "대신 약속 하나 합시다.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "이제 그만 돌아가 주세요.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "저걸.. 가지고요.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "?? 어떻게요??",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "???",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "저는 그냥 소환돼서 온건데.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "돌아가는 법은 몰라요.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "아..?",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "그러면 그냥..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "이집 비는데 여기서 사실래요?",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "와..!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "새 이웃분들에게 어서 인사해야겠어요!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom",
+      "questId": "Y003",
+      "questAction": "Acknowledge"
+    }
+  ]
+}

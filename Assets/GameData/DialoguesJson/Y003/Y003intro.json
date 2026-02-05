@@ -1,0 +1,110 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "아.. 이거 큰일이네요..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(너때문이잖아;; 어쩔거냐고이거..)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "크흠.. ",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "일단 수습을 하시는게..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "아뇨 그런게 아니라요.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "제 포크가 박힌게 안빠져서요.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "저게 포크였구나..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(..그래!)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(악마는 거래에 철저하다고 들었어!)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(침착하게 이 상황을 이용해보자.)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "그런 거라면 제가 도와드릴 수 있어요!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "아 그래요? 그럼 부탁드릴게요.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "물론이죠!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_I01",
+      "background": "Backgrounds/BG_YhouseRoom",
+      "questId": "Y003",
+      "questAction": "Accept"
+    }
+  ]
+}
