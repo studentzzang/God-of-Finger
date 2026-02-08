@@ -31,6 +31,13 @@ public class FinalUnlockWatcher : MonoBehaviour
         public string onceKey;
     }
 
+    private void Awake()
+    {
+        // Sort once so we always evaluate milestones from the smallest count.
+        if (milestones != null)
+            milestones.Sort((a, b) => a.acknowledgedCount.CompareTo(b.acknowledgedCount));
+    }
+
     private void OnEnable()
     {
         TryBindQuestManager();
@@ -109,10 +116,6 @@ public class FinalUnlockWatcher : MonoBehaviour
         if (milestones == null || milestones.Count == 0)
             return false;
 
-        // milestones를 "작은 카운트부터" 검사해서, 아직 안 본 첫 번째를 재생
-        // (예: 2개를 건너뛰고 4개가 먼저 트리거되는 상황 방지)
-        milestones.Sort((a, b) => a.acknowledgedCount.CompareTo(b.acknowledgedCount));
-
         foreach (var m in milestones)
         {
             if (m == null) continue;
@@ -120,26 +123,16 @@ public class FinalUnlockWatcher : MonoBehaviour
             if (m.dialogue == null) continue;
             if (string.IsNullOrEmpty(m.onceKey)) continue;
 
+            // 이미 본 마일스톤은 스킵해서 다음 후보로 넘어간다.
+            if (RuntimeOnceFlags.Instance != null && RuntimeOnceFlags.Instance.HasShown(m.onceKey))
+                continue;
+
             if (acknowledged < m.acknowledgedCount)
                 continue;
 
-            // 이미 본 적 있으면 스킵
-            if (RuntimeOnceFlags.Instance != null)
-            {
-                // TryMarkShown은 실행 직전에만 호출하는 게 안전하므로,
-                // 여기서는 Has 방식이 없어서 "예약"은 하되 실제 마킹은 코루틴에서 한다.
-                // 대신, 예약 중복을 막기 위해 pending 플래그로 보호한다.
-                dialogue = m.dialogue;
-                key = m.onceKey;
-                return true;
-            }
-            else
-            {
-                // RuntimeOnceFlags가 없으면 playedFallback으로 전체 1회만 보장할 수밖에 없음
-                dialogue = m.dialogue;
-                key = m.onceKey;
-                return true;
-            }
+            dialogue = m.dialogue;
+            key = m.onceKey;
+            return true;
         }
 
         return false;

@@ -74,8 +74,8 @@ MonoBehaviour:
       background: {fileID: 21300000, guid: dbf3c6483d29d47118b080bab9d8e083, type: 3}
       standing: {fileID: 0}
       presentation: 2
-  - quest: {fileID: 0}
-    questAction: 0
+  - quest: {fileID: 11400000, guid: 0c3317f3cd40641c798af645fdfd3204, type: 2}
+    questAction: 1
     speaker: 0
     npcName: 
     text: "\uAC70\uC6B8\uB85C \uB3CC\uC544\uAC00\uC57C \uD560 \uB54C\uB2E4."

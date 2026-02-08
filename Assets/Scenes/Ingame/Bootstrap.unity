@@ -453,9 +453,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   milestones:
-  - acknowledgedCount: 1
-    dialogue: {fileID: 11400000, guid: d0cd08ba2ec779a4d8ccf4645389a231, type: 2}
-    onceKey: power1
+  - acknowledgedCount: 2
+    dialogue: {fileID: 11400000, guid: 47d9229b17acf43788530c6a1d4f9b87, type: 2}
+    onceKey: P1
+  - acknowledgedCount: 3
+    dialogue: {fileID: 11400000, guid: 73d792a5eb10845bb9f77654547bba84, type: 2}
+    onceKey: P2
+  - acknowledgedCount: 4
+    dialogue: {fileID: 11400000, guid: dee34211518f74b4186ac2d160480c10, type: 2}
+    onceKey: P3
+  - acknowledgedCount: 5
+    dialogue: {fileID: 11400000, guid: d35237a9d44644bcf80bc697c0549865, type: 2}
+    onceKey: P4
+  - acknowledgedCount: 6
+    dialogue: {fileID: 11400000, guid: 10a03b624175646cda00fc0b6f5fb31c, type: 2}
+    onceKey: P5
+  - acknowledgedCount: 7
+    dialogue: {fileID: 11400000, guid: 8f9664d1723ba4f7698a8065e0c03e96, type: 2}
+    onceKey: ending_intro
   delayFrames: 2
 --- !u!114 &468961307
 MonoBehaviour:

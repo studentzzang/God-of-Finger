@@ -160,7 +160,7 @@ MonoBehaviour:
   gateRule: 1
   openSfxKey: Door_Open
   lockedSfxKey: 
-  lockedDialogue: {fileID: 0}
+  lockedDialogue: {fileID: 11400000, guid: 5581055a76e93432c8de8a866332843b, type: 2}
   lockedLog: Cannot enter.
   isMinigame: 0
   returnSpawnPointId: Default
@@ -219,7 +219,7 @@ Transform:
   m_GameObject: {fileID: 76778889}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.62, y: -6.63, z: -12.099562}
+  m_LocalPosition: {x: 0.59, y: -6.77, z: -12.099562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -235,11 +235,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 950321767555577815, guid: a01b2f648c37c4e4cbfc4015fd6efbf4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 950321767555577815, guid: a01b2f648c37c4e4cbfc4015fd6efbf4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 950321767555577815, guid: a01b2f648c37c4e4cbfc4015fd6efbf4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -484,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00010681152
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -582,7 +582,7 @@ Transform:
   m_GameObject: {fileID: 909538299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47, y: -5.31, z: 0}
+  m_LocalPosition: {x: 0.47, y: -4.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 1249293879}
   - component: {fileID: 1249293878}
   - component: {fileID: 1249293877}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tissue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ MonoBehaviour:
   gateRule: 0
   openSfxKey: 
   lockedSfxKey: 
-  lockedDialogue: {fileID: 0}
+  lockedDialogue: {fileID: 11400000, guid: 041a311c9f9b44baf84e975c3ac5c31f, type: 2}
   lockedLog: Cannot enter.
   isMinigame: 1
   returnSpawnPointId: tissue
@@ -1841,7 +1841,7 @@ Transform:
   m_GameObject: {fileID: 1907205474}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.62, y: -1.74, z: 0}
+  m_LocalPosition: {x: -1.12, y: -1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

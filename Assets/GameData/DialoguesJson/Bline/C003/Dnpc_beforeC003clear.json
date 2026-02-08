@@ -3,33 +3,9 @@
     {
       "speaker": "NPC",
       "npcName": "[ 당근 ]",
-      "text": "오늘도 안녕하신가!",
+      "text": "아직인가?",
       "presentation": "Normal",
       "portrait": "Portraits/portrait_D01"
-    },
-    {
-      "speaker": "Player",
-      "text": "어, 잘.. 있지.",
-      "presentation": "Normal"
-    },
-    {
-      "speaker": "NPC",
-      "npcName": "[ 당근 ]",
-      "text": "도끼를 좀 뽑아줄 수 있겠나?",
-      "presentation": "Normal",
-      "portrait": "Portraits/portrait_D01"
-    },
-    {
-      "speaker": "NPC",
-      "npcName": "[ 당근 ]",
-      "text": "내려찍었더니 그대로 박혀버려서 말이야.",
-      "presentation": "Normal",
-      "portrait": "Portraits/portrait_D01"
-    },
-    {
-      "speaker": "Player",
-      "text": "물론이지.",
-      "presentation": "Normal"
     }
   ]
 }

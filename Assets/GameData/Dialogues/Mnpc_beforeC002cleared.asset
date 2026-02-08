@@ -71,7 +71,7 @@ MonoBehaviour:
     npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
     text: "\uB0B4\uAC00 \uBB50 \uC5B4\uB54C\uC11C!"
     visual:
-      portrait: {fileID: 21300000, guid: ea6b213da0c9248f4b66fa6c5fc07e1e, type: 3}
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
       background: {fileID: 0}
       standing: {fileID: 0}
       presentation: 0

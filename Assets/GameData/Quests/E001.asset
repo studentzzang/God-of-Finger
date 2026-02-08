@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03a605369740a4fb0a61e7c52d8ecae0, type: 3}
-  m_Name: Final
+  m_Name: E001
   m_EditorClassIdentifier: 
   questId: E001
-  title: "\uCD5C\uD6C4\uC758 \uACB0\uC804"
+  title: "\uB05D"
   prerequisiteQuest: {fileID: 0}
   completeSignalId: E001_Clear
-  Description: "\uB4DC\uB514\uC5B4 \uD798\uC774 \uCDA9\uBD84\uD788 \uAE38\uB7EC\uC9C4
-    \uAC83 \uAC19\uB2E4. \uC9DC\uC99D\uB098\uB294 \uD138\uC744 \uBF51\uC73C\uB7EC
-    \uC9D1\uC758 \uAC70\uC6B8\uB85C \uAC00\uC790."
+  Description: "\uBC29 \uAC70\uC6B8\uC5D0\uC11C \uD138\uC744 \uBF51\uB294\uB2E4"

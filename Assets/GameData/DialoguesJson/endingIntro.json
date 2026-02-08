@@ -37,7 +37,9 @@
     {
       "speaker": "Player",
       "text": "거울로 돌아가야 할 때다.",
-      "presentation": "Normal"
+      "presentation": "Normal",
+      "questId": "E001",
+      "questAction": "Accept"
     }
   ]
 }
