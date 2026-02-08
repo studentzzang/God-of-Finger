@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 17
+  targetScene: 13
   targetSpawnPointId: Backyard_Door
   useQuestGate: 0
   requiredQuestId: 
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 10
+  targetScene: 7
   targetSpawnPointId: Default
   useQuestGate: 1
   requiredQuestId: C003

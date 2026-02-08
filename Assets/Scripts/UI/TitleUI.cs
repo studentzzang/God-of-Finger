@@ -3,7 +3,7 @@ using UnityEngine;
 public class TitleUI : MonoBehaviour
 {
     [Header("Start Destination")]
-    [SerializeField] private SceneName startScene = SceneName.House;
+    [SerializeField] private SceneName startScene;
     [SerializeField] private string startSpawnPointId = "Default";
 
     [Header("New Game Options")]

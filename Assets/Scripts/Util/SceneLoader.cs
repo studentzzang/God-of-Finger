@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 public enum SceneName
 {
     Title,
-    House,
-    Street,
-    TopdownMovement,
     MinigameScene,
     A_1,
     A_2,
@@ -16,14 +13,16 @@ public enum SceneName
     B_1,
     B_2,
     B_3,
-    Test_Scene,
     YHouse,
-    YHouseRoom,
+    YHouseRoom, 
     Home,
     BedRoom,
     Whole_Map,
     CHouse,
     Backyard,
+    Ending,
+    Tutorial,
+    
     
 }
 

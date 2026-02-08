@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 8
+  targetScene: 5
   targetSpawnPointId: Default
   useQuestGate: 1
   requiredQuestId: C001
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 14
+  targetScene: 10
   targetSpawnPointId: Home_Door
   useQuestGate: 0
   requiredQuestId: 
@@ -1180,7 +1180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000091552734
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1266,7 +1266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 17
+  targetScene: 13
   targetSpawnPointId: CHouse_Door
   useQuestGate: 1
   requiredQuestId: C001
@@ -8041,7 +8041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 12
+  targetScene: 8
   targetSpawnPointId: YHouse_Door
   useQuestGate: 1
   requiredQuestId: C002
@@ -8392,7 +8392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 5
+  targetScene: 2
   targetSpawnPointId: Defualt
   useQuestGate: 1
   requiredQuestId: Y001

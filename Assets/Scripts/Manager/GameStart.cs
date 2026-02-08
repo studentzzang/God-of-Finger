@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameStart : MonoBehaviour
 {
-    [SerializeField] private SceneName targetScene = SceneName.House;
+    [SerializeField] private SceneName targetScene;
     [SerializeField] private string targetSpawnPointId = "Default";
 
     private IEnumerator Start()
