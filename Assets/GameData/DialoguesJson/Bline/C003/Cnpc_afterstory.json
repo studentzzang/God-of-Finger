@@ -1,0 +1,11 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃맡 아주머니 춘자 ]",
+      "text": "오호호호호호!!",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_C01"
+    }
+  ]
+}

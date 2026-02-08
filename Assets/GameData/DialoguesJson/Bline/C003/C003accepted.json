@@ -1,0 +1,18 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "당근은 뒤뜰에서 장작을 패고 있을거여.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_C02"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "뒷문으로 나가봐.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_C02"
+    }
+  ]
+}

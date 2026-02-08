@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TopdownMovement.unity
     guid: ffc573ad6977342bf969ec5d0e4fcc2f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ingame/House.unity
     guid: 10211712eca6645108874388213d62d7
   - enabled: 1
@@ -27,11 +27,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Ingame/Title.unity
     guid: 6ca72e1b0309b4b4593e54b223783c95
   - enabled: 1
-    path: Assets/Scenes/Ingame/YHouse.unity
+    path: Assets/Scenes/Ingame/Templete.unity
     guid: 68eccdd5190484f2c9a40e70e7fd5722
   - enabled: 1
     path: Assets/Scenes/Minigame/A_2.unity
     guid: 420cde8cd123e7444a5151f6b0d046d6
+  - enabled: 1
+    path: Assets/Scenes/Ingame/YHouse.unity
+    guid: 1b72f579918454f7086ad5dde75e362d
   - enabled: 1
     path: Assets/Scenes/Minigame/A_3.unity
     guid: eff01afdbd0a7a748aa2b590a19dc1cb

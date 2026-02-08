@@ -158,6 +158,8 @@ MonoBehaviour:
   useQuestGate: 0
   requiredQuestId: 
   gateRule: 0
+  openSfxKey: Door_Open
+  lockedSfxKey: 
   lockedDialogue: {fileID: 0}
   lockedLog: Cannot enter.
   isMinigame: 0
@@ -355,25 +357,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1841270755105393430, guid: a01b2f648c37c4e4cbfc4015fd6efbf4, type: 3}
-      propertyPath: testQuest
-      value: 
-      objectReference: {fileID: 11400000, guid: 66cf4ae63732a42c699a2347dd9ee28e, type: 2}
-    - target: {fileID: 1841270755105393430, guid: a01b2f648c37c4e4cbfc4015fd6efbf4, type: 3}
-      propertyPath: testQuest2
-      value: 
-      objectReference: {fileID: 11400000, guid: aaa2c6c9cbdf04f3aa428c4703bf50b6, type: 2}
-    - target: {fileID: 1841270755105393430, guid: a01b2f648c37c4e4cbfc4015fd6efbf4, type: 3}
-      propertyPath: testQuest3
-      value: 
-      objectReference: {fileID: 11400000, guid: 9dea4f94561de46b286a0475513485af, type: 2}
     - target: {fileID: 2727265440978183649, guid: a01b2f648c37c4e4cbfc4015fd6efbf4, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4415232363537477397, guid: a01b2f648c37c4e4cbfc4015fd6efbf4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -553,6 +539,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 495960776515227251, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
+      propertyPath: m_Size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 495960776515227251, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
@@ -562,6 +552,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2159053317105476647, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159053317105476647, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2785445624823541417, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
@@ -654,11 +648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0002593994
+      value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 4674552599379492487, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -675,10 +669,6 @@ PrefabInstance:
     - target: {fileID: 5965893154161782950, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5965893154161782950, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6308348934602688257, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1754,6 +1744,8 @@ MonoBehaviour:
   useQuestGate: 1
   requiredQuestId: Y002
   gateRule: 1
+  openSfxKey: Door_Open
+  lockedSfxKey: Door_Lock
   lockedDialogue: {fileID: 11400000, guid: c81a440954a0d4cb687265c3e1b2adec, type: 2}
   lockedLog: Cannot enter.
   isMinigame: 0
@@ -1919,6 +1911,8 @@ MonoBehaviour:
   useQuestGate: 1
   requiredQuestId: Y002
   gateRule: 0
+  openSfxKey: 
+  lockedSfxKey: 
   lockedDialogue: {fileID: 11400000, guid: e2edef0cd97f7454e84f5397d6ad5bfb, type: 2}
   lockedLog: Cannot enter.
   isMinigame: 1

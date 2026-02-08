@@ -1,0 +1,22 @@
+{
+  "lines": [
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(딱히 문이 잠겨있지는 않다.)",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(그치만 아주머니가 눈앞에 계신걸?)",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(들어가지 말자..)",
+      "presentation": "Normal"
+    }
+  ]
+}

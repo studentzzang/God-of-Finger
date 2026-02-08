@@ -1,0 +1,152 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "text": "할짓없는 마을의 아침이 밝았어요.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I01"
+    },
+    {
+      "speaker": "NPC",
+      "text": "여느 날과 같이 당신은 햇살에 눈을 떴습니다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I01"
+    },
+    {
+      "speaker": "NPC",
+      "text": "덜 풀린눈으로 보는 창 밖은 화창한 날입니다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I01"
+    },
+    {
+      "speaker": "NPC",
+      "text": "오늘도 어제처럼 따분한 하루가 될 거라는 생각에,",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I01"
+    },
+    {
+      "speaker": "NPC",
+      "text": "속은 푹 늘어지고, 나른하게 멍을 때립니다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I01"
+    },
+    {
+      "speaker": "NPC",
+      "text": "앞으로 일어날 일은 상상도 못한 채로 말이에요.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I01"
+    },
+    {
+      "speaker": "NPC",
+      "text": "거울을 지나니 웬걸?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "하루아침에 난데없이,",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "얼굴에 큼지막한 털이 자라나 있는게 아니겠어요?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "손으로 잡아 시원하게 뽑아버리려고 했지만,",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "털 주변만 부어오르고 전혀 뽑히지가 않네요.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "당신은 그만 오기가 생겨 한참 동안 몰두했어요.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "손가락은 아프고, 볼은 따갑고, 부어오르고,",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "뭔지 모를 진물까지 새어나오고 있고..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "..답답하니 짜증이 치밀어 오릅니다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I02"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이대로는 찝찝해서 가만히 있을 수 없습니다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "당신은 손가락을 단련하기로 결심했어요.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "더욱 강해진 손가락으로 직접,",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이 빌어먹게 흉한 털을 뽑아내리라 다짐했어요.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "그렇게 집을 나서기로 합니다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "사람들을 위해 뭐든지 뽑아내주는,",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "할짓없는 마을의 영웅.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨 이야기의 시작이었습니다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I03"
+    },
+    {
+      "speaker": "Player",
+      "text": "볼이 좀 찝찝한데..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "text": "또 진물이 나왔는지 봐야겠는걸.",
+      "presentation": "Normal"
+    }
+  ]
+}

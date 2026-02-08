@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: QuestDatabase
   m_EditorClassIdentifier: 
   quests:
-  - {fileID: 11400000, guid: e4ebf0af7a9172d40ae0afeee49fe75c, type: 2}
-  - {fileID: 11400000, guid: 8f4a367623148fb4aa7a8e5aacee721e, type: 2}
-  - {fileID: 11400000, guid: e088c065fcc66de4ebd9973732a52e55, type: 2}
-  - {fileID: 11400000, guid: 66cf4ae63732a42c699a2347dd9ee28e, type: 2}
-  - {fileID: 11400000, guid: aaa2c6c9cbdf04f3aa428c4703bf50b6, type: 2}
-  - {fileID: 11400000, guid: 9dea4f94561de46b286a0475513485af, type: 2}
+  - {fileID: 11400000, guid: ee13ab8a01cfa49a6a427375879e6ad9, type: 2}
+  - {fileID: 11400000, guid: 0036435f32be14097ba0a1125871e454, type: 2}
+  - {fileID: 11400000, guid: fa329c2cd85e34a4b90f8b01b1e6ef05, type: 2}
+  - {fileID: 11400000, guid: debe553776c7e4c0c98cc196bf97f6cf, type: 2}
+  - {fileID: 11400000, guid: dd60bc93fc85444f1827c9e94e5540d1, type: 2}
+  - {fileID: 11400000, guid: f9294fa586bea4555ad7dd72fb887bab, type: 2}
+  - {fileID: 11400000, guid: daaec6f896bb0498aa167f5ee0cbfec9, type: 2}

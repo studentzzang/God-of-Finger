@@ -1,0 +1,21 @@
+{
+  "lines": [
+    {
+      "speaker": "Player",
+      "text": "아.. 이런.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "text": "나가기 전에 닦아야겠어.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "text": "휴지는 밑에 있었지.",
+      "presentation": "Normal",
+      "questId": "I001",
+      "questAction": "Accept"
+    }
+  ]
+}

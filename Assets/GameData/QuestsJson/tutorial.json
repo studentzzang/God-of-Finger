@@ -1,0 +1,10 @@
+{
+    "quests": [
+        {
+            "questId": "I001",
+            "title":"외출 준비",
+            "description":"거실에서 휴지를 뽑아오자",
+            "completeSignalId":"I001_Clear"
+        }
+    ]
+}

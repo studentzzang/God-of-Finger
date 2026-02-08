@@ -1,0 +1,162 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "text": "꼬마당근: 하하하하하!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C07"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 국간 괜찮은데요?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C07"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 거기 얘!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C07"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 이리 와서 너도 맛좀 보렴.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C07"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마자색무: 으으으..!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C08"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마자색무: 나도...!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C08"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마자색무: 젠장, 나도...!!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C08"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마자색무: 으아아아아아아아아아!!!!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마자색무: 나도 요리 도울 수 있다고오오!!!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C10"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 어머 얘!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C10"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마당근: 안돼!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C10"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨, 춘자, 꼬마당근: ...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C11"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 와! 소고기무국이 완성됐어요!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C12"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 얼른 상을 차리자꾸나.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C12"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마당근: 조산사 양반도 함께 드시오!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C12"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마당근: 즐거운 저녁식사! 와하하하하!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C12"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 그러고보니 무 녀석 말이야.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 당근이 키워서 뽑은거였지?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 그럼 당근이 아빠였다는 거니까..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 당근은 이제 어른이 된게 아닐까?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 오오...?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마당근: 그렇군!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "당근: 오늘부로 나는 아이가 아닐세!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "당근: 나를 당근이라고 불러주게!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 그러고 있었긴 해.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "당근: 하하하하하!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C13",
+      "questId": "C002",
+      "questAction": "Acknowledge"
+    }
+  ]
+}

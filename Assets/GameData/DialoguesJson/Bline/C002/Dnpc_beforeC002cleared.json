@@ -1,0 +1,39 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근 ]",
+      "text": "자네도 엄마가 해주시는 국을 먹으면",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_C01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근 ]",
+      "text": "기분이 좀 풀릴걸세.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_C01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "..근데 우린 입이 없잖아?",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_M01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근 ]",
+      "text": "몸이 뿌리라서 국물요리는 먹을수있음.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_C01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근 ]",
+      "text": "내가 해봤는데 됨ㅇㅇ",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_C01"
+    }
+  ]
+}

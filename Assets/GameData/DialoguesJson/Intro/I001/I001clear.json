@@ -1,0 +1,11 @@
+{
+  "lines": [
+    {
+      "speaker": "Player",
+      "text": "그래도 깔끔한게 좋지.",
+      "presentation": "Normal",
+      "questId": "I001",
+      "questAction": "clear"
+    }
+  ]
+}

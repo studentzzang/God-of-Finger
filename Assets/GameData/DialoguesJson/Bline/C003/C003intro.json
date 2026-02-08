@@ -1,0 +1,196 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "이보게 총각..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "Player",
+      "text": "잘 지내셨어요, 아주머니?",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "Player",
+      "text": "뭔가 도와드릴게 있나요?",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "부탁이라기보단, 상담을 해 줬으면 해..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "Player",
+      "text": "네, 무슨 일이죠?",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "그게..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "당근 저너마 말이여..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "처음은 당황스러웠는데..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "일도 나서서 잘하고.. 애가 호방한 게..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "이래 같이 지내고 살다 보니까..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "그만.. 좀.. 생숭생숭하고 설레지 뭐니.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "Player",
+      "text": "예??",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "Player",
+      "text": "아니 그래도 어머님이시잖아요.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "그치만..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "쟈가 그래 부르니까 그러려니 했던거지,",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "날때부터 저리 컸던놈이라 애같지가 않어.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "내입장에선 그냥 튀어나와 나타난 놈이잖여..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "Player",
+      "text": "이해는 됩니다만...",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "Player",
+      "text": "두 분이서 대화로 이야기해 보시는게..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "이 일을 돕는다면 얼마전에 캔 삼을 주겠네.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "아주 실하지. 그 왜.. 힘이 필요하다믄서?",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "Player",
+      "text": "(큭.. 미끼를 걸다니..)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "Player",
+      "text": "(어차피 나도 가릴 처지가 안 된다..!)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "Player",
+      "text": "좋습니다. 제가 잘 얘기해 볼게요.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_Chouse"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "부탁혀. 당근은 뒤뜰에서 장작을 패고 있을거여.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_Chouse",
+      "questId": "C003",
+      "questAction": "Accept"
+    }
+  ]
+}
