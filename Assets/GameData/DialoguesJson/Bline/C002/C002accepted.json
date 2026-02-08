@@ -1,0 +1,11 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "옆에 도마에서 칼로 썰어다 담으면 디야.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_C01"
+    }
+  ]
+}

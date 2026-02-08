@@ -1,0 +1,25 @@
+{
+    "quests": [
+        {
+            "questId": "C001",
+            "title":"시골 품앗이",
+            "description":"텃밭 당근을 뽑아드리자",
+            "prerequisiteQuestId":"",
+            "completeSignalId":"C001_Clear"
+        },
+        {
+            "questId": "C002",
+            "title":"하 씨 진짜 누구지",
+            "description":"요리를 도와 진짜 당근을 가리자",
+            "prerequisiteQuestId":"C001",
+            "completeSignalId":"C002_Clear"
+        },
+        {
+            "questId": "C003",
+            "title":"삶의 동반자",
+            "description":"도끼를 뽑아주고 운을 띄워보자",
+            "prerequisiteQuestId":"C001,C002",
+            "completeSignalId":"C003_Clear"
+        }
+    ]
+}

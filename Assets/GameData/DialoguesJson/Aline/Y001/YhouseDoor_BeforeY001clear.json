@@ -1,0 +1,23 @@
+{
+  "lines": [
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(영구는 외출 중인 것 같다.)",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(그야 눈 앞에 있으니까.)",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "나 여기 있어!",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_Y01"
+    }
+  ]
+}

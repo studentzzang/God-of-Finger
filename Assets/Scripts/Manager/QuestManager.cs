@@ -147,12 +147,13 @@ public class QuestManager : Singleton<QuestManager>
             Accept(quest);
             return;
         }
-        Save();
+        
 
         // DB에 없으면 선행퀘 검사 없이 단순 수락(테스트/디버그용)
         if (GetState(questId) != QuestState.NotStarted) return;
         states[questId] = QuestState.Accepted;
         BumpRevision();
+        Save();
     }
 
     // 퀘스트 완료 처리 -> 미니게임 완료 후 호출

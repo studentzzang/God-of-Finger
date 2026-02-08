@@ -1,0 +1,29 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(본 적도 없는 커다란 솥이다.)",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "뿌리인간 녀석들은 대체 얼마나 국을 빨아들이는거야?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "주는대로 쑥쑥 먹으니 계속 주게되지 뭐니ㅎㅎ",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_C01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(그림이 상상이 간다..)",
+      "presentation": "Normal"
+    }
+  ]
+}

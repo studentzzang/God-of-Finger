@@ -1,0 +1,24 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "사실 전 임프입니다.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_I01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "근데 임프라고 하면 좀 약해보이잖아요.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_I01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "그...렇구나.",
+      "presentation": "Normal"
+    }
+  ]
+}

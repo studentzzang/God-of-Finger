@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65305491a1230404680fe2db3d6b994b, type: 3}
+  m_Name: Mnpc_beforeC002cleared
+  m_EditorClassIdentifier: 
+  lines:
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uC790\uC0C9\uBB34 ]"
+    text: "\uB2E4 \uD2C0\uB838\uC5B4.. \uC820\uC7A5.."
+    visual:
+      portrait: {fileID: 21300000, guid: d0f0b3f70572b4a4385d80c868e67417, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD551\uAC70\uB9E8 ]"
+    text: "\uC65C \uADF8\uB807\uAC8C\uAE4C\uC9C0 \uC9D1\uCC29\uD558\uB294\uAC70\uC57C."
+    visual:
+      portrait: {fileID: 21300000, guid: d0f0b3f70572b4a4385d80c868e67417, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uC790\uC0C9\uBB34 ]"
+    text: "\uADF8\uB7FC \uC800\uB534 \uB140\uC11D\uC774 \uB0B4 \uC544\uBE60\uB77C\uB294\uAC78
+      \uC778\uC815\uD558\uB77C\uACE0?"
+    visual:
+      portrait: {fileID: 21300000, guid: d0f0b3f70572b4a4385d80c868e67417, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uC790\uC0C9\uBB34 ]"
+    text: "\uC800\uB7F0.. \uD314\uB2E4\uB9AC\uB9CC \uB2EC\uB9B0 \uC778\uC0BC \uC778\uAC04
+      \uB140\uC11D\uC744?"
+    visual:
+      portrait: {fileID: 21300000, guid: d0f0b3f70572b4a4385d80c868e67417, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD551\uAC70\uB9E8 ]"
+    text: "(\uB0A8\uB9D0 \uD560 \uCC98\uC9C0\uAC00 \uC544\uB2CC\uB370)"
+    visual:
+      portrait: {fileID: 21300000, guid: d0f0b3f70572b4a4385d80c868e67417, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uB0B4\uAC00 \uBB50 \uC5B4\uB54C\uC11C!"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uC790\uC0C9\uBB34 ]"
+    text: "\uB098\uB3C4 \uC0AC\uB78C\uC758 \uC628\uAE30 \uC0AC\uB78C\uC758 \uC560\uC815\uC744
+      \uBC1B\uACE0\uC2F6\uC5B4."
+    visual:
+      portrait: {fileID: 21300000, guid: d0f0b3f70572b4a4385d80c868e67417, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uC790\uC0C9\uBB34 ]"
+    text: "\uAC00\uC9C8 \uC218 \uC5C6\uC73C\uBA74 \uBE7C\uC557\uB294\uAC70\uC57C."
+    visual:
+      portrait: {fileID: 21300000, guid: d0f0b3f70572b4a4385d80c868e67417, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD551\uAC70\uB9E8 ]"
+    text: "(\uB300\uB2E8\uD788 \uB4A4\uD2C0\uB9B0 \uB140\uC11D\uC774\uB2E4..)"
+    visual:
+      portrait: {fileID: 21300000, guid: d0f0b3f70572b4a4385d80c868e67417, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  hasChoice: 0
+  choicePromptLine:
+    quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: 
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  acceptLines: []
+  rejectLines: []
+  acceptLabel: 
+  rejectLabel: 
+  defaultPortrait: {fileID: 0}
+  defaultBackground: {fileID: 0}
+  defaultStanding: {fileID: 0}

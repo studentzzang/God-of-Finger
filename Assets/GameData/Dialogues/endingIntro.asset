@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65305491a1230404680fe2db3d6b994b, type: 3}
+  m_Name: endingIntro
+  m_EditorClassIdentifier: 
+  lines:
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uC6B0\uC624\uC637..!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uD798\uC774... \uB290\uAEF4\uC838..!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8: \uB098\uC758 \uC190\uC774 \uBD89\uAC8C \uD0C0\uC624\uB978\uB2E4!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 79ef0bc211cfa4404acfdb0bf6287a35, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8: \uD138\uC744 \uBF51\uC544\uB0B4\uB77C\uACE0 \uD798\uCC28\uAC8C
+      \uC678\uCE58\uACE0 \uC788\uB2E4!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 79ef0bc211cfa4404acfdb0bf6287a35, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8: \uAC01\uC131..!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: dbf3c6483d29d47118b080bab9d8e083, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8: \uAC13..! \uD551\uAC70\uC5B4\uC5B4\uC5B4!!!!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: dbf3c6483d29d47118b080bab9d8e083, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 11400000, guid: 0c3317f3cd40641c798af645fdfd3204, type: 2}
+    questAction: 1
+    speaker: 0
+    npcName: 
+    text: "\uAC70\uC6B8\uB85C \uB3CC\uC544\uAC00\uC57C \uD560 \uB54C\uB2E4."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  hasChoice: 0
+  choicePromptLine:
+    quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: 
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  acceptLines: []
+  rejectLines: []
+  acceptLabel: 
+  rejectLabel: 
+  defaultPortrait: {fileID: 0}
+  defaultBackground: {fileID: 0}
+  defaultStanding: {fileID: 0}

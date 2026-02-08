@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65305491a1230404680fe2db3d6b994b, type: 3}
+  m_Name: C003accepted
+  m_EditorClassIdentifier: 
+  lines:
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD143\uBC2D \uC544\uC8FC\uBA38\uB2C8 \uCD98\uC790 ]"
+    text: "\uB2F9\uADFC\uC740 \uB4A4\uB730\uC5D0\uC11C \uC7A5\uC791\uC744 \uD328\uACE0
+      \uC788\uC744\uAC70\uC5EC."
+    visual:
+      portrait: {fileID: 21300000, guid: 2dfc633fc7fda413fb15cf8c7dcc3191, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD143\uBC2D \uC544\uC8FC\uBA38\uB2C8 \uCD98\uC790 ]"
+    text: "\uB4B7\uBB38\uC73C\uB85C \uB098\uAC00\uBD10."
+    visual:
+      portrait: {fileID: 21300000, guid: 2dfc633fc7fda413fb15cf8c7dcc3191, type: 3}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  hasChoice: 0
+  choicePromptLine:
+    quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: 
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  acceptLines: []
+  rejectLines: []
+  acceptLabel: 
+  rejectLabel: 
+  defaultPortrait: {fileID: 0}
+  defaultBackground: {fileID: 0}
+  defaultStanding: {fileID: 0}

@@ -1,0 +1,17 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 악마 ]",
+      "text": "좀 더럽지만 아늑한 집이에요.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_I01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(지옥이 이 꼴보다는 낫다는 건가..)",
+      "presentation": "Normal"
+    }
+  ]
+}

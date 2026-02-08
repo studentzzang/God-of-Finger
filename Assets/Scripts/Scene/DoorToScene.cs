@@ -10,7 +10,8 @@ public class DoorToScene : MonoBehaviour
     [Header("Quest Gate")]
     [SerializeField] private bool useQuestGate = false;
     [SerializeField] private string requiredQuestId = "";
-
+    
+    
     public enum GateRule
     {
         AcceptedOnly,
@@ -18,6 +19,11 @@ public class DoorToScene : MonoBehaviour
     }
 
     [SerializeField] private GateRule gateRule = GateRule.AcceptedOnly;
+
+
+
+    [Header("SFX")] [SerializeField] private string openSfxKey;
+    [SerializeField] private string lockedSfxKey;
 
     [Header("Locked Behaviour")]
     [SerializeField] private DialogueSO lockedDialogue;     // 잠겨있을 때 재생할 대화
@@ -74,6 +80,7 @@ public class DoorToScene : MonoBehaviour
 
         // 씬 전환(전환 연출 포함)
         TransitionManager.Instance.TransitionTo(targetScene, targetSpawnPointId);
+        AudioManager.Instance?.PlaySFX(openSfxKey);
         
     }
 
@@ -118,6 +125,7 @@ public class DoorToScene : MonoBehaviour
     {
         if (lockedDialogue != null && DialogueManager.Instance != null)
         {
+            AudioManager.Instance?.PlaySFX(lockedSfxKey);
             PlayDialogue(lockedDialogue);
             return;
         }

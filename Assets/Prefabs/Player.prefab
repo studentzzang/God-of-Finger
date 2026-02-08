@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 41292bb2ffeb84ca8ba499a2c6d80d0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,10 +105,10 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 0}
   playerAnimation: {fileID: 5268172325796559360}
-  testQuest: {fileID: 11400000, guid: c7954be1039414e5c83d3bf1c5025d81, type: 2}
-  testQuest2: {fileID: 11400000, guid: 3c98558ed2c134e3691dc46bb73717fd, type: 2}
-  testQuest3: {fileID: 11400000, guid: c00a1f9d9408642aa8bdadda719ad709, type: 2}
-  testQuest4: {fileID: 11400000, guid: 39c9e6e842ba34a96881bf55b0f17ee9, type: 2}
+  testQuest: {fileID: 11400000, guid: debe553776c7e4c0c98cc196bf97f6cf, type: 2}
+  testQuest2: {fileID: 11400000, guid: dd60bc93fc85444f1827c9e94e5540d1, type: 2}
+  testQuest3: {fileID: 11400000, guid: f9294fa586bea4555ad7dd72fb887bab, type: 2}
+  testQuest4: {fileID: 11400000, guid: daaec6f896bb0498aa167f5ee0cbfec9, type: 2}
   testQuest5: {fileID: 11400000, guid: 7bdfa48af8d544df7b1ceb51b155a206, type: 2}
   testQuest6: {fileID: 0}
 --- !u!50 &65294816788013892
@@ -170,7 +170,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -181,7 +181,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 3}
+  m_Size: {x: 1, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &2266946812627181612
 MonoBehaviour:

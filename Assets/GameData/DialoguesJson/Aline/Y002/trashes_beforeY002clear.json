@@ -1,0 +1,29 @@
+{
+  "lines": [
+    {
+      "speaker": "Player",
+      "text": "(도화지가 여러 장 구겨져 있다.)",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "그건 그냥 쓰레기야!",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_Y03"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "내가 치울게.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_Y03"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "어.. 그래.",
+      "presentation": "Normal"
+    }
+  ]
+}

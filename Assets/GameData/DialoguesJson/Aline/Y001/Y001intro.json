@@ -1,0 +1,191 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "안녕, 형아!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "어음.. 안녕?",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "형아 나 영구치 뽑아줘!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "뭐??",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "이빨이 흔들려! 뽑아줘!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y02",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "음...",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y02",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "그건 아마 영구치가 아닐 거야.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y02",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "엥??",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront"
+    }
+ 
+
+
+      
+
+  ],
+  
+  
+  
+  
+  
+  
+  "hasChoice": true,
+  "choicePromptLine" :    {
+    "speaker": "NPC",
+    "npcName": "[ 동네 꼬맹이 영구 ]",
+    "text": "영구 이빨이니까 영구치 아니야??",
+    "presentation": "Cinematic",
+    "portrait": "Portraits/portrait_Y01",
+    "background": "Backgrounds/BG_YhouseFront"
+
+
+  },
+  
+  
+  
+  
+  
+  
+  
+  "acceptLines": [
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "그건 영구치가 아니라 유치라고 하는 거야.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "그리고 사람한테 난 건 이빨이 아니라..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "아무튼 뽑아줘!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y02",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "어.. 음.. 그래.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y02",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(뭐 어쨌든 뽑아야겠지.)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "의자에 가만히 앉아 봐.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront",
+      "questId": "Y001",
+      "questAction": "Accept"
+    }
+  ],
+  "rejectLines": [
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "아, 그렇지. 그건 영구치가 맞겠네.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "그치?? 얼른 뽑아줘!!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y02",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(뭐 어쨌든 뽑아야겠지.)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "의자에 가만히 앉아 봐.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y01",
+      "background": "Backgrounds/BG_YhouseFront",
+      "questId": "Y001",
+      "questAction": "Accept"
+    }
+  ],
+
+  "acceptLabel": "설명해 준다",
+  "rejectLabel": "대충 얼버무린다"
+    
+
+  
+} 

@@ -1,0 +1,11 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당근서방 ]",
+      "text": "하하하하하하!!!",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_D01"
+    }
+  ]
+}

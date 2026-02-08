@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// 플레이어 이동 및 상호작용(레이캐스트 스캔 + Space 입력)을 처리한다.
+/// 플레이어 이동 및 상호작용(레이캐스트 스캔 + E 입력)을 처리한다.
 /// 대화가 열려있을 때는 이동/스캔을 멈추고 Next만 허용한다.
 /// </summary>
 public class PlayerAction : MonoBehaviour
@@ -10,13 +10,6 @@ public class PlayerAction : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private PlayerAnimation playerAnimation;
 
-    [SerializeField] private QuestSO testQuest; // 테스트용 퀘스트 -->> 추후 삭제!!
-    [SerializeField] private QuestSO testQuest2; // 테스트용 퀘스트 -->> 추후 삭제!!
-    [SerializeField] private QuestSO testQuest3; // 테스트용 퀘스트 -->> 추후 삭제!!
-    [SerializeField] private QuestSO testQuest4; // 테스트용 퀘스트 -->> 추후 삭제!!
-    [SerializeField] private QuestSO testQuest5; // 테스트용 퀘스트 -->> 추후 삭제!!
-    [SerializeField] private QuestSO testQuest6; // 테스트용 퀘스트 -->> 추후 삭제!!
-    
     private Vector2 moveInput;
     private Vector2 dirVector = Vector2.down; 
     private GameObject scanObject;
@@ -41,7 +34,7 @@ public class PlayerAction : MonoBehaviour
         }
 
         // 대화 처리 로직 대화 중이면 Next, 아니면 대화 시작
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (DialogueManager.Instance.IsOpen) //대화창 열려있으면 다음으로
             {
@@ -124,52 +117,6 @@ public class PlayerAction : MonoBehaviour
         // 마지막 이동 방향을 기억(정지 중에도 레이 방향 유지)
         if (moveInput != Vector2.zero)
             dirVector = moveInput;
-        
-        // 테스트용: C 키 누르면 퀘스트 완료 처리
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            QuestSignals.Raise("ToothPulled");
-            if (testQuest != null)
-            {
-                QuestManager.Instance.Complete(testQuest);
-                Debug.Log($"[TEST] Quest Completed: {testQuest.questId}");
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            if (testQuest2 != null)
-            {
-                QuestManager.Instance.Complete(testQuest2);
-                Debug.Log($"[TEST] Quest Completed: {testQuest2.questId}");
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            if (testQuest3 != null)
-            {
-                QuestManager.Instance.Complete(testQuest3);
-                Debug.Log($"[TEST] Quest Completed: {testQuest3.questId}");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            if (testQuest4 != null)
-            {
-                QuestManager.Instance.Complete(testQuest4);
-                Debug.Log($"[TEST] Quest Completed: {testQuest4.questId}");
-            }
-        }
-        
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            if (testQuest5 != null)
-            {
-                QuestManager.Instance.Complete(testQuest5);
-                Debug.Log($"[TEST] Quest Completed: {testQuest5.questId}");
-            }
-        }
-        
         
         
         

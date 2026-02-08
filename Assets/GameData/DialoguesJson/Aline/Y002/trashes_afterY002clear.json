@@ -1,0 +1,25 @@
+{
+  "lines": [
+    {
+      "speaker": "Player",
+      "text": "(도화지가 여러 장 구겨져 있다.)",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "text": "(..?)",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "text": "(펼쳐 보니 그림이 그려져 있다.)",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "원.. 육각형의 별.. 가운데는 뭐지..?",
+      "presentation": "Normal"
+    }
+  ]
+}

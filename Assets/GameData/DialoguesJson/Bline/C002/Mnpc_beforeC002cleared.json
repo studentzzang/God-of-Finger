@@ -1,0 +1,67 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "다 틀렸어.. 젠장..",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_M01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "왜 그렇게까지 집착하는거야.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_M01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "그럼 저딴 녀석이 내 아빠라는걸 인정하라고?",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_M01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "저런.. 팔다리만 달린 인삼 인간 녀석을?",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_M01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(남말 할 처지가 아닌데)",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_M01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근 ]",
+      "text": "내가 뭐 어때서!",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_D01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "나도 사람의 온기 사람의 애정을 받고싶어.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_M01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "가질 수 없으면 빼앗는거야.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_M01"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(대단히 뒤틀린 녀석이다..)",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_M01"
+    }
+  ]
+}

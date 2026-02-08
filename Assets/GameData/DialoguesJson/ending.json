@@ -1,0 +1,292 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 와 씨 겨우 뽑았네",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "???: 흐흐흐..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "???: 드디어 여기까지 도달하였군...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 그래 이거까진 예측했지.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E03"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 나는 이야기를 만드는 악마, 이모털이다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E04"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 너에게 깃들려 집밖으로 나오게 만들었지.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E04"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 지난 모든 일들은 다 내가 꾸민 일이었다.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E04"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 네이녀석!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E04"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 너만.. 너만 아니었다면!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E04"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 방학동안 편하게 집에서 놀 수 있었는데!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E04"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 마지막 발악으로 최악의 보스전을 선사해 주지.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E04"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 끔찍한 시간을 보낼 준비는 됐나?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E05"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 으하하하하하!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 너의 온 몸!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 온 집안!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 온 세상에 털이 자라나게 해 주지!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 아하하하하하하하하하!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 큿.. 덤벼랏!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 으웨..ㅇ..?..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E07"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 음??",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E07"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 으어어!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E08"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 아아... 틀렸어...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 이젠 다 끝이야....",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 어떻게 된 거야!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 마지막으로 보스전을 하는거 아니었냐고!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 짜릿하고 강렬한 보스전은...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 없어...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 애초에 이 이야기는 처음부터..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 그렇게 설계되어있지 않았거든...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 시간이 없어..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 벌써 2월 8일 오전 5시야...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 젠장..!! 갑자기 메타성 대사 치지 마!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 중딩이 만든 쯔꾸르 게임이냐고..!!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 지금 스크립트를 최종본으로 확정시켜야..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 주말동안 팀원 분들이 게임을 완성할거야..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 이제는 이 이야기를 끝내야만 해......",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 그래도...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E10"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 너와 이야기를 함께하는 동안은 즐거웠어..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E10"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 너는 어땠니..?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E10"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 지난 6주 동안의 너는..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E10"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 어떤 이야기가 기억에 남니..?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E10"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: ..!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E11"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: ..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E12"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: ..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E13"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: ..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E14"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: ..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E15"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 우웁!! 우우ㅇ읍!!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E16"
+    },
+    {
+      "speaker": "NPC",
+      "text": "(휙)",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E17"
+    }
+  ]
+}

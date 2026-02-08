@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97a04f0e0f154ba98800fd6bfed8af8, type: 3}
+  m_Name: AudioLibrary
+  m_EditorClassIdentifier: 
+  entries:
+  - key: Door_Open
+    bus: 1
+    clips:
+    - {fileID: 8300000, guid: f6674d3470c8a46f3b8853160efc8aca, type: 3}
+    volume: 0.1
+    pitchMin: 0.8
+    pitchMax: 1.2
+    cooldown: 0.2
+  - key: Door_Lock
+    bus: 1
+    clips:
+    - {fileID: 8300000, guid: 727d74f4d3b69456abd767b99cf73789, type: 3}
+    volume: 1
+    pitchMin: 0.9
+    pitchMax: 1.1
+    cooldown: 0
+  - key: PencilScratch
+    bus: 1
+    clips:
+    - {fileID: 8300000, guid: ef3b127f5caeb432c8d516f68fa95360, type: 3}
+    - {fileID: 8300000, guid: f69c2d7c1c84248e0ab3e6a7b24caded, type: 3}
+    - {fileID: 8300000, guid: 6f818d31a04ab4d84b7cf1348254a9ec, type: 3}
+    volume: 1
+    pitchMin: 0.95
+    pitchMax: 1.05
+    cooldown: 0.05
+  - key: 
+    bus: 0
+    clips: []
+    volume: 0
+    pitchMin: 0
+    pitchMax: 0
+    cooldown: 0
+  - key: 
+    bus: 0
+    clips: []
+    volume: 0
+    pitchMin: 0
+    pitchMax: 0
+    cooldown: 0

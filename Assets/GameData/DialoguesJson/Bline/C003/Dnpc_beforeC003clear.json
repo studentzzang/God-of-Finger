@@ -1,0 +1,11 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당근 ]",
+      "text": "아직인가?",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_D01"
+    }
+  ]
+}

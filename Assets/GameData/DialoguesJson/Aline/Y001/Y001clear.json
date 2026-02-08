@@ -1,0 +1,55 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "우와!! 이빨이다!! 피난다!!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y03",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "어 이게 아닌데",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_Y03",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "NPC",
+      "text": "영구: 고마워 형아!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A01"
+    },
+    {
+      "speaker": "NPC",
+      "text": "영구: 나중에 우리 집으로 놀러 와!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_A01"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "...", 
+      "presentation": "Cinematic",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "에이", 
+      "presentation": "Cinematic",
+      "background": "Backgrounds/BG_YhouseFront"
+    },
+    {
+      "speaker": "Player",
+      "npcName": "[ 핑거맨 ]",
+      "text": "설마 영구치겠어.", 
+      "presentation": "Cinematic",
+      "background": "Backgrounds/BG_YhouseFront",
+      "questId": "Y001",
+      "questAction": "Acknowledge"
+    }
+  ]
+}

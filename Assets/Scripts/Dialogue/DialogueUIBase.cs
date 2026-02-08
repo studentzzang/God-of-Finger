@@ -193,10 +193,13 @@ public abstract class DialogueUIBase : MonoBehaviour
 
     protected abstract void BindToManager();
     protected abstract void UnbindFromManager();
+    
+
 
     protected virtual void OnDestroy()
     {
         if (DialogueManager.Instance != null)
             UnbindFromManager();
     }
+    
 }

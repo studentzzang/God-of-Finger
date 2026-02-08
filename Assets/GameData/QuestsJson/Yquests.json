@@ -1,0 +1,18 @@
+{
+    "quests": [
+        {
+            "questId": "Y001",
+            "title":"유치와 영구치",
+            "description":"흔들리는 이를 뽑아주자",
+            "prerequisiteQuestId":"",
+            "completeSignalId":"Y001_Clear"
+        },
+        {
+            "questId": "Y002",
+            "title":"그림 그리기 놀이",
+            "description":"물감 뚜껑을 열어주자",
+            "prerequisiteQuestId":"Y001",
+            "completeSignalId":"Y002_Clear"
+        }
+    ]
+}

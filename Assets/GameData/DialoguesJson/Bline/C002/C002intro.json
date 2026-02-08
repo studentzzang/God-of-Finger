@@ -1,0 +1,312 @@
+{
+  "lines": [
+    {
+      "speaker": "Player",
+      "text": "잘 지내셨어요, 아주머니?",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "잘 왔네, 총각!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "아니 글쎄..! 이를 우짠디야..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "Player",
+      "text": "?? 무슨 일인데요?",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "보여줄 테니 따라와서 직접 봐봐.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "너무 황당해서 정신이 없어야.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "Player",
+      "text": "그래요 함 보시죠.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "text": "???: 사라져라! 이 가짜!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "???: 내가 꼬마당근이야!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마당근: 진정하시게!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "꼬마당근: 원한다고 무가 당근이 되는건 아닐세!",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 이게.. 뭐에요?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 그니께.. 어떻게 된 거냐면..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 당근이가 무농사를 해서 키웠는디..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 지처럼 저래 움직이고 말하는 놈이 기나온거여.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 근디 가가 지가 당근이고 쟈는 가짜라는겨.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 막 버럭버럭 소리를 지르매 정신이 없어야.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 아하, 그런 일이 있었군요.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: ...",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 그래서 어느 쪽이 당근이죠?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "춘자: 내말이.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 흠......",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "text": "핑거맨: 하 씨 진짜 누구지?",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_C06"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "내가 당근이야! 내가 아빠라고!!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_M01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근 ]",
+      "text": "그래, 알겠으니 제발 진정 좀 하시게.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_D01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근 ]",
+      "text": "자네 소리 온 동네방네 다 듣겠네.",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_D01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "싫어!! 내가 엄마 아들 할꺼야!!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_M01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "이를 우짠댜..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(흠..)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(뭔가 좋은 방법 없을까..)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(아...!)",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "이런 건 어때요?",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "당근이는 아주머니 밥을 먹어봤으니까,",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "먹여보고 맛을 맞추는 쪽이 진짜인거죠!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "아...!!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_C02",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근 ]",
+      "text": "오오..!! 역시 조산사 양반! 번뜩이는구만!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_D01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "아, 아니.. 그..",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_M01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "그..! 그래! 검사하면 다 나오게 되어있어!!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_M01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마자색무 ]",
+      "text": "으으.. 두고 보라고 젠장!!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_M01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 텃밭 아주머니 춘자 ]",
+      "text": "그럼 총각이 야채를 좀 썰어줘.",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_C02"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "물론이죠!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근 ]",
+      "text": "다같이 함께하는 식사인가! 좋군!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_D01",
+      "background": "Backgrounds/BG_farm"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근 ]",
+      "text": "커다란 솥을 꺼내오겠네!",
+      "presentation": "Cinematic",
+      "portrait": "Portraits/portrait_D01",
+      "background": "Backgrounds/BG_farm",
+      "questId": "C002",
+      "questAction": "Accept"
+    }
+  ]
+}
