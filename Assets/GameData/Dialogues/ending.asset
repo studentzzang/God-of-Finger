@@ -500,8 +500,8 @@ MonoBehaviour:
       background: {fileID: 21300000, guid: 6c9d9bd9aa6d24dcc901d16ca6291188, type: 3}
       standing: {fileID: 0}
       presentation: 2
-  - quest: {fileID: 0}
-    questAction: 0
+  - quest: {fileID: 11400000, guid: 0c3317f3cd40641c798af645fdfd3204, type: 2}
+    questAction: 2
     speaker: 1
     npcName: 
     text: "(\uD719)"
