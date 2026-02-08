@@ -7,10 +7,7 @@ public class MinigameFlow : Singleton<MinigameFlow>
     [SerializeField] SceneName returnScene;
     [SerializeField] private string returnSpawnId = "Default";
     [SerializeField] private string successSignalId;
-
-    [Header("Standalone Test Fallback")]
-    [SerializeField] private SceneName fallbackReturnScene = SceneName.Title;
-    [SerializeField] private string fallbackReturnSpawnId = "Default";
+    
 
     [Header("Runtime")]
     [SerializeField] private bool isExiting;
