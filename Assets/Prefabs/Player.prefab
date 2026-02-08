@@ -105,10 +105,10 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 0}
   playerAnimation: {fileID: 5268172325796559360}
-  testQuest: {fileID: 11400000, guid: 66cf4ae63732a42c699a2347dd9ee28e, type: 2}
-  testQuest2: {fileID: 11400000, guid: aaa2c6c9cbdf04f3aa428c4703bf50b6, type: 2}
-  testQuest3: {fileID: 11400000, guid: 9dea4f94561de46b286a0475513485af, type: 2}
-  testQuest4: {fileID: 11400000, guid: 39c9e6e842ba34a96881bf55b0f17ee9, type: 2}
+  testQuest: {fileID: 11400000, guid: debe553776c7e4c0c98cc196bf97f6cf, type: 2}
+  testQuest2: {fileID: 11400000, guid: dd60bc93fc85444f1827c9e94e5540d1, type: 2}
+  testQuest3: {fileID: 11400000, guid: f9294fa586bea4555ad7dd72fb887bab, type: 2}
+  testQuest4: {fileID: 11400000, guid: daaec6f896bb0498aa167f5ee0cbfec9, type: 2}
   testQuest5: {fileID: 11400000, guid: 7bdfa48af8d544df7b1ceb51b155a206, type: 2}
   testQuest6: {fileID: 0}
 --- !u!50 &65294816788013892

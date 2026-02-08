@@ -180,6 +180,24 @@ MonoBehaviour:
     completedOnceDialogue: {fileID: 11400000, guid: 17d0c75195c514a2986f5544475d31f7, type: 2}
     acknowledgedDialogue: {fileID: 0}
     lockedDialogue: {fileID: 0}
+  - quest: {fileID: 11400000, guid: aaa2c6c9cbdf04f3aa428c4703bf50b6, type: 2}
+    notStartedDialogue: {fileID: 11400000, guid: 7f1dff90fa18e403f9ff94f05adf736e, type: 2}
+    acceptedDialogue: {fileID: 11400000, guid: 74a1c68591eeb4a01bfb42c6f20ea26b, type: 2}
+    completedOnceDialogue: {fileID: 11400000, guid: 17d0c75195c514a2986f5544475d31f7, type: 2}
+    acknowledgedDialogue: {fileID: 0}
+    lockedDialogue: {fileID: 0}
+  - quest: {fileID: 11400000, guid: aaa2c6c9cbdf04f3aa428c4703bf50b6, type: 2}
+    notStartedDialogue: {fileID: 11400000, guid: 7f1dff90fa18e403f9ff94f05adf736e, type: 2}
+    acceptedDialogue: {fileID: 11400000, guid: 74a1c68591eeb4a01bfb42c6f20ea26b, type: 2}
+    completedOnceDialogue: {fileID: 11400000, guid: 17d0c75195c514a2986f5544475d31f7, type: 2}
+    acknowledgedDialogue: {fileID: 0}
+    lockedDialogue: {fileID: 0}
+  - quest: {fileID: 11400000, guid: aaa2c6c9cbdf04f3aa428c4703bf50b6, type: 2}
+    notStartedDialogue: {fileID: 11400000, guid: 7f1dff90fa18e403f9ff94f05adf736e, type: 2}
+    acceptedDialogue: {fileID: 11400000, guid: 74a1c68591eeb4a01bfb42c6f20ea26b, type: 2}
+    completedOnceDialogue: {fileID: 11400000, guid: 17d0c75195c514a2986f5544475d31f7, type: 2}
+    acknowledgedDialogue: {fileID: 0}
+    lockedDialogue: {fileID: 0}
   idleDialogue: {fileID: 0}
 --- !u!61 &76899505
 BoxCollider2D:
@@ -660,6 +678,8 @@ MonoBehaviour:
   useQuestGate: 1
   requiredQuestId: Q001
   gateRule: 0
+  openSfxKey: 
+  lockedSfxKey: 
   lockedDialogue: {fileID: 11400000, guid: 72b966997f283af4a8106f32971cdbba, type: 2}
   lockedLog: Cannot enter.
   isMinigame: 1
@@ -1031,6 +1051,8 @@ MonoBehaviour:
   useQuestGate: 1
   requiredQuestId: Q001
   gateRule: 1
+  openSfxKey: 
+  lockedSfxKey: 
   lockedDialogue: {fileID: 11400000, guid: 6b30488b25c71684ba3182a9e8fd946b, type: 2}
   lockedLog: Cannot enter.
   isMinigame: 0
@@ -1375,7 +1397,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1257438405

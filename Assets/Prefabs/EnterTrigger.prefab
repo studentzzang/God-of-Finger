@@ -44,7 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cca7b763a55b49ad99fea39b1e25277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: 3882c96ff0d8a416ebab0f27694c4663, type: 2}
   runOnce: 1
   onceKey: 
   delayFrames: 2
+  useQuestGate: 0
+  requiredQuestId: 
+  requiredState: 2
+  requiredAtLeast: 1

@@ -3,7 +3,14 @@
     {
       "speaker": "NPC",
       "npcName": "[ 동네 꼬맹이 영구 ]",
-      "text": "저기 저 구석에 통 말이야.",
+      "text": "옆에 의자에 앉으면 되는거지?",
+      "presentation": "Normal",
+      "portrait": "Portraits/portrait_Y03"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 동네 꼬맹이 영구 ]",
+      "text": "난 준비 됐어! 빨리 빨리!",
       "presentation": "Normal",
       "portrait": "Portraits/portrait_Y03"
     }

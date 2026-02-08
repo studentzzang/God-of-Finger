@@ -18,7 +18,12 @@ public enum SceneName
     B_3,
     Test_Scene,
     YHouse,
-    YHouseRoom
+    YHouseRoom,
+    Home,
+    BedRoom,
+    Whole_Map,
+    CHouse,
+    Backyard,
     
 }
 

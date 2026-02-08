@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: 12
-  targetSpawnPointId: YHouseRoom
+  targetSpawnPointId: YHouse_Room
   useQuestGate: 0
   requiredQuestId: 
   gateRule: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c9351938b6e4d8d8dbe40e1b9f05a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnId: YHouseRoom
+  spawnId: YHouse_Room
 --- !u!4 &102026146
 Transform:
   m_ObjectHideFlags: 0
@@ -264,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 102026144}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.19, y: -0.82, z: 0}
+  m_LocalPosition: {x: 2.07, y: -0.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questEntries: []
-  idleDialogue: {fileID: 11400000, guid: aa69e5282fcfa4fb5ae62003e8d28734, type: 2}
+  idleDialogue: {fileID: 11400000, guid: 57034800f6ae44a259dffd436b7595b2, type: 2}
 --- !u!1001 &439612968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -866,7 +866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000061035156
+      value: 0.00047302246
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 1274928333}
   - component: {fileID: 1274928332}
   m_Layer: 9
-  m_Name: trash
+  m_Name: bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1020,13 +1020,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questEntries:
-  - quest: {fileID: 11400000, guid: 9dea4f94561de46b286a0475513485af, type: 2}
+  - quest: {fileID: 11400000, guid: daaec6f896bb0498aa167f5ee0cbfec9, type: 2}
     notStartedDialogue: {fileID: 0}
     acceptedDialogue: {fileID: 0}
     completedOnceDialogue: {fileID: 0}
-    acknowledgedDialogue: {fileID: 11400000, guid: d4665e77baab74cba94022e396ce006c, type: 2}
+    acknowledgedDialogue: {fileID: 11400000, guid: 7cb0c781481a94976b8e5d11fb504f92, type: 2}
     lockedDialogue: {fileID: 0}
-  idleDialogue: {fileID: 11400000, guid: aae4c9160c0c545a692a846aaca998d1, type: 2}
+  idleDialogue: {fileID: 11400000, guid: a731ae7cb10e34564af6214afcb11add, type: 2}
 --- !u!61 &1274928333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ PrefabInstance:
     - target: {fileID: 4324217459604807675, guid: 888c38bed6fd24d46a48af998ab0aa7a, type: 3}
       propertyPath: dialogue
       value: 
-      objectReference: {fileID: 11400000, guid: da7a900b269bc4706bb505cfee15b4d9, type: 2}
+      objectReference: {fileID: 11400000, guid: ba90a384786674e29a06a1182709287d, type: 2}
     - target: {fileID: 5368646963050277886, guid: 888c38bed6fd24d46a48af998ab0aa7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 320
@@ -1293,7 +1293,6 @@ GameObject:
   - component: {fileID: 1810900400}
   - component: {fileID: 1810900399}
   - component: {fileID: 1810900398}
-  - component: {fileID: 1810900397}
   m_Layer: 9
   m_Name: interact_Inpc
   m_TagString: Untagged
@@ -1301,24 +1300,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1810900397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810900396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744470b26e21f4d9ea7fb0096f9c8fc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showQuestId: 
-  showWhen: 3
-  showAtLeast: 1
-  hideQuestId: 
-  hideWhen: 3
-  hideAtLeast: 1
 --- !u!114 &1810900398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,11 +1313,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questEntries:
-  - quest: {fileID: 11400000, guid: 9dea4f94561de46b286a0475513485af, type: 2}
-    notStartedDialogue: {fileID: 11400000, guid: 90ce02ca2c01c4125a98d343c7ad8b73, type: 2}
-    acceptedDialogue: {fileID: 11400000, guid: e87d5d6fe8219403595c45928e4ff944, type: 2}
-    completedOnceDialogue: {fileID: 11400000, guid: 1551d6dac6d4e4484a55172dcb682930, type: 2}
-    acknowledgedDialogue: {fileID: 11400000, guid: 39e1ecbd736f64da88ed1f4a7ce23256, type: 2}
+  - quest: {fileID: 11400000, guid: daaec6f896bb0498aa167f5ee0cbfec9, type: 2}
+    notStartedDialogue: {fileID: 11400000, guid: 4a1f7c537f2d24d5aa9f637b036ebeb2, type: 2}
+    acceptedDialogue: {fileID: 11400000, guid: 3e50986b492214d5abdd54d4eecdef06, type: 2}
+    completedOnceDialogue: {fileID: 11400000, guid: 2982095a0f90d40f183e4b508d70af07, type: 2}
+    acknowledgedDialogue: {fileID: 11400000, guid: 387be37b3762645538ee149868845606, type: 2}
     lockedDialogue: {fileID: 0}
   idleDialogue: {fileID: 0}
 --- !u!61 &1810900399
@@ -1490,7 +1471,7 @@ MonoBehaviour:
   gateRule: 0
   openSfxKey: 
   lockedSfxKey: 
-  lockedDialogue: {fileID: 11400000, guid: 2907eac88ff0949aead46a9f83818f38, type: 2}
+  lockedDialogue: {fileID: 11400000, guid: df41cadd7636e46c0b81822d980deccc, type: 2}
   lockedLog: Cannot enter.
   isMinigame: 1
   returnSpawnPointId: YBody

@@ -1,0 +1,465 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65305491a1230404680fe2db3d6b994b, type: 3}
+  m_Name: C001clear
+  m_EditorClassIdentifier: 
+  lines:
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD143\uBC2D \uC544\uC8FC\uBA38\uB2C8 \uCD98\uC790 ]"
+    text: "\uC6CC\uBA54 \uC190\uAC00\uB77D\uB9CC \uAC16\uB2E4\uAC00 \uADF8\uB9AC
+      \uBF51\uB294\uACA8?"
+    visual:
+      portrait: {fileID: 21300000, guid: ea6b213da0c9248f4b66fa6c5fc07e1e, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uC608 \uC81C\uAC00\uC880 \uC5F0\uC2B5\uD558\uB294\uAC8C \uC788\uC5B4\uC11C\uC694."
+    visual:
+      portrait: {fileID: 21300000, guid: ea6b213da0c9248f4b66fa6c5fc07e1e, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD143\uBC2D \uC544\uC8FC\uBA38\uB2C8 \uCD98\uC790 ]"
+    text: "\uC544\uB530 \uC7A5\uC0AC\uACE0\uB9C8\uC774."
+    visual:
+      portrait: {fileID: 21300000, guid: ea6b213da0c9248f4b66fa6c5fc07e1e, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD143\uBC2D \uC544\uC8FC\uBA38\uB2C8 \uCD98\uC790 ]"
+    text: "\uADF8\uB77C\uBAA8 \uB2E4\uB978\uAC83\uB3C4 \uC880 \uBD80\uD0C1\uD560\uC218
+      \uC788\uB0A8?"
+    visual:
+      portrait: {fileID: 21300000, guid: 2dfc633fc7fda413fb15cf8c7dcc3191, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD143\uBC2D \uC544\uC8FC\uBA38\uB2C8 \uCD98\uC790 ]"
+    text: "\uB3C4\uC800\uD788 \uBABB\uD574\uBA39\uC744\uAC8C \uC788\uC5B4\uC11C \uB9D0\uC774\uC5EC."
+    visual:
+      portrait: {fileID: 21300000, guid: 2dfc633fc7fda413fb15cf8c7dcc3191, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uC5B4\uB5A4\uAC70\uC8E0?"
+    visual:
+      portrait: {fileID: 21300000, guid: 2dfc633fc7fda413fb15cf8c7dcc3191, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uCD98\uC790: \uC800\uAC70 \uB9D0\uC774\uC5EC."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 1137f4cb65dee47e8af7ad6f92ae0004, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8: \uC5D0.."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 1137f4cb65dee47e8af7ad6f92ae0004, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8: \uBB50 \uC800\uB9AC \uD06C\uB300\uC694?"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 1137f4cb65dee47e8af7ad6f92ae0004, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uCD98\uC790: \uC6B0\uC9F8 \uC7C8\uB9CC \uC465\uC465 \uCEE4\uC9C0\uB4DC\uB77C\uACE0.."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 1137f4cb65dee47e8af7ad6f92ae0004, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8: \uC774\uAC70\uB294 \uAC19\uC774\uBF51\uC544\uC57C\uACA0\uB294\uB370\uC694."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 1137f4cb65dee47e8af7ad6f92ae0004, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uCD98\uC790: \uADF8\uB798 \uAC19\uC774 \uBD99\uB4E4\uC5B4 \uBD10\uC57C\uAC83\uC5B4."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 1137f4cb65dee47e8af7ad6f92ae0004, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uCD98\uC790: \uD798\uC880 \uC368\uBD10 \uC80A\uC740\uC774!!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 1ad3a2a3d178b4b8fa727df08d4cb21a, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8: \uD06C\uC544\uC544\uC544\uC545!!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 1ad3a2a3d178b4b8fa727df08d4cb21a, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8: \uC544\uB2C8\uC774\uAC70 \uC65C \uAFC8\uD2C0\uAC70\uB824\uC694??!!?"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: 1ad3a2a3d178b4b8fa727df08d4cb21a, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8, \uCD98\uC790: \uC6B0\uC640\uC544\uC544\uC557!!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: c394ee66c81ce4570a0fc21b812580db, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "???: \uD558\uD558\uD558\uD558\uD558"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: d42b3d14f51ec4224a400fb2c68879fc, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "\uD551\uAC70\uB9E8: ??!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: d42b3d14f51ec4224a400fb2c68879fc, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "???: \uC774\uBAB8, \uB4F1\uC7A5!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: fc92b6d9f3c3744f7a3c12a99d2f1994, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "???: \uD558\uD558\uD558\uD558\uD558\uD558!!"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: fc92b6d9f3c3744f7a3c12a99d2f1994, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uBB54\uB370\uC774\uAC70"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uB098\uB294 \uAF2C\uB9C8\uB2F9\uADFC\uC774\uB2E4!"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uC5C4\uB9C8\uAC00 \uB098\uB97C \uD0A4\uC6CC\uC8FC\uC154\uC11C \uC774\uB807\uAC8C
+      \uC138\uC0C1\uC5D0 \uB098\uC654\uC9C0!"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uC804\uD600 \uAF2C\uB9C8 \uC0AC\uC774\uC988\uC758 \uB2F9\uADFC\uC774
+      \uC544\uB2CC\uB370..?"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uC0AC\uB78C\uC758 \uD3B8\uD611\uD55C \uC2DC\uAC01\uC73C\uB85C \uB098\uB97C
+      \uD310\uB2E8\uD558\uC9C0 \uB9C8\uB78F!"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uC5C4\uB9C8\uC758 \uC740\uD61C\uC640 \uBCF4\uC0B4\uD54C\uC73C\uB85C \uB098\uB294
+      \uD0DC\uC5B4\uB0AC\uB2E4."
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uC989 \uB098\uB294 \uC5C4\uB9C8\uC758 \uC790\uC2DD\uC774\uB77C\uB294
+      \uAC70\uC9C0!"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uB098\uB294 \uB2F9\uADFC\uC774\uC790 \uC5B4\uB9B0\uC774\uC778 \uAC83\uC774\uB2E4!"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uADF8\uB7EC\uB2C8 \uB098\uB97C \uAF2C\uB9C8\uB2F9\uADFC\uC774\uB77C \uBD88\uB7EC\uB2E4\uC624!"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uADF8\uCE58, \uC5C4\uB9C8?\u314E\u314E"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD143\uBC2D \uC544\uC8FC\uBA38\uB2C8 \uCD98\uC790 ]"
+    text: "\uC5B4, \uC5B4.. \uADF8\uB807\uC9C0 \uC544\uBB34\uB834."
+    visual:
+      portrait: {fileID: 21300000, guid: 2dfc633fc7fda413fb15cf8c7dcc3191, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uADF8\uB7FC \uB0B4\uAC00 \uC544\uC8FC\uBA38\uB2C8\uB791 \uAC19\uC774
+      \uB108\uB97C \uBF51\uC558\uC73C\uB2C8\uAE4C,"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uB098\uB294 \uB108\uC758 \uC544\uBE60\uC778\uAC70\uB124?"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uBB54\uC18C\uB9AC\uC57C"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uC5C4\uB9C8\uAC00 \uB108\uC758 \uB3C4\uC6C0\uC744 \uBC1B\uC558\uC744
+      \uBFD0\uC774\uC9C0 \uC54A\uC740\uAC00."
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uB108\uB294 \uC0B0\uBD80\uC778\uACFC \uC758\uC0AC\uB97C \uC544\uBC84\uC9C0\uB77C
+      \uBD80\uB974\uB294\uAC00?"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uBC18\uBC15\uD560\uC218\uAC00 \uC5C6\uB2E4.."
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uADF8\uB7F0\uACE0\uB85C \uC798 \uBD80\uD0C1\uD558\uB124, \uC870\uC0B0\uC0AC
+      \uC591\uBC18!"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uAF2C\uB9C8\uB2F9\uADFC ]"
+    text: "\uC5C4\uB9C8! \uC55E\uC73C\uB85C\uB294 \uC800\uB3C4 \uC77C \uB3C4\uC6B8\uAC8C\uC694!"
+    visual:
+      portrait: {fileID: 21300000, guid: cae0a18f065ca4eda89dfc7df641ec9c, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD143\uBC2D \uC544\uC8FC\uBA38\uB2C8 \uCD98\uC790 ]"
+    text: "\uC5B4\uC5B4.. \uADF8\uB798."
+    visual:
+      portrait: {fileID: 21300000, guid: ea6b213da0c9248f4b66fa6c5fc07e1e, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD143\uBC2D \uC544\uC8FC\uBA38\uB2C8 \uCD98\uC790 ]"
+    text: "\uACE0\uB9D9\uB2E4 \uC598~."
+    visual:
+      portrait: {fileID: 21300000, guid: 2dfc633fc7fda413fb15cf8c7dcc3191, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  - quest: {fileID: 11400000, guid: ee13ab8a01cfa49a6a427375879e6ad9, type: 2}
+    questAction: 2
+    speaker: 0
+    npcName: 
+    text: "(\uC5B4\uCA4C\uBA74 \uC774 \uB458, \uAD1C\uCC2E\uC744 \uC9C0\uB3C4..?)"
+    visual:
+      portrait: {fileID: 21300000, guid: 2dfc633fc7fda413fb15cf8c7dcc3191, type: 3}
+      background: {fileID: 21300000, guid: e36bc9c40b8e3452ba748f6717679cfa, type: 3}
+      standing: {fileID: 0}
+      presentation: 1
+  hasChoice: 0
+  choicePromptLine:
+    quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: 
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  acceptLines: []
+  rejectLines: []
+  acceptLabel: 
+  rejectLabel: 
+  defaultPortrait: {fileID: 0}
+  defaultBackground: {fileID: 0}
+  defaultStanding: {fileID: 0}

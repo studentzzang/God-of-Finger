@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f555f174ad24fa2aae800090f1977d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScene: 12
+  startScene: 15
   startSpawnPointId: Default
   clearRuntimeOnceFlagsOnStart: 1
 --- !u!114 &649339692
