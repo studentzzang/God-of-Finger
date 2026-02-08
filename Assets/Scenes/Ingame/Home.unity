@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 16
+  targetScene: 12
   targetSpawnPointId: Home_Door
   useQuestGate: 1
   requiredQuestId: I001
@@ -710,8 +710,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 0
-  targetSpawnPointId: Default
+  targetScene: 16
+  targetSpawnPointId: 
   useQuestGate: 1
   requiredQuestId: I001
   gateRule: 0
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 15
+  targetScene: 11
   targetSpawnPointId: BedRoom_Door
   useQuestGate: 0
   requiredQuestId: 
