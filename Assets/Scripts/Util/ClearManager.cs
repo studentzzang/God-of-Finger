@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Reflection;
-
+using System.Collections;
 public class ClearFinder : MonoBehaviour
 {
     public Transform target;        // 다른 오브젝트 가능
@@ -10,6 +10,7 @@ public class ClearFinder : MonoBehaviour
     FieldInfo clearField;
     bool cleared;
 
+    public float _delaySec = 1.9f;
     void Awake()
     {
         var scripts = target.GetComponents<MonoBehaviour>();
@@ -37,9 +38,14 @@ public class ClearFinder : MonoBehaviour
         }
     }
 
-    void OnClear() { 
-    
-        //TODO : N초뒤에 
+    void OnClear()
+    {
+        StartCoroutine(ExitAfterSeconds(_delaySec)); // n초
+    }
+
+    IEnumerator ExitAfterSeconds(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         MinigameFlow.Instance.Exit(true);
     }
 }
