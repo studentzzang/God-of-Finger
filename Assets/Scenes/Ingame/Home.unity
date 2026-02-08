@@ -484,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.00010681152
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: 16
-  targetSpawnPointId: 
+  targetSpawnPointId: Default
   useQuestGate: 1
   requiredQuestId: I001
   gateRule: 0
@@ -720,7 +720,7 @@ MonoBehaviour:
   lockedDialogue: {fileID: 11400000, guid: 041a311c9f9b44baf84e975c3ac5c31f, type: 2}
   lockedLog: Cannot enter.
   isMinigame: 1
-  returnSpawnPointId: tissue
+  returnSpawnPointId: Tissue
   successSignalIdOnClear: I001_Clear
 --- !u!61 &1249293878
 BoxCollider2D:
@@ -879,51 +879,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.47, y: -0.9, z: -12.099562}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1451773904
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1451773906}
-  - component: {fileID: 1451773905}
-  m_Layer: 0
-  m_Name: tissue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1451773905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451773904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6c9351938b6e4d8d8dbe40e1b9f05a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnId: tissue
---- !u!4 &1451773906
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451773904}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.63, y: -2.08, z: -12.125628}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1743,6 +1698,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1747967782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1747967784}
+  - component: {fileID: 1747967783}
+  m_Layer: 0
+  m_Name: Tissue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1747967783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747967782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c9351938b6e4d8d8dbe40e1b9f05a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnId: Tissue
+--- !u!4 &1747967784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747967782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.37, y: -2.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905726991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,4 +1967,4 @@ SceneRoots:
   - {fileID: 1907205476}
   - {fileID: 1362955969}
   - {fileID: 1249293879}
-  - {fileID: 1451773906}
+  - {fileID: 1747967784}

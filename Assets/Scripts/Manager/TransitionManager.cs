@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,21 @@ public class TransitionManager : MonoBehaviour
     /// 전역 접근용 싱글턴 인스턴스
     /// </summary>
     public static TransitionManager Instance { get; private set; }
+
+    /// <summary>
+    /// True while a transition coroutine is running.
+    /// </summary>
+    public bool IsTransitioning => busy;
+
+    /// <summary>
+    /// Raised right after a transition is accepted (before fade/unload/load begins).
+    /// </summary>
+    public event Action<SceneName, string> OnTransitionStarted;
+
+    /// <summary>
+    /// Raised when a transition fully completes (after fade-in and input unlock).
+    /// </summary>
+    public event Action<SceneName, string> OnTransitionCompleted;
 
     /// <summary>
     /// 화면 페이드 인/아웃을 담당하는 컴포넌트
@@ -76,10 +92,20 @@ public class TransitionManager : MonoBehaviour
     /// <param name="spawnId">도착 후 사용할 스폰 포인트 ID</param>
     public void TransitionTo(SceneName scene, string spawnId)
     {
-        // 전환 중이면 추가 전환 요청 무시
-        if (busy) return;
+        TryTransitionTo(scene, spawnId);
+    }
 
+    /// <summary>
+    /// Attempts to start a transition. Returns true if accepted, false if already transitioning.
+    /// </summary>
+    public bool TryTransitionTo(SceneName scene, string spawnId)
+    {
+        // 전환 중이면 추가 전환 요청 무시
+        if (busy) return false;
+
+        OnTransitionStarted?.Invoke(scene, spawnId);
         StartCoroutine(Run(scene, spawnId));
+        return true;
     }
 
     /// <summary>
@@ -88,49 +114,57 @@ public class TransitionManager : MonoBehaviour
     private IEnumerator Run(SceneName scene, string spawnId)
     {
         busy = true;
+        var targetScene = scene;
+        var targetSpawnId = spawnId;
 
-        // 1. 플레이어 입력 잠금
-        PlayerInputLock.SetLocked(true);
-
-        // 2. 화면 페이드 아웃
-        if (fader)
-            yield return fader.FadeOut();
-
-        // 다음 씬에서 사용할 스폰 ID 저장
-        if (PlayerRegistry.Instance != null)
-            PlayerRegistry.Instance.SetPendingSpawn(spawnId);
-        //플레이어 스폰 위치 적용은 씬 로드 후에 수행
-
-        // 3. 기존 맵 씬 언로드
-        // 단, 부트스트랩 씬은 절대 언로드하지 않는다.
-        if (currentMapScene.IsValid() &&
-            currentMapScene.isLoaded &&
-            currentMapScene.name != bootstrapSceneName)
+        try
         {
-            yield return SceneManager.UnloadSceneAsync(currentMapScene);
+            // 1. 플레이어 입력 잠금
+            PlayerInputLock.SetLocked(true);
+
+            // 2. 화면 페이드 아웃
+            if (fader)
+                yield return fader.FadeOut();
+
+            // 다음 씬에서 사용할 스폰 ID 저장
+            if (PlayerRegistry.Instance != null)
+                PlayerRegistry.Instance.SetPendingSpawn(targetSpawnId);
+            //플레이어 스폰 위치 적용은 씬 로드 후에 수행
+
+            // 3. 기존 맵 씬 언로드
+            // 단, 부트스트랩 씬은 절대 언로드하지 않는다.
+            if (currentMapScene.IsValid() &&
+                currentMapScene.isLoaded &&
+                currentMapScene.name != bootstrapSceneName)
+            {
+                yield return SceneManager.UnloadSceneAsync(currentMapScene);
+            }
+
+            // 4. 다음 맵 씬을 Additive 방식으로 로드
+            var nextSceneName = targetScene.ToString();
+            yield return SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Additive);
+
+            // 5. 새로 로드된 맵 씬을 Active Scene으로 설정
+            currentMapScene = SceneManager.GetSceneByName(nextSceneName);
+            if (currentMapScene.IsValid())
+            {
+                SceneManager.SetActiveScene(currentMapScene);
+            }
+            yield return null;
+
+            // 6. 화면 페이드 인
+            if (fader)
+                yield return fader.FadeIn();
+
+            OnTransitionCompleted?.Invoke(targetScene, targetSpawnId);
         }
-
-        // 4. 다음 맵 씬을 Additive 방식으로 로드
-        var nextSceneName = scene.ToString();
-        yield return SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Additive);
-
-        // 5. 새로 로드된 맵 씬을 Active Scene으로 설정
-        currentMapScene = SceneManager.GetSceneByName(nextSceneName);
-        if (currentMapScene.IsValid())
+        finally
         {
-            
-            SceneManager.SetActiveScene(currentMapScene);
+            // 7. 플레이어 입력 해제
+            PlayerInputLock.SetLocked(false);
+
+            busy = false;
         }
-        yield return null;
-
-        // 6. 화면 페이드 인
-        if (fader)
-            yield return fader.FadeIn();
-
-        // 7. 플레이어 입력 해제
-        PlayerInputLock.SetLocked(false);
-
-        busy = false;
     }
     
 }

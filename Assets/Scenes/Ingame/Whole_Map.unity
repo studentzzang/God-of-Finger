@@ -1180,7 +1180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000030517578
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8044,7 +8044,7 @@ MonoBehaviour:
   targetScene: 8
   targetSpawnPointId: YHouse_Door
   useQuestGate: 1
-  requiredQuestId: C002
+  requiredQuestId: Y001
   gateRule: 1
   openSfxKey: Door_Open
   lockedSfxKey: 
