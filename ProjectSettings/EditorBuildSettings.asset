@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TopdownMovement.unity
     guid: ffc573ad6977342bf969ec5d0e4fcc2f
   - enabled: 0
-    path: Assets/Scenes/Ingame/House.unity
+    path: Assets/Scenes/House.unity
     guid: 10211712eca6645108874388213d62d7
   - enabled: 1
     path: Assets/Scenes/Minigame/A_1.unity
