@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a605369740a4fb0a61e7c52d8ecae0, type: 3}
+  m_Name: Y003
+  m_EditorClassIdentifier: 
+  questId: Y003
+  title: "\uC544\uBB34\uC77C\uB3C4 \uC5C6\uC5C8\uB2E4"
+  prerequisiteQuest: {fileID: 0}
+  completeSignalId: Y003_Clear
+  Description: "\uAF42\uD600\uBC84\uB9B0 \uD3EC\uD06C\uB97C \uBF51\uC544\uC8FC\uC790"
