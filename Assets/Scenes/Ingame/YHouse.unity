@@ -648,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00024414062
+      value: 0.000091552734
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -845,6 +845,51 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.67, y: -0.24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &946724375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 946724377}
+  - component: {fileID: 946724376}
+  m_Layer: 0
+  m_Name: BottlePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &946724376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946724375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c9351938b6e4d8d8dbe40e1b9f05a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnId: Bottle
+--- !u!4 &946724377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946724375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.75, y: -2.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1751,7 +1796,7 @@ MonoBehaviour:
   lockedLog: Cannot enter.
   isMinigame: 1
   returnSpawnPointId: Default
-  successSignalIdOnClear: Y002_Clear
+  successSignalIdOnClear: Bottle
 --- !u!212 &1653396689
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1998,6 +2043,7 @@ SceneRoots:
   - {fileID: 909538301}
   - {fileID: 1601232907}
   - {fileID: 1339682809}
+  - {fileID: 946724377}
   - {fileID: 1653396690}
   - {fileID: 534342984}
   - {fileID: 898483876}
