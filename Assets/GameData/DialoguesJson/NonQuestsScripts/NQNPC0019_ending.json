@@ -1,0 +1,85 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 형사 ]",
+      "text": "안녕하십니까.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 형사 ]",
+      "text": "이곳에서 살인 사건이 일어났다는 제보를 받아서요.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 형사 ]",
+      "text": "잠시 시간 내서 몇 가지 질문에 답해주실 수 있겠습니까?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 형사 ]",
+      "text": "이 앞의 집이 수상한데, 집에 들여보내주지를 않더군요.",
+      "presentation": "Normal"
+    }
+    
+  ],
+  "hasChoice": true,
+  "choicePromptLine":
+  {
+    "speaker": "NPC",
+    "npcName": "[ 형사 ]",
+    "text": "혹시 여기 사시는 분이랑 아는 사이신가요?",
+    "presentation": "Normal"
+
+
+  },
+
+  
+  "acceptLines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "에이 이런 평화로운 마을에 살인사건이 일어날리가 없잖아요.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 형사 ]",
+      "text": "그런가... 알겠습니다. 수고하세요.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(아무래도 도망쳐야겠다.)",
+      "presentation": "Normal"
+    }
+  ],
+  "rejectLines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "죄송합니다만, 저는 모르는 사람입니다.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 형사 ]",
+      "text": "그런가... 알겠습니다. 수고하세요.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(아무래도 도망쳐야겠다.)",
+      "presentation": "Normal"
+    }
+
+  ],
+
+  "acceptLabel": "얼버무린다",
+  "rejectLabel": "모른척 한다"
+}

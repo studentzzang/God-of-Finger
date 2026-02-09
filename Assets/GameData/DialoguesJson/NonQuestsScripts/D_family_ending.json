@@ -1,0 +1,37 @@
+{
+  "lines": [
+    {
+      "speaker": "Player",
+      "text": "뭐야",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "text": "너희들은...?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근들 ]",
+      "text": "우린 당근이야!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 꼬마당근들 ]",
+      "text": "보면 몰라?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "text": "그..그래",
+      "presentation": "Normal"
+    }
+    ,
+    {
+      "speaker": "Player",
+      "text": "(아주머니와 당근사위는 아주 잘 지내고 있는 것 같다.)",
+      "presentation": "Normal"
+    }
+  ]
+}

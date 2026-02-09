@@ -1,0 +1,24 @@
+{
+  "lines": [
+    {
+      "speaker": "Player",
+      "text": "그건 그렇고 어디서 훈련하지?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "text": "흠... 오랜만에 마을로 가볼까?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "text": "마을에 가면 아무래도 뽑을만한게 있겠지?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "Player",
+      "text": "",
+      "presentation": "Normal"
+    }
+  ]
+}

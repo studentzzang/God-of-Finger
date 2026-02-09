@@ -1,0 +1,82 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "간만에 보는 얼굴이군.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "예.. 제가 좀 집에서 안나와서..하하",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "머무는 삶인가... 그또한 나름이지.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "나는 이곳을 떠나기로 했네.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "나의 꿈, 나의 야망!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "더 유능하고 멋진 사람들과 함께하기 위해!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "저도 갈래요! 저는 수행이 필요해요!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "하하. 마음이 앞서는군 젊은이.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "이곳에서 떠나기는 쉽지 않을거라네.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "기차역이 문을 닫았거든.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "그럴수가!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "하지만 나는 방법을 찾을거야.. 어떻게든.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "아무튼 지금 역으로 가는건 별 소득이 없을거란다.",
+      "presentation": "Normal"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 지질학자 ]",
+      "text": "어머, 얘.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 지질학자 ]",
+      "text": "이런데까지 왜온거니?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 지질학자 ]",
+      "text": "기차역은 운영도 안하는데.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "당신은 여기 왜 있는데요.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 지질학자 ]",
+      "text": "나는 절벽을 보러 왔어.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 지질학자 ]",
+      "text": "여기 절벽이 이 주변에서 제일 높거든.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 지질학자 ]",
+      "text": "다 똑같은 흙벽 같아도, 아무 용건이 없어도,",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 지질학자 ]",
+      "text": "자세히 살펴보면 소소한 재미가 있단다.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 지질학자 ]",
+      "text": "너도 그래서 이런 데까지 걸어온 거 아니니?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 지질학자 ]",
+      "text": "온 김에 그래도 역이나 구경하고 가렴.",
+      "presentation": "Normal"
+    }
+  ]
+}

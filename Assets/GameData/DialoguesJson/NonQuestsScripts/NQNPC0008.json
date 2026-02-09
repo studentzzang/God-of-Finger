@@ -1,0 +1,64 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기사 ]",
+      "text": "하아.. 여기.. 어딘가에..!!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기사 ]",
+      "text": "분명 있을거야...",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기사 ]",
+      "text": "이 앞, 뭔가 있다.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "여기서 대체 뭐하세요..?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기사 ]",
+      "text": "나는 절벽 핥는 기사.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기사 ]",
+      "text": "절벽만 보이면 따라다니며 꼭 둘러보지.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기사 ]",
+      "text": "뭔가가 분명히 있을거라고 기대하면서 말이야.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기사 ]",
+      "text": "아래쪽 좋은 물건 기쁘다!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기사 ]",
+      "text": "오오, 그럴 자격 없다.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(미친사람이다)",
+      "presentation": "Normal"
+    }
+  ]
+}

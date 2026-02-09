@@ -152,6 +152,42 @@
     },
     {
       "speaker": "NPC",
+      "text": "이모털: 나는, 이야기를 만드는 악마.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 내 재미와 변덕을 충족시키기 위해..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 사람들을 멋대로 이야기에 끌어들이지.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 방안에 틀어박혀있는 너에게..",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 재미있는 경험을 시켜주고 싶었어.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
+      "text": "이모털: 그것도 이제 다 끝이야.",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E09"
+    },
+    {
+      "speaker": "NPC",
       "text": "이모털: 짜릿하고 강렬한 보스전은...",
       "presentation": "FullCinematic",
       "background": "Backgrounds/cutScene_E09"
@@ -286,10 +322,34 @@
       "speaker": "NPC",
       "text": "(휙)",
       "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_E17"
+    },
+    {
+      "speaker": "NPC",
+      "text": "(휙)",
+      "presentation": "FullCinematic",
       "background": "Backgrounds/cutScene_E17",
       "questId": "E001",
       "questAction": "Acknowledge"
       
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 안내 ]",
+      "text": "엔딩 후 자유롭게 마저 탐색할 수 있습니다.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 안내 ]",
+      "text": "엔딩 후 몇몇 변화가 있으니 천천히 구경해 보세요.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 안내 ]",
+      "text": "원하실 때 직접 종료해 주세요.",
+      "presentation": "Normal"
     }
   ]
 }

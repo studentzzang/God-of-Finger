@@ -1,0 +1,28 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 어미새 ]",
+      "text": "뭘봐.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 어미새 ]",
+      "text": "새똥 맞고 싶어?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 어미새 ]",
+      "text": "올라오지도 못하는게",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(대꾸하지도 말아야겠다.)",
+      "presentation": "Normal"
+    }
+  ]
+}

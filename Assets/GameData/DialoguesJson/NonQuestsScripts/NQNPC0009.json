@@ -1,0 +1,76 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 한량 ]",
+      "text": "아.. 나른하구나..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "안녕하세요!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "뭐 도와드릴 일 있나요?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 한량 ]",
+      "text": "아주 많지..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 한량 ]",
+      "text": "내 인생이 아주그냥 도움이 많이 필요하지..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "???근데 왜 이런 데서 그러고 계세요??",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 한량 ]",
+      "text": "복잡한건 일일이 신경쓰지 마..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 한량 ]",
+      "text": "가령 예를 들자면,",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 한량 ]",
+      "text": "왜 저 철도는 굳이 이 좁은 절벽을 뚫었는가?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 한량 ]",
+      "text": "같은 거 말이야..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 한량 ]",
+      "text": "자세하게 따지지 않으면 속 편해..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "아.. 예..",
+      "presentation": "Normal"
+    }
+  ]
+}

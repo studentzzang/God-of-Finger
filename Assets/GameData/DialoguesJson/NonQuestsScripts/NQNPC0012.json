@@ -1,0 +1,112 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "오오.. 간만에 보는구나.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "안녕하세요, 할아버지!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "근데 여기 원래 할아버지네 댁 자리 아니에요?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "허허.. 대기업 녀석들..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "그 영악한 녀석들이 내 땅을 사가버렸단다.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "이제 여긴 내 집이 아니야.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "그런 일이...",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "그녀석들이 하는 말은 거절할 수가 없지.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "마치 자기네들이 꼭 원하는대로 될 것 처럼..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "저들이 예상하는 대로 우리가 행동할 것 처럼...",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "꼭대기에서 내려다보듯이 행동하지.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "분하지 않으세요?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "뭔소리야.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "난 지금 최고로 행복해.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "돈이 최고야.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "나이먹으면 좀 겸허해질 것 같지?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 노인 ]",
+      "text": "인생 놀거리 천지다?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(나이먹어서 돈 없지는 말아야겠다..)",
+      "presentation": "Normal"
+    }
+  ]
+}

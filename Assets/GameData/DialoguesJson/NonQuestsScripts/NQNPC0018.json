@@ -1,0 +1,98 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 잡상인 ]",
+      "text": "일회용 면도칼 팝니다! 싸요!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 잡상인 ]",
+      "text": "거기 당신!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 잡상인 ]",
+      "text": "잘라버리고 싶은 털이 나 있지 않습니까?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 잡상인 ]",
+      "text": "간편하게 깔끔해질 수 있는 절호의 기회!",
+      "presentation": "Normal"
+    }
+  ],
+
+  "hasChoice": true,
+  "choicePromptLine":
+      {
+    "speaker": "NPC",
+    "npcName": "[ 잡상인 ]",
+    "text": "날이면 날마다 오는게 아닙니다!",
+    "presentation": "Normal"
+
+
+  },
+  
+  
+  
+  
+  
+  
+  
+  "acceptLines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "좋은데요?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "당장 살게요!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 잡상인 ]",
+      "text": "감사합니다!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "싹 잘라버려야지.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "...???",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(잘라버리기 무섭게, 새로 솟아나왔다.)",
+      "presentation": "Normal"
+    }
+  ],
+  "rejectLines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "아 안사요.",
+      "presentation": "Normal"
+    }
+  ],
+
+  "acceptLabel": "산다",
+  "rejectLabel": "거절한다"
+    
+
+  
+} 

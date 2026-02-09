@@ -1,0 +1,28 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 거대 로봇 ]",
+      "text": "삐리빕-",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 거대 로봇 ]",
+      "text": "이동 불가, 경로를 찾을 수 없음-",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "작은 로봇을 구하러 온건가?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "이 로봇도 길을 잃었나보네.",
+      "presentation": "Normal"
+    }
+  ]
+}

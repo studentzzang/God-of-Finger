@@ -3,6 +3,17 @@
     {
       "speaker": "Player",
       "text": "그래도 깔끔한게 좋지.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "text": "(휙)",
+      "presentation": "FullCinematic",
+      "background": "Backgrounds/cutScene_I04"
+    },
+    {
+      "speaker": "Player",
+      "text": "좋았어.",
       "presentation": "Normal",
       "questId": "I001",
       "questAction": "Acknowledge"

@@ -1,0 +1,28 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 신사 ]",
+      "text": "뭐?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 신사 ]",
+      "text": "둥근 문은 열리지 않는 문이니까,",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 신사 ]",
+      "text": "각진 문은 말이라도 나와야 하는거 아니냐고?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 신사 ]",
+      "text": "그런 게 어딨어.",
+      "presentation": "Normal"
+    }
+  ]
+}
