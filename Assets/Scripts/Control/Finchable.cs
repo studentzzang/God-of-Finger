@@ -38,6 +38,11 @@ public class Finchable : Grabable
     protected override void OnGrabReleased()
     {
         _lockHand = false;
+        /*
+        if (_clear)
+        {
+            this.enabled = false;
+        }*/
     }
 
     protected override void LateUpdate()
@@ -104,4 +109,6 @@ public class Finchable : Grabable
         _lockHand = false;
         _lockObject = false;
     }
+    
+
 }
