@@ -322,12 +322,6 @@
       "speaker": "NPC",
       "text": "(휙)",
       "presentation": "FullCinematic",
-      "background": "Backgrounds/cutScene_E17"
-    },
-    {
-      "speaker": "NPC",
-      "text": "(휙)",
-      "presentation": "FullCinematic",
       "background": "Backgrounds/cutScene_E17",
       "questId": "E001",
       "questAction": "Acknowledge"
