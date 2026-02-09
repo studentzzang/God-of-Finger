@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Ingame/Bootstrap.unity
+    guid: 35983879f84cf49b3bf80fa58f740482
+  - enabled: 1
+    path: Assets/Scenes/Ingame/Title.unity
+    guid: 6ca72e1b0309b4b4593e54b223783c95
+  - enabled: 1
     path: Assets/Scenes/Minigame/A_1.unity
     guid: 73459bbc7bb0b964aab2779cbb1732e3
   - enabled: 1
@@ -39,9 +45,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Ingame/BedRoom.unity
     guid: e72b6a0301d2c4a368d49ebd3e191a11
   - enabled: 1
-    path: Assets/Scenes/Ingame/Bootstrap.unity
-    guid: 35983879f84cf49b3bf80fa58f740482
-  - enabled: 1
     path: Assets/Scenes/Ingame/CHouse.unity
     guid: 0139b2811ffa94010b3b2a75a28e5214
   - enabled: 1
@@ -50,9 +53,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Ingame/Templete.unity
     guid: 68eccdd5190484f2c9a40e70e7fd5722
-  - enabled: 1
-    path: Assets/Scenes/Ingame/Title.unity
-    guid: 6ca72e1b0309b4b4593e54b223783c95
   - enabled: 1
     path: Assets/Scenes/Ingame/Whole_Map.unity
     guid: b53b68a2b27e74ac48c8c31cabfebc73

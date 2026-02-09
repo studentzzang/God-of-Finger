@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 76778891}
   - component: {fileID: 76778890}
   m_Layer: 9
-  m_Name: YHouse_Door
+  m_Name: YHouse_Room_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 12
-  targetSpawnPointId: YHouse_Door
+  targetScene: 9
+  targetSpawnPointId: YHouse_Room
   useQuestGate: 0
   requiredQuestId: 
   gateRule: 0
@@ -648,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.041259766
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 909538301}
   - component: {fileID: 909538300}
   m_Layer: 0
-  m_Name: YHouse_DoorPoint
+  m_Name: YHouse_Room_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -834,7 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c9351938b6e4d8d8dbe40e1b9f05a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnId: YHouse_Door
+  spawnId: YHouse_Room
 --- !u!4 &909538301
 Transform:
   m_ObjectHideFlags: 0
@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 1339682809}
   - component: {fileID: 1339682808}
   m_Layer: 0
-  m_Name: YHouseRoomPoint
+  m_Name: YHousePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1555,7 +1555,7 @@ GameObject:
   - component: {fileID: 1601232906}
   - component: {fileID: 1601232905}
   m_Layer: 9
-  m_Name: YHouse_RoomDoor
+  m_Name: YHouse_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1573,8 +1573,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b549bc492aa1c45aebe3ffd3c3745496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 9
-  targetSpawnPointId: YHouse_Room
+  targetScene: 12
+  targetSpawnPointId: YHouse_Door
   useQuestGate: 1
   requiredQuestId: Y002
   gateRule: 1
