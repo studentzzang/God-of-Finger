@@ -44,16 +44,6 @@ MonoBehaviour:
       background: {fileID: 0}
       standing: {fileID: 0}
       presentation: 0
-  - quest: {fileID: 0}
-    questAction: 0
-    speaker: 0
-    npcName: 
-    text: 
-    visual:
-      portrait: {fileID: 0}
-      background: {fileID: 0}
-      standing: {fileID: 0}
-      presentation: 0
   hasChoice: 0
   choicePromptLine:
     quest: {fileID: 0}
