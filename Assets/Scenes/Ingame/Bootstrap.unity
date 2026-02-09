@@ -426,8 +426,7 @@ MonoBehaviour:
   returnScene: 3
   returnSpawnId: Default
   successSignalId: 
-  fallbackReturnScene: 3
-  fallbackReturnSpawnId: Default
+  isExiting: 0
 --- !u!114 &468961305
 MonoBehaviour:
   m_ObjectHideFlags: 0
