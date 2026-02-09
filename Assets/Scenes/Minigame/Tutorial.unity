@@ -624,6 +624,10 @@ PrefabInstance:
       value: 2.01
       objectReference: {fileID: 0}
     - target: {fileID: 3315791356958531530, guid: d0d1bf81a920b7242bcc027a92c1c638, type: 3}
+      propertyPath: _friction
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315791356958531530, guid: d0d1bf81a920b7242bcc027a92c1c638, type: 3}
       propertyPath: targetHand
       value: 
       objectReference: {fileID: 881365107}

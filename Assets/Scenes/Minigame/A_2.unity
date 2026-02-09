@@ -680,6 +680,10 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5882573401434120880, guid: c5a9c80b695089d47bf1b25cc9af6dd4, type: 3}
+      propertyPath: _friction
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882573401434120880, guid: c5a9c80b695089d47bf1b25cc9af6dd4, type: 3}
       propertyPath: targetHand
       value: 
       objectReference: {fileID: 299678513}

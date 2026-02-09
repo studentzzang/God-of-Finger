@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd373fbf67c05c645890a0aa305785e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _friction: 5
+  _friction: 8
   targetHand: {fileID: 881365107}
   _holdTimerLimit: 0.4
   _holdTimer: 0
@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd373fbf67c05c645890a0aa305785e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _friction: 5
+  _friction: 8
   targetHand: {fileID: 881365107}
   _holdTimerLimit: 0.4
   _holdTimer: 0
@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd373fbf67c05c645890a0aa305785e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _friction: 5
+  _friction: 8
   targetHand: {fileID: 881365107}
   _holdTimerLimit: 0.4
   _holdTimer: 0
@@ -1561,6 +1561,10 @@ PrefabInstance:
     - target: {fileID: 642792647489840762, guid: d0d1bf81a920b7242bcc027a92c1c638, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315791356958531530, guid: d0d1bf81a920b7242bcc027a92c1c638, type: 3}
+      propertyPath: _friction
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3315791356958531530, guid: d0d1bf81a920b7242bcc027a92c1c638, type: 3}
       propertyPath: targetHand
