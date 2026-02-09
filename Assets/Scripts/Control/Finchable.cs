@@ -33,6 +33,9 @@ public class Finchable : Grabable
         _lockedObjPos = transform.position;   
         _lockHand = true;
 
+        Debug.Log("zz");
+        AudioManager.Instance?.PlaySFX("GrabSFX");
+
     }
 
     protected override void OnGrabReleased()

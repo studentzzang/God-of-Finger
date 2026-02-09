@@ -35,7 +35,7 @@ public class Grabable : MonoBehaviour
 
 
     //Finchable 상속용
-    protected virtual void OnGrabbed() { }          // 잡기 성공 순간 1회
+    protected virtual void OnGrabbed() { AudioManager.Instance?.PlaySFX("GrabSFX"); }          // 잡기 성공 순간 1회
     protected virtual void OnGrabReleased() { }     // 잡기 해제 순간 1회
     protected virtual bool CanFollowWhileGrabbing() => true; // Grabbing 중 Grabbed 허용 여부
 

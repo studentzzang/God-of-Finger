@@ -38,6 +38,8 @@ public class Roundable : Grabable
 
     protected override void OnGrabbed()
     {
+
+        AudioManager.Instance?.PlaySFX("GrabSFX");
         _isGrabbing = true;
         _roundedTriggered = false;
         _roundHoldTimer = 0f;

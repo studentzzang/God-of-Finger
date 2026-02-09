@@ -15,7 +15,7 @@ public class FingerPower : MonoBehaviour
     {
         InputPower();
 
-        Debug.Log(_power); //테스트용 디버그
+        //Debug.Log(_power); //테스트용 디버그
     }
     void InputPower()
     {

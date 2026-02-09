@@ -39,12 +39,13 @@ MonoBehaviour:
     pitchMin: 0.95
     pitchMax: 1.05
     cooldown: 0.05
-  - key: 
+  - key: GrabSFX
     bus: 0
-    clips: []
-    volume: 0
-    pitchMin: 0
-    pitchMax: 0
+    clips:
+    - {fileID: 8300000, guid: 583cabc782b974e0488d936a7dadf696, type: 3}
+    volume: 1
+    pitchMin: 0.9
+    pitchMax: 1.1
     cooldown: 0
   - key: 
     bus: 0
