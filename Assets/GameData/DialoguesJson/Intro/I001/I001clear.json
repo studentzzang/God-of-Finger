@@ -16,7 +16,7 @@
       "text": "좋았어.",
       "presentation": "Normal",
       "questId": "I001",
-      "questAction": "clear"
+      "questAction": "Acknowledge"
     }
   ]
 }

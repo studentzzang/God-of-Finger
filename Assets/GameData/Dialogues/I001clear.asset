@@ -34,7 +34,7 @@ MonoBehaviour:
       standing: {fileID: 0}
       presentation: 2
   - quest: {fileID: 11400000, guid: debe553776c7e4c0c98cc196bf97f6cf, type: 2}
-    questAction: 0
+    questAction: 2
     speaker: 0
     npcName: 
     text: "\uC88B\uC558\uC5B4."
