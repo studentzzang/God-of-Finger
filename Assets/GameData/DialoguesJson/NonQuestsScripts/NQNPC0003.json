@@ -9,7 +9,7 @@
     {
       "speaker": "NPC",
       "npcName": "[ 핑거맨 ]",
-      "text": "(←:할짓없는 마을 / ↓:기차역)",
+      "text": "(서:할짓없는 마을 / 남:기차역)",
       "presentation": "Normal"
     }
   ]
