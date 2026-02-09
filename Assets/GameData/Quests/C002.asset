@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questId: C002
   title: "\uD558 \uC528 \uC9C4\uC9DC \uB204\uAD6C\uC9C0"
-  prerequisiteQuest: {fileID: 0}
+  prerequisiteQuest: {fileID: 11400000, guid: ee13ab8a01cfa49a6a427375879e6ad9, type: 2}
   completeSignalId: C002_Clear
   Description: "\uC694\uB9AC\uB97C \uB3C4\uC640 \uC9C4\uC9DC \uB2F9\uADFC\uC744 \uAC00\uB9AC\uC790"
