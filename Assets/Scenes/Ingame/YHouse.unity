@@ -155,12 +155,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetScene: 9
   targetSpawnPointId: YHouse_Room
-  useQuestGate: 0
-  requiredQuestId: 
-  gateRule: 0
+  useQuestGate: 1
+  requiredQuestId: Y002
+  gateRule: 1
   openSfxKey: Door_Open
   lockedSfxKey: 
-  lockedDialogue: {fileID: 0}
+  lockedDialogue: {fileID: 11400000, guid: 1b3938063e6b244d8be0061978c41d29, type: 2}
   lockedLog: Cannot enter.
   isMinigame: 0
   returnSpawnPointId: Default
@@ -1620,12 +1620,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetScene: 12
   targetSpawnPointId: YHouse_Door
-  useQuestGate: 1
-  requiredQuestId: Y002
+  useQuestGate: 0
+  requiredQuestId: 
   gateRule: 1
   openSfxKey: Door_Open
   lockedSfxKey: 
-  lockedDialogue: {fileID: 11400000, guid: 1b3938063e6b244d8be0061978c41d29, type: 2}
+  lockedDialogue: {fileID: 0}
   lockedLog: Cannot enter.
   isMinigame: 0
   returnSpawnPointId: Default

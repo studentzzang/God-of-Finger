@@ -1,0 +1,29 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "간만에 보는 얼굴이군.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "아직도 계셨네요?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "떠날 방법을 아직 못찾아서 말이야.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 비즈니스맨 ]",
+      "text": "그래도 난 포기하지 않을걸세.",
+      "presentation": "Normal"
+    }
+
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당돌한 꼬마 ]",
+      "text": "여기 언덕 위에 뭐가 있는지 알아?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "글쎄..?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당돌한 꼬마 ]",
+      "text": "언덕을 올라서 위로 쭉 가면,",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당돌한 꼬마 ]",
+      "text": "위험한 숲이 있어.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당돌한 꼬마 ]",
+      "text": "길이 매번 바뀌고, 괴물들이 튀어나와!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당돌한 꼬마 ]",
+      "text": "소문으로 들은 건데",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당돌한 꼬마 ]",
+      "text": "그걸 다 이겨내고 숲의 끝에 가면,",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당돌한 꼬마 ]",
+      "text": "마법의 목각인형이 소원을 들어준대.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "개재밌겠는데??",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "당장 가봐야겠어!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당돌한 꼬마 ]",
+      "text": "안돼! 안비켜줄거야!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당돌한 꼬마 ]",
+      "text": "형은 지금 방패도, 칼도 없잖아!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 당돌한 꼬마 ]",
+      "text": "너무 위험해!",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "쳇, 글렀군.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "마을에서 칼이랑 방패를 구할 수 있을리가 없지.",
+      "presentation": "Normal"
+    }
+  ]
+}

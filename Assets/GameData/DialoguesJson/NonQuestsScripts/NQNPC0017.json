@@ -1,0 +1,46 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 뭔가 익숙한 꼬마 ]",
+      "text": "망했어... 으아앙..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 뭔가 익숙한 꼬마 ]",
+      "text": "실내화가방을 위로 던지면서 놀았는데,",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 뭔가 익숙한 꼬마 ]",
+      "text": "언덕 위로 올라가 버렸어..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 뭔가 익숙한 꼬마 ]",
+      "text": "....",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 뭔가 익숙한 꼬마 ]",
+      "text": "사실 난 프로토타이핑에 쓰였던 이미지야.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 뭔가 익숙한 꼬마 ]",
+      "text": "원래는 내가 영구가 될 예정이었대.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 뭔가 익숙한 꼬마 ]",
+      "text": "지금은 꼬맹이 npc로 재탄생했지.",
+      "presentation": "Normal"
+    }
+  ]
+}

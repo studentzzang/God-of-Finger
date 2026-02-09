@@ -1,0 +1,46 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "뭐 도와드릴 일 있나요?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "특히 뭔가를 뽑아야 한다던가..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 행인 ]",
+      "text": "음, 딱히?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 행인 ]",
+      "text": "마을에 가면 그런 사람이 많지 않을까?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 행인 ]",
+      "text": "길에서 아무나 붙들고 그렇게 물어보면",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 행인 ]",
+      "text": "뭔가 다른 이상한 건 줄 알고 오해할걸?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "그러네..",
+      "presentation": "Normal"
+    }
+  ]
+}

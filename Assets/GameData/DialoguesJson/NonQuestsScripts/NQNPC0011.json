@@ -1,0 +1,76 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "이 커다란 건물 좀 봐.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "얼마전에 갑자기 생긴 건물인데",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "짓는 과정이 정말 가관이었어.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "양복입은 사람 몇명이 인부들을 데려오더니",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "며칠만에 뚝딱 기둥 올리고 완성했어.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "걔네 말로 이게 뭐라더라..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "데이터센터...?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "엄청 많은 컴퓨터들이 다닥다닥 들어있어서",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "그것들이 24시간 자동으로 일하는 곳이래.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "안에 아무도 없고 불도 안켜져 있어..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "세상이 어떻게 되려는지 모르겠다.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 무기력한 주민 ]",
+      "text": "나 너무 무서워.",
+      "presentation": "Normal"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 수상한 사람 ]",
+      "text": "히히..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 수상한 사람 ]",
+      "text": "숨겨 두었다..",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "어디에요? 뭘요?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 수상한 사람 ]",
+      "text": "안 알려주지. 히히.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(....관심주지 말자..)",
+      "presentation": "Normal"
+    }
+  ]
+}

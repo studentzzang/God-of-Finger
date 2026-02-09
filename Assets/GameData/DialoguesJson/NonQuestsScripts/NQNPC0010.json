@@ -1,0 +1,16 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "화단에.. 들어오지.. 마시오...?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "..장난하나?",
+      "presentation": "Normal"
+    }
+  ]
+}

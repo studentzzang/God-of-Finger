@@ -1,0 +1,58 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기차 오타쿠 ]",
+      "text": "헤헤. 나는 철덕이야.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기차 오타쿠 ]",
+      "text": "플랫폼에 서서 기차가 지나가는걸 구경하려고.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기차 오타쿠 ]",
+      "text": "역이 운영을 안하는건 아쉽지만,",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기차 오타쿠 ]",
+      "text": "기차가 여기를 지나갈 수는 있는거잖아?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기차 오타쿠 ]",
+      "text": "너도 여기 서서 기다려보는게 어때?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기차 오타쿠 ]",
+      "text": "어쩌면 기차가 슉 하고 지나갈지도 모르잖아.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기차 오타쿠 ]",
+      "text": "일단 내가 보고있는 동안은 그런 적 없었어.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "언제부터 봤는데?",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 기차 오타쿠 ]",
+      "text": "어제 점심..?",
+      "presentation": "Normal"
+    }
+  ]
+}

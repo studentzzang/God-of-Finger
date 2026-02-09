@@ -1,0 +1,16 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(이정표가 있다.)",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 핑거맨 ]",
+      "text": "(←:할짓없는 마을 / ↓:기차역)",
+      "presentation": "Normal"
+    }
+  ]
+}

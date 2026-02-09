@@ -13,11 +13,31 @@ MonoBehaviour:
   m_Name: I001clear
   m_EditorClassIdentifier: 
   lines:
-  - quest: {fileID: 11400000, guid: debe553776c7e4c0c98cc196bf97f6cf, type: 2}
-    questAction: 2
+  - quest: {fileID: 0}
+    questAction: 0
     speaker: 0
     npcName: 
     text: "\uADF8\uB798\uB3C4 \uAE54\uB054\uD55C\uAC8C \uC88B\uC9C0."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: "(\uD719)"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 21300000, guid: e826ec7820604435caf236aed95d1d52, type: 3}
+      standing: {fileID: 0}
+      presentation: 2
+  - quest: {fileID: 11400000, guid: debe553776c7e4c0c98cc196bf97f6cf, type: 2}
+    questAction: 0
+    speaker: 0
+    npcName: 
+    text: "\uC88B\uC558\uC5B4."
     visual:
       portrait: {fileID: 0}
       background: {fileID: 0}

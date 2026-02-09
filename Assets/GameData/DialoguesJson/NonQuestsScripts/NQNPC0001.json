@@ -1,0 +1,52 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 두더지 ]",
+      "text": "저는 두더지입니다.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 두더지 ]",
+      "text": "동물이 갑자기 말을 걸면 당황하실 것 같아서,",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 두더지 ]",
+      "text": "최대한 정중하게 얘기하고 있습니다.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 두더지 ]",
+      "text": "다른 분들도 각자 나름의 고충이 있겠지요.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 두더지 ]",
+      "text": "그분들의 성의를 존중한다는 마음으로,",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 두더지 ]",
+      "text": "친절하게 말 한마디씩은 걸어주세요.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 두더지 ]",
+      "text": "더 아름다운 세상, 우리 마을을 위하여.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 두더지 ]",
+      "text": "피스.",
+      "presentation": "Normal"
+    }
+  ]
+}

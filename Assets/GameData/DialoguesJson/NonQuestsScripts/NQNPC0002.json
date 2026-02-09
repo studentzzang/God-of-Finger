@@ -1,0 +1,58 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "[ 로봇 ]",
+      "text": "삐리빕-",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 로봇 ]",
+      "text": "저는 [라인트레이서 로봇] 입니다-.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 로봇 ]",
+      "text": "센서로 감지한 길을 따라서만 움직입니다-.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 로봇 ]",
+      "text": "(!)error report:",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 로봇 ]",
+      "text": "길을 잃었습니다....",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 로봇 ]",
+      "text": "return(FATAL!!!!OTL:();",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 로봇 ]",
+      "text": "...본사에서 저를 회수하러 올 것입니다-.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 로봇 ]",
+      "text": "[당신]은 저처럼 되지 마십시오-.",
+      "presentation": "Normal"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "[ 로봇 ]",
+      "text": "길이 있는 데에는 다 이유가 있습니다-.",
+      "presentation": "Normal"
+    }
+  ]
+}

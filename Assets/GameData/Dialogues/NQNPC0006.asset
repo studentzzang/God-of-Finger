@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65305491a1230404680fe2db3d6b994b, type: 3}
+  m_Name: NQNPC0006
+  m_EditorClassIdentifier: 
+  lines:
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uC9C0\uC9C8\uD559\uC790 ]"
+    text: "\uC5B4\uBA38, \uC598."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uC9C0\uC9C8\uD559\uC790 ]"
+    text: "\uC774\uB7F0\uB370\uAE4C\uC9C0 \uC65C\uC628\uAC70\uB2C8?"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uC9C0\uC9C8\uD559\uC790 ]"
+    text: "\uAE30\uCC28\uC5ED\uC740 \uC6B4\uC601\uB3C4 \uC548\uD558\uB294\uB370."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uD551\uAC70\uB9E8 ]"
+    text: "\uB2F9\uC2E0\uC740 \uC5EC\uAE30 \uC65C \uC788\uB294\uB370\uC694."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uC9C0\uC9C8\uD559\uC790 ]"
+    text: "\uB098\uB294 \uC808\uBCBD\uC744 \uBCF4\uB7EC \uC654\uC5B4."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uC9C0\uC9C8\uD559\uC790 ]"
+    text: "\uC5EC\uAE30 \uC808\uBCBD\uC774 \uC774 \uC8FC\uBCC0\uC5D0\uC11C \uC81C\uC77C
+      \uB192\uAC70\uB4E0."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uC9C0\uC9C8\uD559\uC790 ]"
+    text: "\uB2E4 \uB611\uAC19\uC740 \uD759\uBCBD \uAC19\uC544\uB3C4, \uC544\uBB34
+      \uC6A9\uAC74\uC774 \uC5C6\uC5B4\uB3C4,"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uC9C0\uC9C8\uD559\uC790 ]"
+    text: "\uC790\uC138\uD788 \uC0B4\uD3B4\uBCF4\uBA74 \uC18C\uC18C\uD55C \uC7AC\uBBF8\uAC00
+      \uC788\uB2E8\uB2E4."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uC9C0\uC9C8\uD559\uC790 ]"
+    text: "\uB108\uB3C4 \uADF8\uB798\uC11C \uC774\uB7F0 \uB370\uAE4C\uC9C0 \uAC78\uC5B4\uC628
+      \uAC70 \uC544\uB2C8\uB2C8?"
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  - quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: "[ \uC9C0\uC9C8\uD559\uC790 ]"
+    text: "\uC628 \uAE40\uC5D0 \uADF8\uB798\uB3C4 \uC5ED\uC774\uB098 \uAD6C\uACBD\uD558\uACE0
+      \uAC00\uB834."
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  hasChoice: 0
+  choicePromptLine:
+    quest: {fileID: 0}
+    questAction: 0
+    speaker: 1
+    npcName: 
+    text: 
+    visual:
+      portrait: {fileID: 0}
+      background: {fileID: 0}
+      standing: {fileID: 0}
+      presentation: 0
+  acceptLines: []
+  rejectLines: []
+  acceptLabel: 
+  rejectLabel: 
+  defaultPortrait: {fileID: 0}
+  defaultBackground: {fileID: 0}
+  defaultStanding: {fileID: 0}
