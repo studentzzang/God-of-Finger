@@ -648,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000091552734
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 3823777789219634563, guid: 77919b8ba191c4fde9d3f4b69fe512e1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c9351938b6e4d8d8dbe40e1b9f05a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnId: YHouse_Room
+  spawnId: YHouse_Door
 --- !u!4 &1339682809
 Transform:
   m_ObjectHideFlags: 0
@@ -1795,8 +1795,8 @@ MonoBehaviour:
   lockedDialogue: {fileID: 11400000, guid: e2edef0cd97f7454e84f5397d6ad5bfb, type: 2}
   lockedLog: Cannot enter.
   isMinigame: 1
-  returnSpawnPointId: Default
-  successSignalIdOnClear: Bottle
+  returnSpawnPointId: Bottle
+  successSignalIdOnClear: Y002_Clear
 --- !u!212 &1653396689
 SpriteRenderer:
   m_ObjectHideFlags: 0
