@@ -1,0 +1,43 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "영구",
+      "text": "헉! 형! 나 이빨이 막 흔들려! 뽑아주면 안 돼?!",
+      "useCinematic": false,
+      "portrait": "Portraits/Younggu"
+    },
+    {
+      "speaker": "NPC",
+      "npcName": "영구",
+      "text": "근데... 유치? 영구치? 그게 뭐야? 맛있는 거야?",
+      "useCinematic": false,
+      "portrait": "Portraits/Younggu"
+    }
+  ],
+  "hasChoice": true,
+  "choicePromptLine": {
+    "speaker": "NPC",
+    "npcName": "영구",
+    "text": "뽑아줘! 지금! 당장!",
+    "useCinematic": true,
+    "portrait": "Portraits/Younggu",
+    "background": "Backgrounds/StreetDay"
+  },
+  "acceptResult": {
+    "speaker": "Player",
+    "npcName": "",
+    "text": "알았어. 근데 조심해야 하니까, 진짜 흔들리는지 먼저 보자.",
+    "useCinematic": true,
+    "questId": "Q_TOOTH_001",
+    "questAction": "Accept"
+  },
+  "rejectResult": {
+    "speaker": "Player",
+    "npcName": "",
+    "text": "나중에 보호자랑 같이 오자. 지금은 위험해.",
+    "useCinematic": false
+  },
+  "acceptLabel": "뽑아준다",
+  "rejectLabel": "거절한다"
+}

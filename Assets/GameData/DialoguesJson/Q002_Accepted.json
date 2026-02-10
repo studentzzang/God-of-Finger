@@ -1,0 +1,18 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "상인",
+      "text": "마을 사람들에게 ‘상인 가게’ 좋다고 한마디만!",
+      "useCinematic": false,
+      "portrait": "Portraits/Merchant",
+      "background": ""
+    }
+  ],
+  "hasChoice": false,
+  "choicePromptLine": null,
+  "acceptResult": null,
+  "rejectResult": null,
+  "acceptLabel": "",
+  "rejectLabel": ""
+}

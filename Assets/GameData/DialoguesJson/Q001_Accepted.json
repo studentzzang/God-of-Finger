@@ -1,0 +1,18 @@
+{
+  "lines": [
+    {
+      "speaker": "NPC",
+      "npcName": "상인",
+      "text": "사과… 꼭 찾아줘!",
+      "useCinematic": false,
+      "portrait": "Portraits/Merchant",
+      "background": ""
+    }
+  ],
+  "hasChoice": false,
+  "choicePromptLine": null,
+  "acceptResult": null,
+  "rejectResult": null,
+  "acceptLabel": "",
+  "rejectLabel": ""
+}
